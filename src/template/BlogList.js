@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import BlogItem from "./BlogItem";
 import SelectCategory from "./layout/header/SelectCategory";
 import SelectDestination from "./layout/header/SelectDestination";
@@ -18,8 +19,10 @@ function BlogList() {
 
         <div className="mt-5">
           <div className="d-flex justify-content-end text-primary">
-            <i className="fa-solid fa-pencil me-1" />
-            <i className="fa-solid fa-trash" />
+            <Link to="/blog/edit" className="mt-minus-5">
+              <i className="fa-solid fa-pencil me-1" />
+            </Link>
+            <i className="fa-solid fa-trash" role="button" />
           </div>
           <BlogItem />
 

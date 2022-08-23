@@ -1,4 +1,4 @@
-import { Location } from "./icons";
+import { Like, Location } from "./icons";
 
 function BlogItem() {
   return (
@@ -19,15 +19,15 @@ function BlogItem() {
             <p className="color-subtitle fs-5">DEC 19, 2022</p>
 
             <div className="d-flex flex-grow-1 justify-content-between like">
-              <div>
-                <Location />
+              <div className="fs-3">
+                <Location opacity={50} />
                 <span className="destination color-subtitle fs-5">
                   อาหารริมทาง, กรุงเทพ
                 </span>
               </div>
 
-              <span className="like">
-                <i className="fa-solid fa-thumbs-up fs-2 me-3 text-secondary" />
+              <span className="like fs-2">
+                <Like color="grey" />
                 <span className="color-subtitle fs-5">10</span>
               </span>
             </div>

@@ -5,7 +5,7 @@ import Logo from "../../img/Logo.jpg";
 function Footer() {
   return (
     <>
-      <div className="w-100% bg-base mt-5">
+      <div className="w-100 bg-base mt-5">
         <div className="d-flex flex-column align-content-center">
           <div className="d-flex justify-content-between">
             <div className="d-flex flex-column">

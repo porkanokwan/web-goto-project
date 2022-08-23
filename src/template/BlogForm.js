@@ -1,35 +1,45 @@
 import { useState } from "react";
-import { uniqueId } from "lodash";
+import { Link } from "react-router-dom";
 import PlaceInBlogForm from "./PlaceInBlogForm";
+import { Image } from "./icons";
 
 function BlogForm() {
   const [number, setNumber] = useState(1);
+  const [toggleTitle, setToggleTitle] = useState(false);
   const [place, setPlace] = useState([{ name: "", picture: "", content: "" }]);
-  const arr = ["0"];
+  const arr = [1];
   for (let i = 0; i < number - 1; i++) {
-    arr.push(uniqueId());
+    arr.push(arr[i] + 1);
   }
 
   return (
     <>
       <div className="bg-white d-flex justify-content-between">
         <h2 className="p-3">Create Blog</h2>
-        <i className="fa-solid fa-xmark fs-2 text-danger p-4" type="button" />
+        <Link to="/">
+          <i className="fa-solid fa-xmark fs-2 text-danger p-4" />
+        </Link>
       </div>
 
-      <div
-        role="button"
-        className="position-relative container-fluid h-500"
-      ></div>
+      <div role="button" className="position-relative container-fluid h-500">
+        {toggleTitle && (
+          <h1 className="title fw-bold position-absolute top-50 left-30">
+            DISCOVER STORY-WORTHY PLACE
+          </h1>
+        )}
+      </div>
       <div className="d-flex justify-content-center py-3 position-absolute top-80 left-35">
         <button className="d-flex rounded-3 border border-0 btn-cover">
           <div className="text-center rounded-circle p-2 fs-3 me-1">
-            <i className="fa-regular fa-image"></i>
+            <Image />
           </div>
           <div className="mt-2 fs-4 pe-2 py-1">เลือกรูปปก</div>
         </button>
 
-        <button className="fs-4 pe-2 ms-5 rounded-3 border border-0 text-center btn-cover">
+        <button
+          className="fs-4 pe-2 ms-5 rounded-3 border border-0 text-center btn-cover"
+          onClick={() => setToggleTitle((prev) => !prev)}
+        >
           แสดงหัวเรื่องบนภาพปก
         </button>
       </div>
@@ -37,26 +47,26 @@ function BlogForm() {
       <div className="bg-white w-mt">
         <div className="bg-white form-size mx-auto">
           <form>
-            <div className="d-flex w-100 justify-content-around pt-5 ps-10 fs-5 ps-35">
+            <div className="d-flex w-100 justify-content-around pt-5 fs-5 ps-35">
               <div>
-                <input type="radio" />
+                <input type="radio" id="retaurant" name="category" />
                 <label className="me-3 ms-1">
                   ร้านอาหาร/คาเฟ่(Restaurant & Cafe)
                 </label>
               </div>
 
               <div>
-                <input type="radio" />
+                <input type="radio" id="street-food" name="category" />
                 <label className="me-3 ms-1">อาหารริมทาง (Street Food)</label>
               </div>
 
               <div>
-                <input type="radio" />
+                <input type="radio" id="nightlife" name="category" />
                 <label className="me-3 ms-1">สถานบันเทิง(NightLife)</label>
               </div>
 
               <div>
-                <input type="radio" />
+                <input type="radio" id="attraction" name="category" />
                 <label className="me-3 ms-1">
                   สถานที่ท่องเที่ยว(Attractions)
                 </label>
@@ -89,7 +99,12 @@ function BlogForm() {
                 />
 
                 {arr.map((el) => (
-                  <PlaceInBlogForm key={el} place={place} setPlace={setPlace} />
+                  <PlaceInBlogForm
+                    key={el}
+                    count={el}
+                    place={place}
+                    setPlace={setPlace}
+                  />
                 ))}
 
                 <button
@@ -103,7 +118,7 @@ function BlogForm() {
 
               <button
                 type="submit"
-                className="btn btn-warning btn-post text-white fw-400 fs-5 mb-5 align-self-end"
+                className="btn btn-warning btn-post text-white fw-400 fs-5 mb-3 align-self-end"
               >
                 โพสต์
               </button>

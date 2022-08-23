@@ -1,8 +1,10 @@
-function PlaceInBlogForm({ place, setPlace }) {
+import { Image } from "./icons";
+
+function PlaceInBlogForm({ count, place, setPlace }) {
   return (
     <div className="border border-dark rounded-2 d-flex flex-column mb-3 p-3">
       <div className="d-flex justify-content-between">
-        <h5>สถานที่</h5>
+        <h5>สถานที่ที่ {count}</h5>
         <i className="fa-solid fa-trash mt-2" />
       </div>
 
@@ -16,8 +18,8 @@ function PlaceInBlogForm({ place, setPlace }) {
       </div>
 
       <div className="h-350 m-3 bg-secondary opacity-25" role="button">
-        <div className="d-flex mb-3 position-absolute fs-2 position-place">
-          <i className="fa-regular fa-image text-primary fs-1 opacity-100" />
+        <div className="d-flex mb-3 fs-1 position-place">
+          <Image color={"primary"} />
           <div className="fs-2 ps-3 text-dark">
             Add Photo
             <input className="d-none" type="file" />

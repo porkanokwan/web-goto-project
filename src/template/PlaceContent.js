@@ -1,15 +1,24 @@
 import { Location } from "./icons";
+import StarRating from "./StarRating";
+import Carousel from "./ui/Carousel";
 
-function PlaceContent() {
+function PlaceContent({ setEditPlace }) {
   return (
     <>
+      <div className="p-5">
+        <h1>Name Place</h1>
+        <StarRating star={3} size="fs-3" />
+      </div>
+
+      <Carousel />
+
       <div className="d-flex justify-content-center mt-5">
         <div className="d-flex flex-column bg-lightgrey rounded mb-5">
           <div className="d-flex">
             <div>Maps</div>
             <div className="d-flex flex-column ms-3">
               <h4>
-                <Location /> ที่ตั้ง
+                <Location opacity={50} /> ที่ตั้ง
               </h4>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -71,7 +80,11 @@ function PlaceContent() {
             </div>
           </div>
 
-          <div role="button" className="mt-3 bg-lightgrey rounded text-center">
+          <div
+            role="button"
+            className="mt-3 bg-lightgrey rounded text-center"
+            onClick={() => setEditPlace(true)}
+          >
             <i className="fa-solid fa-pencil" />
             แก้ไขข้อมูล
           </div>

@@ -2,7 +2,10 @@ function MenuForm() {
   return (
     <>
       <div className="w-100 bg-secondary opacity-25 h-180" role="button">
-        <div className="d-flex mb-3 position-absolute position-menu">
+        <div
+          className="d-flex mb-3"
+          style={{ paddingTop: "125px", paddingLeft: "125px" }}
+        >
           <i className="fa-regular fa-image text-primary fs-1 opacity-100" />
           <div className="fs-2 text-dark">
             Add Photo

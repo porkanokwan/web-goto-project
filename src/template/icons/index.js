@@ -19,10 +19,32 @@ export function SocialLogo() {
   );
 }
 
-export function Location() {
+export function Location({ opacity }) {
   return (
     <>
-      <i className="fa-solid fa-location-dot mb-3 mt-8 fs-3 me-1 opacity-50" />
+      <i
+        className={`fa-solid fa-location-dot mb-3 mt-8 me-1 opacity-${opacity}`}
+      />
+    </>
+  );
+}
+
+export function Like({ color = "black", mt = "0px" }) {
+  return (
+    <>
+      <i
+        className="fa-solid fa-thumbs-up me-3"
+        role="button"
+        style={{ color, marginTop: `${mt}px` }}
+      />
+    </>
+  );
+}
+
+export function Image({ color = "" }) {
+  return (
+    <>
+      <i className={`fa-regular fa-image text-${color}`} role="button" />
     </>
   );
 }

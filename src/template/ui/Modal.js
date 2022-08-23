@@ -1,6 +1,6 @@
 function Modal({ children, picture, height }) {
   return (
-    <div className="modal fade" id="modal-post" tabindex="-1">
+    <div className="modal fade" id="modal-post" tabIndex="-1">
       <div className="modal-dialog modal-dialog-centered">
         <div className="modal-content">
           <div className="modal-header">

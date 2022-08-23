@@ -19,7 +19,7 @@ function Dropdown() {
           </Link>
         </li>
         <li>
-          <Link className="dropdown-item" to="/login">
+          <Link className="dropdown-item" to="/place">
             Add restaurant/attraction
           </Link>
         </li>

@@ -1,10 +1,11 @@
 import defaultCover from "../../img/thailand.jpg";
 import Header from "./Header";
 import Footer from "../footer/Footer";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import SearchBar from "./SearchBar";
 
 function CoverPic() {
+  const location = useLocation();
   return (
     <>
       <div className="header">
@@ -18,7 +19,7 @@ function CoverPic() {
           DISCOVER STORY-WORTHY PLACE
         </h1>
 
-        <SearchBar />
+        {location.pathname !== `/blog/1` && <SearchBar />}
       </div>
 
       <div>

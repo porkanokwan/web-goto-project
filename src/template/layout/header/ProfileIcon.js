@@ -1,16 +1,15 @@
 import { Link } from "react-router-dom";
-import User from "../../img/user.png";
+import UserIcon from "../../common/UserIcon";
 
-function ProfileIcon({ src, size }) {
+function ProfileIcon({ src, size, mt }) {
   return (
-    <Link to="#">
-      <img
-        src={src || User}
-        alt="profile"
-        className="rounded-circle profile"
-        width={size}
-        height={size}
-      />
+    <Link to={`/profile/${1}`} className="text-dark text-decoration-none">
+      <div className="d-flex">
+        <UserIcon src={src} size={size} />
+        <div className="ms-3 fs-4" style={{ marginTop: mt }}>
+          <span>John Doe</span>
+        </div>
+      </div>
     </Link>
   );
 }

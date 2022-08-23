@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
+import UserIcon from "../../common/UserIcon";
 import Logo from "../../img/Logo.jpg";
 import Dropdown from "./Dropdown";
-import ProfileIcon from "./ProfileIcon";
 
 function Header() {
   const location = useLocation();
@@ -48,7 +48,7 @@ function Header() {
         </div>
 
         <div className="d-flex">
-          <ProfileIcon size="80px" />
+          <UserIcon size="80px" />
 
           <Dropdown />
         </div>
