@@ -2,11 +2,11 @@ import { Location } from "../../icons";
 
 function SearchBar() {
   return (
-    <div className="d-flex flex-grow-1 flex-nowrap justify-content-center position-relative bottom-100">
-      <div className="d-flex flex-nowrap justify-content-center rounded-pill bg-white text-dark shadow-sm p-3 bg-body rounded mx-auto search">
-        <div className="location fs-3">
+    <>
+      <div className="d-flex flex-wrap bg-white rounded-pill justify-content-center align-items-center text-dark search">
+        <div className="destination d-flex ">
           <Location opacity={50} />
-          <label className="ps-1 fs-5 pe-3 mt-8">Destinations</label>
+          <label className="fs-s pe-3 mt-1">Destinations</label>
           <div className="search-destination mt-8 d-flex">
             <i className="fa-solid fa-magnifying-glass ms-1 mt-2" />
             <select className="border border-0 mt-1 ms-1 text-secondary w-100 rounded-3">
@@ -15,8 +15,10 @@ function SearchBar() {
               </option>
             </select>
           </div>
+        </div>
 
-          <label className="ps-3 fs-5 pe-3 mt-8">Category</label>
+        <div className="category mb-2 d-flex">
+          <label className="fs-s px-3 mt-1">Category</label>
           <div className="search-destination mt-8 d-flex">
             <i className="fa-solid fa-magnifying-glass ms-1 mt-2" />
             <select className="border border-0 mt-1 ms-1 text-secondary w-100 rounded-3">
@@ -25,15 +27,15 @@ function SearchBar() {
               </option>
             </select>
           </div>
+        </div>
 
-          <div>
-            <button className="btn-search" type="button">
-              Search
-            </button>
-          </div>
+        <div>
+          <button className="btn-search" type="button">
+            Search
+          </button>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

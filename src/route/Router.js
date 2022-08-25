@@ -41,7 +41,7 @@ function Router() {
       </Route>
 
       {/* login แล้ว */}
-      {/* <Route path="/" element={<HeaderFooterPage />}>
+      <Route path="/" element={<HeaderFooterPage />}>
         <Route path="profile/:userId" element={<SideBar />}>
           <Route path="" element={<ProfilePage />} />
           <Route path="blog" element={<BlogList />} />
@@ -50,7 +50,7 @@ function Router() {
         <Route path="place/:placeId" element={<PlaceContainer />} />
         <Route path="blog/create" element={<BlogForm />} />
         <Route path="blog/edit" element={<BlogForm />} />
-      </Route> */}
+      </Route>
     </Routes>
   );
 }

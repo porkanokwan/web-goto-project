@@ -8,7 +8,7 @@ function BlogPage() {
         <h3>20 ร้านอาหาร Street Food เจ้าดังใน กทม. ที่ต้องไปโดนนนน</h3>
         <div className="d-flex">
           <div className="d-flex mt-3">
-            <ProfileIcon size={70} mt={48} />
+            <ProfileIcon size={70} mt={20} />
           </div>
 
           <div className="d-flex">
@@ -18,7 +18,7 @@ function BlogPage() {
                 อาหารริมทาง, กรุงเทพ
               </span>
             </div>
-            <p className="ms-3 mt-2 fs-6 text-secondary opacity-50 pt-65">
+            <p className="ms-3 mt-2 fs-6 text-secondary opacity-50 pt-66">
               DEC 19, 2022
             </p>
           </div>
@@ -44,8 +44,7 @@ function BlogPage() {
           <h5>01 ร้านหม่าล่า</h5>
           <img
             src="https://res.cloudinary.com/drwgmpw3e/image/upload/v1659171006/pisol82ljjts35fjptjj.jpg"
-            width="1000px"
-            height="600px"
+            className="img-pb"
           />
         </div>
         <p>
@@ -63,8 +62,7 @@ function BlogPage() {
           <h5>02 ร้านหม่าล่า</h5>
           <img
             src="https://res.cloudinary.com/drwgmpw3e/image/upload/v1659171006/pisol82ljjts35fjptjj.jpg"
-            width="1000px"
-            height="600px"
+            className="img-pb"
           />
         </div>
         <p>

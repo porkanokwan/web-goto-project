@@ -5,9 +5,9 @@ function PlaceForm({ title }) {
   return (
     <>
       <h1 className="m-5">{title || "เพิ่มร้าน/สถานที่"}</h1>
-      <div className="bg-white border border-dark rounded-2 mx-auto form-size">
-        <form>
-          <div className="d-flex w-100 justify-content-around pt-5 fs-5 ps-35">
+      <div className="form-size">
+        <form className="bg-white border border-dark rounded-2">
+          <div className="d-flex w-100 justify-content-around pt-5 fs-1v ps-35">
             <div>
               <input type="radio" id="retaurant" name="category" />
               <label className="me-3 ms-1">
@@ -45,11 +45,12 @@ function PlaceForm({ title }) {
               <h5>อัตราค่าบริการ*</h5>
               <div className="d-flex">
                 <label className="fs-5 ms-3">ผู้ใหญ่: </label>
-                <input type="text" className="rounded-2 ms-3 me-3" /> บาท/ต่อคน
+                <input type="text" className="rounded-2 ms-3 wh-50 me-3" />{" "}
+                บาท/ต่อคน
               </div>
               <div className="d-flex my-3">
                 <label className="fs-5 ms-3">เด็ก: </label>
-                <input type="text" className="rounded-2 ms-44 me-3" />
+                <input type="text" className="rounded-2 ms-44 wh-50 me-3" />
                 บาท/ต่อคน
               </div>
 
@@ -122,8 +123,8 @@ function PlaceForm({ title }) {
                 placeholder="ตัวอย่าง: 08.00 - 22.00"
               />
 
-              <div className="d-flex justify-content-between w-25 fs-5 ">
-                <h5>Wifi:</h5>
+              <div className="d-flex justify-content-between bs-size fs-5 ">
+                <h5 className="wifi">Wifi:</h5>
                 <div className="ms-46">
                   <input
                     type="radio"
@@ -145,8 +146,8 @@ function PlaceForm({ title }) {
                 </div>
               </div>
 
-              <div className="d-flex justify-content-between w-25 fs-5 ">
-                <h5>ที่จอดรถ:</h5>
+              <div className="d-flex justify-content-between bs-size fs-5 ">
+                <h5 className="parking">ที่จอดรถ:</h5>
                 <div className="ms-43">
                   <input
                     type="radio"
@@ -168,8 +169,8 @@ function PlaceForm({ title }) {
                 </div>
               </div>
 
-              <div className="d-flex justify-content-between w-25 fs-5">
-                <h5>จองล่วงหน้า:</h5>
+              <div className="d-flex justify-content-between  bs-size fs-5">
+                <h5 className="reserve">จองล่วงหน้า:</h5>
                 <div>
                   <input
                     type="radio"
@@ -204,7 +205,7 @@ function PlaceForm({ title }) {
                 <div className="d-flex flex-grow-1 justify-content-end">
                   <button
                     type="button"
-                    className="btn btn-outline-primary rounded-4 me-5 p-3 mb-25 fs-4"
+                    className="btn btn-outline-primary rounded-4 p-3 mb-25 fs-4"
                   >
                     <Image />
                     <span className="fs-5 ms-3">เพิ่มรูป</span>

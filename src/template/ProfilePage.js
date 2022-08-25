@@ -6,22 +6,22 @@ function ProfilePage() {
   return (
     <>
       <div>
-        <div className="d-flex p-5">
+        <div className="d-flex p-5 wd-450 fd-column">
           <div className="d-flex flex-column w-25 text-center">
             <img
               src="https://res.cloudinary.com/drwgmpw3e/image/upload/v1659411545/oifge8vr1woptedabvft.jpg"
               alt="profile picture"
               className="pic-size"
             />
-            <div className="ms-5" role="button">
+            <div className="w-100 ms-5 ms-ep-5" role="button">
               <p className="text-primary text-decoration-underline">
-                edit profile picture
+                edit profile
               </p>
               <input type="file" className="d-none" />
             </div>
           </div>
 
-          <div className="d-flex flex-column ms-150 mt-5 w-100">
+          <div className="mr-p-80 d-flex flex-column ms-150 mt-5 w-100">
             <div className="d-flex">
               <h4 className="fw-bold">ชื่อ-นามสกุล:</h4>
               <p className="ms-3 fs-5">John Doe</p>

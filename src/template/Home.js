@@ -12,9 +12,9 @@ function Home() {
         <AllPlace />
       ) : (
         <div className="min-vh-100">
-          <h1 className="ms-5 mt-5">Popular Attractions</h1>
+          <h1 className="title-place ms-5 mt-5">Popular Attractions</h1>
           <div className="d-flex flex-column">
-            <div className="d-flex flex-grow-1 justify-content-evenly mt-5">
+            <div className="card-category d-flex flex-grow-1 justify-content-evenly mt-5">
               <CardItem />
               <CardItem />
               <CardItem />
@@ -29,7 +29,7 @@ function Home() {
 
           <h1 className="ms-5 mt-5">Popular Restaurant & Cafe</h1>
           <div className="d-flex flex-column">
-            <div className="d-flex flex-grow-1 justify-content-evenly mt-5">
+            <div className="card-category d-flex flex-grow-1 justify-content-evenly mt-5">
               <CardItem />
               <CardItem />
               <CardItem />
@@ -41,7 +41,7 @@ function Home() {
 
           <h1 className="ms-5 mt-5">Popular Street Food</h1>
           <div className="d-flex flex-column">
-            <div className="d-flex flex-grow-1 justify-content-evenly mt-5">
+            <div className="card-category d-flex flex-grow-1 justify-content-evenly mt-5">
               <CardItem />
               <CardItem />
               <CardItem />
@@ -51,12 +51,12 @@ function Home() {
 
           <h1 className="ms-5 mt-5">Popular NightLife</h1>
           <div className="d-flex flex-column">
-            <div className="d-flex flex-grow-1 justify-content-evenly mt-5">
+            <div className="card-category d-flex flex-grow-1 justify-content-evenly mt-5">
               <CardItem />
               <CardItem />
               <CardItem />
             </div>
-            <button className="mt-4 button-view">view all NightLife</button>
+            <button className="button-view">view all NightLife</button>
           </div>
         </div>
       )}

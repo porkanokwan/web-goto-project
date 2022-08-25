@@ -1,16 +1,18 @@
 import { Like, Location } from "./icons";
 
-function BlogItem() {
+function BlogItem({ size = "", direction = "", line = "" }) {
   return (
     <>
       <div className="blog-item w-100 d-flex flex-grow-1 justify-content-center">
-        <div className="d-flex justify-content-center">
+        <div
+          className={`d-flex ${direction} justify-content-center box-content`}
+        >
           <img
             className="card-img"
             src="https://res.cloudinary.com/drwgmpw3e/image/upload/v1659171006/pisol82ljjts35fjptjj.jpg"
             alt="name place"
           />
-          <div className="ms-5 w-50">
+          <div className={`descript ms-5 w-50 ${size}`}>
             <p className="fs-2 fw-400">
               ร้านอาหารรางวัล Users Choice ใน Wongnai Bangkok Restaurant Week
               2019
@@ -35,7 +37,7 @@ function BlogItem() {
         </div>
       </div>
 
-      <hr className="w-75 text-dark mx-auto mb-50" />
+      <hr className={`w-75 text-dark mx-auto mb-50 ${line}`} />
     </>
   );
 }

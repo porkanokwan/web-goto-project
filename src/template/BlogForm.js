@@ -28,7 +28,7 @@ function BlogForm() {
           </h1>
         )}
       </div>
-      <div className="d-flex justify-content-center py-3 position-absolute top-80 left-35">
+      <div className="d-flex justify-content-center py-3">
         <button className="d-flex rounded-3 border border-0 btn-cover">
           <div className="text-center rounded-circle p-2 fs-3 me-1">
             <Image />
@@ -45,9 +45,9 @@ function BlogForm() {
       </div>
 
       <div className="bg-white w-mt">
-        <div className="bg-white form-size mx-auto">
+        <div className="bg-white w-100 mx-auto">
           <form>
-            <div className="d-flex w-100 justify-content-around pt-5 fs-5 ps-35">
+            <div className="d-flex w-100 justify-content-around pt-5 fs-vw ps-35">
               <div>
                 <input type="radio" id="retaurant" name="category" />
                 <label className="me-3 ms-1">
@@ -73,7 +73,7 @@ function BlogForm() {
               </div>
             </div>
 
-            <div className="d-flex flex-column ms-5">
+            <div className="d-flex flex-column mx-5">
               <div className="my-4">
                 <label className="fs-5">จังหวัด:</label>
                 <select className="rounded-3 ms-3 text-secondary">

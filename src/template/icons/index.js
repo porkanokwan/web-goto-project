@@ -12,7 +12,7 @@ export function SocialLogo() {
           key={index}
           src={logo}
           alt={`${logo} Logo`}
-          className="logo-width"
+          className="logo-width me-3 mb-3"
         />
       ))}
     </>
@@ -23,7 +23,7 @@ export function Location({ opacity }) {
   return (
     <>
       <i
-        className={`fa-solid fa-location-dot mb-3 mt-8 me-1 opacity-${opacity}`}
+        className={`fa-solid fa-location-dot mb-3 mt-2 me-1 opacity-${opacity}`}
       />
     </>
   );

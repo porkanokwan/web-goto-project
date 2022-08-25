@@ -6,7 +6,7 @@ function AllPlace() {
     <>
       <h1 className="p-5">All Attractions</h1>
 
-      <div className="container-place ms-400">
+      <div className="container-place ms-275 ps-45">
         <CardItem />
         <CardItem />
         <CardItem />

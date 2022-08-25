@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 
 function Dropdown() {
   return (
-    <div className="dropdown me-5 ms-2">
+    <div className="dropdown me-3 ms-2">
       <button
-        className="btn w-10 h-10 mt-5 p-0"
+        className="btn w-10 h-10 p-0"
         data-bs-toggle="dropdown"
         type="button"
         aria-expanded="false"

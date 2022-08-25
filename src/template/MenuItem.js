@@ -4,18 +4,18 @@ import Modal from "./ui/Modal";
 
 function MenuItem() {
   return (
-    <div>
-      <div className="card-container">
+    <>
+      <div className="card-container-menu">
         <img
-          className="card-img-top"
+          className="card-img-menu"
           src="https://res.cloudinary.com/drwgmpw3e/image/upload/v1659171006/pisol82ljjts35fjptjj.jpg"
           alt="attraction name"
         />
-        <div className="card-box">
+        <div className="card-box-menu">
           <div className="mb-15 d-flex">
             <span className="text-secondary fs-1">เฟรนฟราย</span>
 
-            <div className="dropdown ms-100 mt-3">
+            <div className="dropdown ms-100">
               <i
                 className="fa-solid fa-ellipsis"
                 data-bs-toggle="dropdown"
@@ -47,7 +47,7 @@ function MenuItem() {
           <MenuForm />
         </Modal>
       </div>
-    </div>
+    </>
   );
 }
 

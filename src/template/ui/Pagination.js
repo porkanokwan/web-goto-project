@@ -8,7 +8,7 @@ function Pagination() {
         <ul class="pagination">
           <li class="page-item">
             <Link
-              class="page-link border border-0 fs-48 me-5 shadow-none bg-transparent"
+              class="page-link border border-0 fs-48 me-15 shadow-none bg-transparent"
               to="#"
             >
               <span>&laquo;</span>
@@ -16,7 +16,7 @@ function Pagination() {
           </li>
           <li class="page-item">
             <Link
-              class="page-link border border-0 fs-48 me-5 shadow-none bg-transparent"
+              class="page-link border border-0 fs-48 me-15 shadow-none bg-transparent"
               to="#"
             >
               1
@@ -24,7 +24,7 @@ function Pagination() {
           </li>
           <li class="page-item">
             <Link
-              class="page-link border border-0 fs-48 me-5 shadow-none bg-transparent"
+              class="page-link border border-0 fs-48 me-15 shadow-none bg-transparent"
               to="#"
             >
               2
@@ -32,7 +32,7 @@ function Pagination() {
           </li>
           <li class="page-item">
             <Link
-              class="page-link border border-0 fs-48 me-5 shadow-none bg-transparent"
+              class="page-link border border-0 fs-48 me-15 shadow-none bg-transparent"
               to="#"
             >
               3
@@ -40,7 +40,7 @@ function Pagination() {
           </li>
           <li class="page-item">
             <Link
-              class="page-link border border-0 fs-48 me-5 shadow-none bg-transparent"
+              class="page-link border border-0 fs-48 me-15 shadow-none bg-transparent"
               to="#"
             >
               4
@@ -48,7 +48,7 @@ function Pagination() {
           </li>
           <li class="page-item">
             <Link
-              class="page-link border border-0 fs-48 me-5 shadow-none bg-transparent"
+              class="page-link border border-0 fs-48 me-15 shadow-none bg-transparent"
               to="#"
             >
               <span>&raquo;</span>

@@ -28,7 +28,7 @@ function Login() {
               </button>
             </div>
 
-            <div className="input-group mb-5 h-25 p-150">
+            <div className="input-group mb-54 h-25 p-150">
               <span className="input-group-text">
                 <i className="fa-regular fa-envelope" />
               </span>
