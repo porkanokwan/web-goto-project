@@ -6,7 +6,7 @@ function ProfileIcon({ src, size, mt }) {
     <Link to={`/profile/${1}`} className="text-dark text-decoration-none">
       <div className="d-flex">
         <UserIcon src={src} size={size} />
-        <div className="ms-3" style={{ marginTop: mt }}>
+        <div className="ms-3 w-100" style={{ marginTop: mt }}>
           <span className="fs-name">John Doe</span>
         </div>
       </div>

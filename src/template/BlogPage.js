@@ -45,6 +45,7 @@ function BlogPage() {
           <img
             src="https://res.cloudinary.com/drwgmpw3e/image/upload/v1659171006/pisol82ljjts35fjptjj.jpg"
             className="img-pb"
+            alt="blog"
           />
         </div>
         <p>
@@ -63,6 +64,26 @@ function BlogPage() {
           <img
             src="https://res.cloudinary.com/drwgmpw3e/image/upload/v1659171006/pisol82ljjts35fjptjj.jpg"
             className="img-pb"
+            alt="blog"
+          />
+        </div>
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book.Lorem Ipsum is simply dummy
+          text of the printing and typesetting industry. Lorem Ipsum has been
+          the industry's standard dummy text ever since the 1500s, when an
+          unknown printer took a galley of type and scrambled it to make a type
+          specimen book.
+        </p>
+
+        <div className="text-center my-4">
+          <h5>03 ร้านหม่าล่า</h5>
+          <img
+            src="https://res.cloudinary.com/drwgmpw3e/image/upload/v1659171006/pisol82ljjts35fjptjj.jpg"
+            className="img-pb"
+            alt="blog"
           />
         </div>
         <p>

@@ -21,32 +21,32 @@ function BlogForm() {
         </Link>
       </div>
 
-      <div role="button" className="position-relative container-fluid h-500">
-        {toggleTitle && (
-          <h1 className="title fw-bold position-absolute top-50 left-30">
-            DISCOVER STORY-WORTHY PLACE
-          </h1>
-        )}
-      </div>
-      <div className="d-flex justify-content-center py-3">
-        <button className="d-flex rounded-3 border border-0 btn-cover">
-          <div className="text-center rounded-circle p-2 fs-3 me-1">
-            <Image />
-          </div>
-          <div className="mt-2 fs-4 pe-2 py-1">เลือกรูปปก</div>
-        </button>
+      <form>
+        <div role="button" className="position-relative container-fluid h-500">
+          {toggleTitle && (
+            <h1 className="title fw-bold position-absolute top-50 left-30">
+              DISCOVER STORY-WORTHY PLACE
+            </h1>
+          )}
+        </div>
+        <div className="d-flex justify-content-center py-3">
+          <button className="d-flex rounded-3 border border-0 btn-cover">
+            <div className="text-center rounded-circle p-2 fs-3 me-1">
+              <Image />
+            </div>
+            <div className="mt-2 fs-4 pe-2 py-1">เลือกรูปปก</div>
+          </button>
 
-        <button
-          className="fs-4 pe-2 ms-5 rounded-3 border border-0 text-center btn-cover"
-          onClick={() => setToggleTitle((prev) => !prev)}
-        >
-          แสดงหัวเรื่องบนภาพปก
-        </button>
-      </div>
+          <button
+            className="fs-4 pe-2 ms-5 rounded-3 border border-0 text-center btn-cover"
+            onClick={() => setToggleTitle((prev) => !prev)}
+          >
+            แสดงหัวเรื่องบนภาพปก
+          </button>
+        </div>
 
-      <div className="bg-white w-mt">
-        <div className="bg-white w-100 mx-auto">
-          <form>
+        <div className="bg-white w-mt">
+          <div className="bg-white w-100 mx-auto">
             <div className="d-flex w-100 justify-content-around pt-5 fs-vw ps-35">
               <div>
                 <input type="radio" id="retaurant" name="category" />
@@ -123,9 +123,9 @@ function BlogForm() {
                 โพสต์
               </button>
             </div>
-          </form>
+          </div>
         </div>
-      </div>
+      </form>
     </>
   );
 }

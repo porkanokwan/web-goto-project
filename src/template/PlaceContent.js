@@ -12,10 +12,14 @@ function PlaceContent({ setEditPlace }) {
 
       <Carousel />
 
-      <div className="d-flex justify-content-center mt-5">
-        <div className="d-flex flex-column bg-lightgrey rounded mb-5">
+      <div className="d-flex justify-content-center mt-5 m-box">
+        <div className="d-flex flex-column bg-lightgrey rounded mb-5 mr-15">
           <div className="d-flex">
-            <div>Maps</div>
+            <img
+              className="w-maps"
+              src="https://res.cloudinary.com/drwgmpw3e/image/upload/v1659171006/pisol82ljjts35fjptjj.jpg"
+              alt="place"
+            />
             <div className="d-flex flex-column ms-3">
               <h4>
                 <Location opacity={50} /> ที่ตั้ง
@@ -52,15 +56,15 @@ function PlaceContent({ setEditPlace }) {
 
             <div>
               <i className="fa-solid fa-check fs-3 ms-3 text-success" />
-              <span className="ms-3 fs-5">Wifi</span>
+              <span className="ms-3">Wifi</span>
             </div>
             <div>
               <i className="fa-solid fa-close fs-3 ms-3 text-danger" />
-              <span className="ms-3 fs-5">ที่จอดรถ</span>
+              <span className="ms-3">ที่จอดรถ</span>
             </div>
             <div>
               <i className="fa-solid fa-close fs-3 ms-3 text-danger" />
-              <span className="ms-3 fs-5">จองล่วงหน้า</span>
+              <span className="ms-3">จองล่วงหน้า</span>
             </div>
 
             <div>

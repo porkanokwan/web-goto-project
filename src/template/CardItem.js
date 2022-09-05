@@ -10,15 +10,15 @@ function CardItem() {
         alt="attraction name"
       />
       <div className="card-box">
-        <p className="mb-15">
+        <div className="mb-15">
           <Location opacity={100} />
           <span className="name-location ps-1">เกาะล้าน, ชลบุรี</span>
 
           <div className="d-flex pb-3 reviews">
             <StarRating />
-            <span className="ms-3">0 reviews</span>
+            <span className="ms-3">5.0 scores</span>
           </div>
-        </p>
+        </div>
       </div>
     </div>
   );

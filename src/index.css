@@ -72,14 +72,14 @@ html {
 }
 
 .logo-footer {
-  width: 25vw;
+  width: 18vw;
   height: auto;
   margin: 15px 30px 0px 50px;
 }
 
 .caption {
   width: 250px;
-  margin-left: 8.75vw;
+  margin-left: 5.75vw;
   margin-top: -80px;
   line-height: 36px;
 }
@@ -100,16 +100,16 @@ html {
 
 .line {
   color: rgb(156, 150, 150);
-  width: 85vw;
+  width: 92.5vw;
   margin-left: 80px;
 }
 
-.mt-100 {
-  margin-top: 100px;
+.mt-150 {
+  margin-top: 8vw;
 }
 
-.mt-150 {
-  margin-top: 150px;
+.mt-180 {
+  margin-top: 10vw;
 }
 
 .me-150 {
@@ -118,7 +118,7 @@ html {
 
 .word {
   color: rgba(217, 217, 217, 0.5);
-  padding-right: 2vw;
+  padding-right: 1vw;
 }
 
 .fs-vw {
@@ -130,15 +130,29 @@ html {
 }
 
 .fs-vw-footer {
-  font-size: 3.25vw;
+  font-size: 2.8vw;
+}
+
+.add-btn {
+  width: 150px;
+  margin-left: -100px;
+  font-size: 20px;
 }
 
 .logo-width {
   width: 50px;
 }
 
+.add-photo {
+  font-size: 32px;
+}
+
 .copy-right {
   font-size: 1vw !important;
+}
+
+.w-350 {
+  width: 350px;
 }
 
 .card-container {
@@ -256,6 +270,14 @@ html {
   height: 790px;
 }
 
+.form-forgot {
+  position: absolute;
+  top: 225px;
+  left: 21.75vw;
+  width: 800px;
+  height: 500px;
+}
+
 .form-size {
   display: flex;
   justify-content: center;
@@ -268,6 +290,14 @@ html {
 
 .p-50 {
   padding: 0px 150px 100px 150px;
+}
+
+.p-forgot {
+  padding: 100px 150px 50px 150px;
+}
+
+.p-reset {
+  padding: 30px 0px;
 }
 
 .btn-login {
@@ -291,6 +321,17 @@ html {
   font-size: 48px;
 }
 
+.btn-reset {
+  background-color: #203473;
+  color: white;
+  font-weight: 400;
+  font-size: 32px;
+  border: #203473;
+  border-radius: 14px;
+  width: 420px;
+  margin-top: 20px;
+}
+
 .btn-submit {
   background-color: #203473;
   color: white;
@@ -305,7 +346,7 @@ html {
 .link-forgot {
   margin-top: -80px;
   margin-bottom: 30px;
-  margin-left: 375px;
+  margin-left: 525px;
 }
 
 .img-pb {
@@ -354,6 +395,18 @@ html {
   border-radius: 14px;
 }
 
+.card-img-review {
+  width: 22vw;
+  height: 260px;
+  border-radius: 14px;
+}
+
+.card-img-bl {
+  width: 350px;
+  height: 260px;
+  border-radius: 14px;
+}
+
 .color-subtitle {
   color: #d9d9d9;
 }
@@ -371,19 +424,19 @@ html {
 }
 
 .fs-48 {
-  font-size: 3.75vw;
+  font-size: 2.75vw;
 }
 
 .mb-25 {
   margin-bottom: 25px;
 }
 
-.ms-100 {
-  margin-left: 100px;
+.ms-120 {
+  margin-left: 120px;
 }
 
 .ms-250 {
-  margin-left: 250px;
+  margin-left: 150px;
 }
 
 .ms-90 {
@@ -391,7 +444,7 @@ html {
 }
 
 .ms-450 {
-  margin-left: 28.5vw;
+  margin-left: 32.5vw;
 }
 
 .me-15 {
@@ -404,7 +457,7 @@ html {
 
 .container-menu {
   display: grid;
-  grid-template-columns: 100px 50px 100px;
+  grid-template-columns: 100px 40px 100px 40px;
   grid-template-rows: 80px 80px 80px;
   gap: 350px 400px;
 }
@@ -414,6 +467,12 @@ html {
   grid-template-columns: 100px 50px 100px;
   grid-template-rows: 80px 80px 80px;
   gap: 300px 350px;
+}
+
+.img-review {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 .ms-275 {
@@ -475,8 +534,8 @@ html {
 }
 
 .m-drop {
-  margin-top: 50px;
-  margin-left: 1200px;
+  margin-top: 10px;
+  margin-left: 1450px;
 }
 
 .card-img-w {
@@ -532,10 +591,6 @@ html {
   border: 1px solid black;
 }
 
-.ms-150 {
-  margin-left: 150px;
-}
-
 .ms-44 {
   margin-left: 2.4rem;
 }
@@ -573,6 +628,12 @@ html {
   width: 50%;
 }
 
+.w-maps {
+  width: 350px;
+  height: 350px;
+  margin: 15px;
+}
+
 .btn-cover {
   background-color: white;
   color: rgba(0, 0, 0, 0.35);
@@ -602,8 +663,83 @@ html {
   margin-left: 425px;
 }
 
+.position-add {
+  margin-top: 300px;
+  margin-left: 600px;
+}
+
 .edit-blog-size {
   width: 1000px;
+}
+
+.wd-450 {
+  width: 92vw !important;
+}
+
+.wf-69 {
+  width: 69vw !important;
+}
+
+.w-70 {
+  width: 50% !important;
+}
+
+.w-bt {
+  width: 50%;
+}
+
+.w-pass {
+  width: 63.5vw;
+  padding-left: 48px;
+}
+
+.w-line {
+  width: 70.5%;
+}
+
+.ms-ep-5 {
+  margin-left: -14px;
+}
+
+.area-about {
+  width: 55vw;
+}
+
+.w-hr {
+  width: 75%;
+}
+
+.wb-600 {
+  width: 65vw;
+}
+
+.mt-search {
+  margin-top: 0.5rem;
+}
+
+.w-blog {
+  width: 100%;
+}
+
+.ms-edit {
+  margin-left: 60vw;
+}
+
+.p-re {
+  padding-left: 3rem;
+}
+
+.p-re-0 {
+  padding-right: 3rem;
+}
+
+.mr-0 {
+  margin-right: 0px !important;
+}
+
+.ma-25 {
+  margin-top: 10px;
+  margin-right: 30px !important;
 }
 
 @media (max-width: 2000px) {
@@ -613,9 +749,6 @@ html {
 }
 
 @media (max-width: 1400px) {
-  .blog-item {
-    display: block;
-  }
   .position-title {
     top: 40%;
     left: 27%;
@@ -636,6 +769,81 @@ html {
     left: 15.75vw;
     width: 70vw;
   }
+  .form-forgot {
+    left: 15.75vw;
+    width: 70vw;
+  }
+  .position-add {
+    margin-top: 300px;
+    margin-left: 37vw;
+  }
+  .wd-450 {
+    width: 70vw !important;
+  }
+  .w-pass,
+  .w-line {
+    width: 55vw;
+  }
+  .w-line {
+    width: 80%;
+  }
+  .ms-150 {
+    margin-left: 120px;
+  }
+  .ms-ep-5 {
+    margin-left: 45px;
+  }
+  .wf-69 {
+    width: 92% !important;
+  }
+  .ms-275 {
+    margin-left: 16.5vw;
+  }
+  .mt-15 {
+    margin-top: 0.35rem;
+  }
+  .wb-600 {
+    width: 57vw;
+  }
+  .img-review {
+    gap: 50px 4vw;
+  }
+  .ms-700 {
+    margin-left: 45.5vw;
+  }
+}
+
+@media (max-width: 1280px) {
+  .position-title {
+    top: 50%;
+    left: 22.5%;
+  }
+  .wd-450 {
+    width: 65vw !important;
+  }
+  .mr-p-80 {
+    margin-right: 0px !important;
+  }
+  .ms-150 {
+    margin-left: 100px;
+  }
+  .pic-size {
+    width: 20vw;
+    height: 20vw;
+    border: 1px solid black;
+  }
+  .area-about {
+    width: 50vw;
+  }
+  .wf-69 {
+    width: 89% !important;
+  }
+  .ms-edit {
+    margin-left: 50vw;
+  }
+  .card-img-review {
+    width: 30vw;
+  }
 }
 
 @media (max-width: 992px) {
@@ -646,7 +854,7 @@ html {
     padding: 0px 100px 100px 100px;
   }
   .link-forgot {
-    margin-left: 25vw;
+    margin-left: 40vw;
     font-size: 1.75vw;
   }
   .btn-submit {
@@ -659,16 +867,16 @@ html {
   .btn-signup {
     font-size: 28px;
   }
-  .blog-item {
-    display: block;
-  }
   .like {
     flex-direction: column;
     margin-left: 0px;
   }
   .card-img {
-    width: 400px;
-    height: 326px;
+    width: 45vw;
+    height: 33vw;
+  }
+  .card-img-bl {
+    width: 45vw;
   }
   .header {
     min-width: 100%;
@@ -703,17 +911,38 @@ html {
   .bg-base {
     width: 100%;
   }
+  .mr-p-80 {
+    margin-right: 50px !important;
+  }
   .wd-450 {
-    width: 450px !important;
+    width: 100vw !important;
+  }
+  .w-pass {
+    width: 45vw !important;
+    padding-left: 0px;
+  }
+  .w-line {
+    width: 45vw !important;
   }
   .ms-150 {
-    margin-left: 0px;
+    margin-left: -220px !important;
+    margin-top: 240px !important;
   }
   .ms-ep-5 {
-    margin-left: 5.59rem !important;
+    margin-left: -10px;
   }
   .ms-0 {
     margin-left: 0px !important;
+  }
+  .ms-700 {
+    margin-left: 42.5vw;
+  }
+  .fs-in {
+    font-size: 12px !important;
+  }
+  .m-box {
+    width: 95vw;
+    margin-left: 1.75rem;
   }
   .wb-0 {
     width: 0% !important;
@@ -722,7 +951,7 @@ html {
     flex-direction: column;
   }
   .w-hr {
-    width: 50% !important;
+    width: 100%;
   }
   .container-place {
     display: grid;
@@ -734,8 +963,10 @@ html {
     padding-left: 45px;
   }
   .position-place {
-    margin-top: 300px;
     margin-left: 30.5vw;
+  }
+  .position-add {
+    margin-left: 31vw;
   }
   .ms-275 {
     margin-left: 0px;
@@ -751,12 +982,19 @@ html {
   }
   .ms-250 {
     margin-left: 50px;
+    margin-right: 40px;
+  }
+  .logo-width {
+    width: 40px;
   }
   .caption {
     width: 150px;
     margin-left: 8.75vw;
-    margin-top: -80px;
+    margin-top: -50px;
     line-height: 36px;
+  }
+  .w-follow {
+    font-size: 2.7vw;
   }
   .card-container {
     width: 30vw;
@@ -781,11 +1019,6 @@ html {
   .card-container-menu {
     width: 36vw;
     height: 300px;
-    border-radius: 15px;
-    background-color: white;
-    justify-self: center;
-    column-gap: 10px;
-    row-gap: 15px;
   }
   .card-box-menu {
     width: 36vw;
@@ -818,6 +1051,25 @@ html {
   }
   .copy-right {
     font-size: 1.2vw !important;
+  }
+  .wf-69 {
+    width: 53% !important;
+  }
+  .area-about {
+    width: 40vw;
+  }
+  .side-layout {
+    grid-template-columns: 430px 520px;
+  }
+  .d-flex p {
+    font-size: 20px !important;
+  }
+  .w-blog {
+    width: 75%;
+    margin-left: 0px !important;
+  }
+  .ms-edit {
+    margin-left: 40vw;
   }
 }
 
@@ -858,7 +1110,6 @@ html {
   .coverHome {
     width: 100vw;
     height: 80vh;
-    background-size: cover;
   }
   .title {
     height: 72px;
@@ -872,17 +1123,17 @@ html {
   .search {
     width: 75%;
     height: 7vw;
-    margin-left: 15vw;
+    margin-left: 11.5vw;
     margin-top: -10.75vw;
   }
   .position-place {
     margin-left: 27.5vw;
   }
+  .position-add {
+    margin-left: 25vw;
+  }
   .caption {
-    width: 150px;
-    margin-left: 8.75vw;
-    margin-top: -60px;
-    line-height: 36px;
+    margin-top: -40px;
   }
   .ms-100 {
     margin-left: 95px;
@@ -900,9 +1151,6 @@ html {
   .box-logo {
     margin-top: 35px;
   }
-  .logo-width {
-    width: 5.95vw;
-  }
   .button-view {
     width: 200px;
     margin-left: 68vw;
@@ -915,7 +1163,7 @@ html {
     margin-left: 24.5vw;
   }
   .destination {
-    font-size: 1.5vw !important;
+    font-size: 2.5vw !important;
   }
   .pt-65 {
     padding-top: 3.5vw;
@@ -926,6 +1174,58 @@ html {
   }
   .pt-70 {
     padding-top: 3.75vw;
+  }
+  .container-place {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 80px 80px 80px 80px 80px 80px;
+    gap: 300px 0px;
+    grid-auto-flow: column;
+    overflow: scroll;
+  }
+  .side-size {
+    width: 40vw;
+    height: 100%;
+  }
+  .side-layout {
+    grid-template-columns: 44vw 55vw;
+  }
+  .p-left {
+    padding-left: 30px;
+  }
+  .ms-ep-5 {
+    margin-left: 10px;
+  }
+  .wd-450 {
+    width: 90vw !important;
+  }
+  .ms-150 {
+    margin-left: -150px !important;
+  }
+  .w-blog {
+    width: 90%;
+  }
+  .mt-180 {
+    margin-top: 15vw;
+  }
+  .mt-150 {
+    margin-top: 12vw;
+  }
+  .d-flex p {
+    font-size: 14px !important;
+  }
+  .w-follow {
+    font-size: 2.5vw;
+  }
+  .card-box-menu span {
+    font-size: 2.5vw !important;
+  }
+  .card-img-review {
+    width: 40vw;
+  }
+  .w-maps {
+    width: 35vw;
+    height: 35vw;
   }
 }
 
@@ -938,6 +1238,7 @@ html {
     width: 14.5vw;
     height: 3.5vw;
     font-size: 1.025vw;
+    margin-top: 3px !important;
   }
   .btn-search {
     margin-bottom: 10px;
@@ -976,15 +1277,18 @@ html {
     font-size: 2.75vw;
   }
   .card-img {
-    width: 100vw;
-    height: 50vh;
+    width: 90vw;
+    height: 70vw;
   }
   .box-content {
     display: block !important;
   }
   .descript {
-    width: 80vw !important;
+    width: 56vw !important;
     padding-top: 15px;
+  }
+  .card-img-bl {
+    width: 53vw;
   }
   .container-menu {
     display: grid;
@@ -994,12 +1298,6 @@ html {
   }
   .card-container-menu {
     width: 45vw;
-    height: 300px;
-    border-radius: 15px;
-    background-color: white;
-    justify-self: center;
-    column-gap: 10px;
-    row-gap: 15px;
   }
   .card-box-menu {
     width: 45vw;
@@ -1014,11 +1312,24 @@ html {
     padding-top: 4.5vw;
   }
   .pt-66 {
-    padding-top: 5.75vw;
+    padding-top: 5.2vw;
+  }
+  .mt-180 {
+    margin-top: 18vw;
+  }
+  .logo-width {
+    width: 25px;
+  }
+  .mt-150 {
+    margin-top: 15vw;
   }
 }
 
 @media (max-width: 576px) {
+  .logo {
+    width: 120px;
+    height: 120px;
+  }
   .p-name {
     padding: 40px 50px 60px 50px;
   }
@@ -1051,8 +1362,7 @@ html {
   }
   .coverHome {
     width: 100vw;
-    height: 70vh;
-    background-size: cover;
+    height: 100vw;
   }
   .title-place {
     font-size: 8vw;
@@ -1060,27 +1370,26 @@ html {
   .search {
     width: 90%;
     height: 8.75vw;
-    margin-top: -16.75vw;
     margin-left: 6.5vw;
-    padding: 1.75vw 0px 1.95vw 0px;
   }
   .search-destination {
     width: 14.5vw;
     height: 3.5vw;
     font-size: 1.5vw;
+    margin-top: 8px !important;
   }
   .fs-s {
-    font-size: 0.75rem !important;
+    font-size: 0.95rem !important;
   }
   .bs-size {
     width: 100% !important;
   }
   .img-size {
     width: 28vw;
-    height: 21vh;
+    height: 25vw;
   }
   .word {
-    font-size: 2.5vw;
+    font-size: 3.3vw;
   }
   .mb-25 {
     margin-top: 90px;
@@ -1092,8 +1401,41 @@ html {
     font-size: 2.35vw;
     padding-top: 7.5px;
   }
-  .p-3 {
-    padding: 0px 5px !important;
+  .fs-1v {
+    font-size: 2vw;
+  }
+  .p-pagination {
+    padding: 300px 0px 0px 125px;
+  }
+  .pic-size {
+    width: 30vw;
+    height: 30vw;
+    border: 1px solid black;
+  }
+  .ms-ep-5 {
+    margin-left: 45px;
+  }
+  .ms-150 {
+    margin-left: -100px !important;
+    margin-top: 185px !important;
+  }
+  .p-left {
+    padding-left: 0px;
+  }
+  .d-flex h4 {
+    font-size: 14px !important;
+  }
+  .d-flex p {
+    font-size: 10px !important;
+  }
+  .destination {
+    font-size: 2vw !important;
+  }
+  .password {
+    font-size: 12px !important;
+  }
+  .ms-5 {
+    margin-left: 0rem !important;
   }
   .ms-3 {
     margin-left: 0% !important;
@@ -1115,16 +1457,16 @@ html {
     height: 2.85vw;
     font-size: 1.5vw;
     margin-left: 10px;
-    margin-bottom: 12px;
+    margin-bottom: 5px;
     padding: 0px !important;
   }
   .card-img-top {
     width: 65vw;
-    height: 50vh;
+    height: 80vw;
   }
   .card-container {
     width: 100vw;
-    height: 50vh;
+    height: 80vw;
     margin: 0px 0px 30px;
   }
   .card-category {
@@ -1135,7 +1477,7 @@ html {
     padding: 0px 10px;
   }
   .button-view {
-    margin-left: 58vw;
+    margin-left: 35vw;
     margin-top: 1.75vw !important;
   }
   .name-location {
@@ -1145,27 +1487,17 @@ html {
     font-size: 2.5vw;
   }
   .card-img {
-    width: 400px;
-    height: 326px;
+    width: 90vw;
+    height: 70vw;
   }
   .header {
     min-width: 100%;
     font-size: 2.7vw;
   }
-  .card-container-menu {
-    width: 50vw;
-    height: 300px;
-    border-radius: 15px;
-    background-color: white;
-    justify-self: center;
-    column-gap: 10px;
-    row-gap: 15px;
-  }
-  .card-box-menu {
-    width: 50vw;
-  }
+  .card-container-menu,
+  .card-box-menu,
   .card-img-menu {
-    width: 50vw;
+    width: 60vw;
   }
   .card-box-menu span {
     font-size: 3.75vw !important;
@@ -1178,6 +1510,7 @@ html {
   }
   .pt-65 {
     padding-top: 5.5vw;
+    padding-left: 0px !important;
   }
   .pt-66 {
     padding: 7vw 0px 0px 1.5vw;
@@ -1186,7 +1519,13 @@ html {
     padding-top: 5.5vw;
   }
   .fs-name {
-    font-size: 2vw;
+    font-size: 3vw;
+  }
+  .ms-90 {
+    margin-left: 50px;
+  }
+  .date-review {
+    margin-top: -10px;
   }
   .profile {
     width: 50px !important;
@@ -1198,8 +1537,7 @@ html {
     line-height: 0px !important;
   }
   .position-title {
-    top: 35%;
-    left: 22.5%;
+    top: 25%;
   }
   .wifi {
     font-size: 3.5vw;
@@ -1211,10 +1549,10 @@ html {
     font-size: 3.5vw;
   }
   .ms-450 {
-    margin-left: 20.55vw;
+    margin-left: 22.75vw;
   }
   .fs-48 {
-    font-size: 6vw;
+    font-size: 4vw;
   }
   .me-15 {
     margin-right: 3vw;
@@ -1225,11 +1563,27 @@ html {
   .position-place {
     margin-left: 19vw;
   }
+  .position-add {
+    margin-top: 200px;
+    margin-left: 18vw;
+  }
+  .add-photo {
+    font-size: 5vw;
+  }
+  .h-350 {
+    height: 250px;
+  }
   .caption {
-    width: 100px;
+    width: 90px;
     margin-left: 12.75vw;
     margin-top: -25px;
     line-height: 24px;
+  }
+  .mt-180 {
+    margin-top: 25vw;
+  }
+  .mt-150 {
+    margin-top: 20vw;
   }
   .line {
     width: 85vw;
@@ -1239,7 +1593,7 @@ html {
     font-size: 1.75vw;
   }
   .logo-width {
-    width: 2vw !important;
+    width: 4.8vw !important;
   }
   .w-follow {
     font-size: 3.15vw;
@@ -1248,5 +1602,109 @@ html {
     width: 25vw;
     height: auto;
     margin: 35px 30px 0px 50px;
+  }
+  .w-bt {
+    width: 90vw !important;
+  }
+  .card-img-bl {
+    height: 50vw;
+  }
+  .fs-vw-footer {
+    margin-left: -1px;
+  }
+  .card-img-review {
+    width: 40vw;
+    height: 50vw;
+  }
+  .img-review {
+    gap: 0vw 0vw;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1.5fr;
+  }
+  .p-re {
+    padding-left: 1rem !important;
+  }
+  .p-re-0 {
+    padding-right: 0px !important;
+  }
+  .pr-0 {
+    padding-right: 0px !important;
+  }
+  .ma-25 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 5px !important;
+  }
+  .m-box {
+    width: 96.5vw;
+    margin-left: 0.75rem;
+  }
+  .w-300 {
+    width: 200px;
+  }
+  .mr-15 {
+    margin-right: 15px;
+  }
+}
+
+@media (max-width: 350px) {
+  .card-container-menu,
+  .card-box-menu,
+  .card-img-menu {
+    width: 80vw;
+  }
+  .fs-s {
+    font-size: 0.55rem !important;
+  }
+  .search-destination {
+    width: 20vw;
+    margin-top: 4px !important;
+  }
+  .btn-search {
+    margin-left: 5px;
+    margin-bottom: 10px;
+  }
+  .mt-search {
+    margin-top: 2px;
+  }
+  .position-title {
+    top: 15%;
+  }
+  .search-destination select {
+    margin-top: 0.5px !important;
+  }
+  .des-x {
+    padding-right: 0.5rem !important;
+  }
+  .cate-x {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+  .social-logo {
+    padding-left: 5px;
+  }
+  .logo-width {
+    width: 5vw !important;
+  }
+  .d-flex p {
+    font-size: 10px !important;
+  }
+  .mt-180 {
+    margin-top: 35vw;
+  }
+  .fs-vw-footer {
+    margin-left: -5px;
+  }
+  .logo-width {
+    width: 4vw !important;
+  }
+  .mt-150 {
+    margin-top: 28vw;
+  }
+  .w-follow {
+    font-size: 3.15vw;
+  }
+  i + span {
+    font-size: 12px !important;
   }
 }

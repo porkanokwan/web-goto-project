@@ -18,9 +18,9 @@ function PlaceInBlogForm({ count, place, setPlace }) {
       </div>
 
       <div className="h-350 m-3 bg-secondary opacity-25" role="button">
-        <div className="d-flex mb-3 fs-1 position-place">
+        <div className="d-flex mb-3 fs-1 position-add">
           <Image color={"primary"} />
-          <div className="fs-2 ps-3 text-dark">
+          <div className="add-photo ps-3 text-dark">
             Add Photo
             <input className="d-none" type="file" />
           </div>

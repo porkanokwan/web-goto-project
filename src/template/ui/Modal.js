@@ -1,10 +1,10 @@
-function Modal({ children, picture, height }) {
+function Modal({ children, title, height }) {
   return (
     <div className="modal fade" id="modal-post" tabIndex="-1">
       <div className="modal-dialog modal-dialog-centered">
         <div className="modal-content">
           <div className="modal-header">
-            <h3 className="modal-title">{picture || "เพิ่มเมนู"}</h3>
+            <h3 className="modal-title">{title}</h3>
             <button
               type="button"
               className="btn-close"

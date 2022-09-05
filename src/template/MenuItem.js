@@ -13,9 +13,9 @@ function MenuItem() {
         />
         <div className="card-box-menu">
           <div className="mb-15 d-flex">
-            <span className="text-secondary fs-1">เฟรนฟราย</span>
+            <span className="text-secondary fs-2">เฟรนฟราย</span>
 
-            <div className="dropdown ms-100">
+            <div className="dropdown ms-120">
               <i
                 className="fa-solid fa-ellipsis"
                 data-bs-toggle="dropdown"
@@ -42,8 +42,9 @@ function MenuItem() {
               </ul>
             </div>
           </div>
+          <p className="text-secondary opacity-50">by name</p>
         </div>
-        <Modal>
+        <Modal title="แก้ไขเมนู">
           <MenuForm />
         </Modal>
       </div>

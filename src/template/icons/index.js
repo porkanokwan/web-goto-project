@@ -23,7 +23,7 @@ export function Location({ opacity }) {
   return (
     <>
       <i
-        className={`fa-solid fa-location-dot mb-3 mt-2 me-1 opacity-${opacity}`}
+        className={`fa-solid fa-location-dot mb-3 mt-search me-1 opacity-${opacity}`}
       />
     </>
   );

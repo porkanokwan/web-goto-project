@@ -5,7 +5,7 @@ import Modal from "./ui/Modal";
 function Menu() {
   return (
     <div className="overflow-s">
-      <div className="d-flex flex-grow-1 justify-content-between">
+      <div className="d-flex flex-grow-1 justify-content-between w-100">
         <div className="d-flex justify-content-start">
           <h1 className="pt-5 ps-5">เมนู</h1>
           <i className="fa-solid fa-utensils fs-1 mt-5" />
@@ -36,7 +36,7 @@ function Menu() {
         <MenuItem />
       </div>
 
-      <Modal>
+      <Modal title="เพิ่มเมนู">
         <MenuForm />
       </Modal>
     </div>

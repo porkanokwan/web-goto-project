@@ -7,13 +7,13 @@ function BlogHomePage() {
       <div className="bg-white min-vh-100 w-mt">
         <p className="fs-1 p-5">Blog List</p>
 
-        <BlogItem />
-        <BlogItem />
-        <BlogItem />
-        <BlogItem />
-        <BlogItem />
-        <BlogItem />
-        <BlogItem />
+        <BlogItem size="w-bt" line="w-hr" picSize="card-img" />
+        <BlogItem size="w-bt" line="w-hr" picSize="card-img" />
+        <BlogItem size="w-bt" line="w-hr" picSize="card-img" />
+        <BlogItem size="w-bt" line="w-hr" picSize="card-img" />
+        <BlogItem size="w-bt" line="w-hr" picSize="card-img" />
+        <BlogItem size="w-bt" line="w-hr" picSize="card-img" />
+        <BlogItem size="w-bt" line="w-hr" picSize="card-img" />
 
         <div className="ms-450">
           <Pagination />

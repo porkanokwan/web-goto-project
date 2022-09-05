@@ -18,8 +18,8 @@ function PlaceContainer() {
 
       <div className="bg-lightgrey">
         <div className="d-flex justify-content-between">
-          <h3 className="pt-5 ps-5 pb-0 fw-bold">Review</h3>
-          <div className="pt-5 px-5 pb-0">
+          <h3 className="pt-5 ps-5 pb-4 fw-bold">Review</h3>
+          <div className="pt-5 px-5 pb-0 pr-0">
             <button
               type="button"
               className="btn btn-warning text-white"
@@ -30,12 +30,12 @@ function PlaceContainer() {
           </div>
         </div>
 
-        <div className="mx-auto ps-5">
+        <div className="mx-auto p-re">
           <div className="d-flex flex-column">
             <div className="d-flex flex-grow-1">
               <div className="d-flex flex-column ps-3">
-                <ProfileIcon size="70px" mt={32} />
-                <p className="text-grey ms-90 date-review ">Dec 19, 2022</p>
+                <ProfileIcon size="70px" />
+                <p className="text-grey ms-90 date-review w-vw">Dec 19, 2022</p>
               </div>
 
               <div className="m-drop dropdown">
@@ -65,7 +65,7 @@ function PlaceContainer() {
               <ReviewForm onClickCloseEdit={() => setEditReview(false)} />
             ) : (
               <>
-                <div className="pe-5">
+                <div className="p-re-0">
                   <h5 className="fw-bold">Lorem ipsum dolor sit amet</h5>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
@@ -79,10 +79,10 @@ function PlaceContainer() {
                   </p>
                 </div>
                 {/* Limit 4 */}
-                <CardPic classImg="card-img" />
+                <CardPic classImg="card-img-review" />
                 <div
                   role="button"
-                  className="d-flex flex-grow-1 justify-content-end pe-5 text-primary text-decoration-underline"
+                  className="d-flex flex-grow-1 justify-content-end p-re-0 text-primary text-decoration-underline"
                   data-bs-toggle="modal"
                   data-bs-target="#modal-post"
                 >
@@ -97,7 +97,7 @@ function PlaceContainer() {
               </div>
             </Modal>
 
-            <hr className="me-5" />
+            <hr className="me-5 mr-0" />
 
             {open && (
               <>

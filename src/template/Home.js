@@ -21,7 +21,7 @@ function Home() {
             </div>
             <button
               className="mt-4 button-view"
-              onClick={() => navigate("/user/1/2")}
+              onClick={() => navigate("/user/allplace")}
             >
               view all Attractions
             </button>
@@ -34,7 +34,10 @@ function Home() {
               <CardItem />
               <CardItem />
             </div>
-            <button className="mt-4 button-view">
+            <button
+              className="mt-4 button-view"
+              onClick={() => navigate("/user/allplace")}
+            >
               view all Restaurant & Cafe
             </button>
           </div>
@@ -46,7 +49,12 @@ function Home() {
               <CardItem />
               <CardItem />
             </div>
-            <button className="mt-4 button-view">view all Street Food</button>
+            <button
+              className="mt-4 button-view"
+              onClick={() => navigate("/user/allplace")}
+            >
+              view all Street Food
+            </button>
           </div>
 
           <h1 className="ms-5 mt-5">Popular NightLife</h1>
@@ -56,7 +64,12 @@ function Home() {
               <CardItem />
               <CardItem />
             </div>
-            <button className="button-view">view all NightLife</button>
+            <button
+              className="button-view"
+              onClick={() => navigate("/user/allplace")}
+            >
+              view all NightLife
+            </button>
           </div>
         </div>
       )}

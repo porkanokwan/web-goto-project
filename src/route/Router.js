@@ -14,18 +14,20 @@ import BlogList from "../template/BlogList";
 import BlogForm from "../template/BlogForm";
 import BlogPage from "../template/BlogPage";
 import PlaceForm from "../template/PlaceForm";
+import ForgotPassword from "../template/auth/ForgotPassword";
 
 function Router() {
   return (
     <Routes>
       <Route path="/login" element={<Login />} />
+      <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/" element={<CoverPic />}>
         <Route path="" element={<Home />} />
         <Route path=":provinceId" element={<Home />} />
         <Route path="blog" element={<BlogHomePage />} />
         <Route path="blog/:blogId" element={<BlogPage />} />
-        <Route path="category/:categoryId" element={<AllPlace />} />
-        <Route path="category/:categoryId/:provinceId" element={<AllPlace />} />
+        <Route path="category" element={<AllPlace />} />
+        <Route path="category/province" element={<AllPlace />} />
       </Route>
 
       <Route path="*" element={<HeaderFooterPage />}>
@@ -33,9 +35,9 @@ function Router() {
       </Route>
 
       <Route path="/user" element={<HeaderFooterPage />}>
-        <Route path=":categoryId" element={<AllPlace />} />
-        <Route path=":categoryId/:provinceId" element={<AllPlace />} />
-        <Route path="menu" element={<Menu />} />
+        <Route path="allplace" element={<AllPlace />} />
+        <Route path="allplace/province" element={<AllPlace />} />
+        <Route path="menu/:placeId" element={<Menu />} />
         <Route path="place/:placeId" element={<PlaceContainer />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>

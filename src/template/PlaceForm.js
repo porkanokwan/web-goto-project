@@ -202,13 +202,13 @@ function PlaceForm({ title }) {
                 </div>
 
                 <input type="file" className="d-none" />
-                <div className="d-flex flex-grow-1 justify-content-end">
+                <div className="add-btn d-flex flex-grow-1 justify-content-end">
                   <button
                     type="button"
-                    className="btn btn-outline-primary rounded-4 p-3 mb-25 fs-4"
+                    className="btn btn-outline-primary rounded-4 p-3 mb-25"
                   >
                     <Image />
-                    <span className="fs-5 ms-3">เพิ่มรูป</span>
+                    <span className="ms-3">เพิ่มรูป</span>
                   </button>
                 </div>
               </div>

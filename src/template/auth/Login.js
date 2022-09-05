@@ -50,8 +50,10 @@ function Login() {
               />
             </div>
 
-            <div className="link-forgot">
-              <Link to="/"> Forgot your password ?</Link>
+            <div className="input-group link-forgot">
+              <Link to="/forgot-password" className="text-decoration-none">
+                Forgot your password ?
+              </Link>
             </div>
 
             <button

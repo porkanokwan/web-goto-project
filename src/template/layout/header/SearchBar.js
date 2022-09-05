@@ -6,9 +6,9 @@ function SearchBar() {
       <div className="d-flex flex-wrap bg-white rounded-pill justify-content-center align-items-center text-dark search">
         <div className="destination d-flex ">
           <Location opacity={50} />
-          <label className="fs-s pe-3 mt-1">Destinations</label>
+          <label className="des-x fs-s pe-3 mt-1">Destinations</label>
           <div className="search-destination mt-8 d-flex">
-            <i className="fa-solid fa-magnifying-glass ms-1 mt-2" />
+            <i className="fa-solid fa-magnifying-glass ms-1 mt-search" />
             <select className="border border-0 mt-1 ms-1 text-secondary w-100 rounded-3">
               <option value="" disabled selected>
                 Where are you going?
@@ -18,9 +18,9 @@ function SearchBar() {
         </div>
 
         <div className="category mb-2 d-flex">
-          <label className="fs-s px-3 mt-1">Category</label>
+          <label className="cate-x fs-s px-3 mt-1">Category</label>
           <div className="search-destination mt-8 d-flex">
-            <i className="fa-solid fa-magnifying-glass ms-1 mt-2" />
+            <i className="fa-solid fa-magnifying-glass ms-1 mt-search" />
             <select className="border border-0 mt-1 ms-1 text-secondary w-100 rounded-3">
               <option value="" disabled selected>
                 Choose Category...

@@ -15,7 +15,7 @@ function Footer() {
               </h5>
             </div>
 
-            <div className="d-flex mt-150 flex-grow-1 justify-content-around fs-vw-footer">
+            <div className="d-flex mt-180 flex-grow-1 justify-content-around fs-vw-footer">
               <Link className="text-decoration-none word" to="/">
                 Home
               </Link>
@@ -27,8 +27,8 @@ function Footer() {
               </Link>
             </div>
 
-            <div className="d-flex flex-column me-5">
-              <h2 className="text-white fw-normal mt-100 w-follow">
+            <div className="d-flex flex-column me-15">
+              <h2 className="text-white fw-normal mt-150 w-follow">
                 Follow us
               </h2>
               <div className="social-logo d-flex ms-0 justify-content-evenly">

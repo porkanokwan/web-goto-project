@@ -1,6 +1,6 @@
 import { Like, Location } from "./icons";
 
-function BlogItem({ size = "", direction = "", line = "" }) {
+function BlogItem({ size, direction = "", line, picSize }) {
   return (
     <>
       <div className="blog-item w-100 d-flex flex-grow-1 justify-content-center">
@@ -8,11 +8,11 @@ function BlogItem({ size = "", direction = "", line = "" }) {
           className={`d-flex ${direction} justify-content-center box-content`}
         >
           <img
-            className="card-img"
+            className={picSize}
             src="https://res.cloudinary.com/drwgmpw3e/image/upload/v1659171006/pisol82ljjts35fjptjj.jpg"
             alt="name place"
           />
-          <div className={`descript ms-5 w-50 ${size}`}>
+          <div className={`descript ms-5 ${size}`}>
             <p className="fs-2 fw-400">
               ร้านอาหารรางวัล Users Choice ใน Wongnai Bangkok Restaurant Week
               2019
@@ -37,7 +37,7 @@ function BlogItem({ size = "", direction = "", line = "" }) {
         </div>
       </div>
 
-      <hr className={`w-75 text-dark mx-auto mb-50 ${line}`} />
+      <hr className={`text-dark mx-auto mb-50 ${line}`} />
     </>
   );
 }
