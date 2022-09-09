@@ -11,7 +11,7 @@ import PlaceContainer from "../template/PlaceContainer";
 import ProfilePage from "../pages/ProfilePage";
 import SideBar from "../component/layout/sidebar/SideBar";
 import BlogList from "../component/profile/BlogList";
-import BlogForm from "../component/blog/BlogForm";
+import BlogForm from "../component/blog/form/BlogForm";
 import BlogPage from "../pages/BlogPage";
 import PlaceForm from "../template/PlaceForm";
 import ForgotPassword from "../component/auth/ForgotPassword";
@@ -45,8 +45,8 @@ function Router() {
             </Route>
             <Route path="place" element={<PlaceForm />} />
             <Route path="place/:placeId" element={<PlaceContainer />} />
-            <Route path="blog/create" element={<BlogForm />} />
-            <Route path="blog/edit" element={<BlogForm />} />
+            <Route path="/create/blog" element={<BlogForm />} />
+            <Route path="/edit/blog" element={<BlogForm />} />
           </Route>
 
           <Route path="*" element={<HeaderFooterPage />}>
