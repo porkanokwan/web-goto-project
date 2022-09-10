@@ -37,7 +37,7 @@ function BlogContainer() {
         titleShow={blog.titleShow}
         text="position-title"
       />
-      <BlogDeatail blog={blog} />
+      <BlogDeatail blog={blog} setBlog={setBlog} />
     </>
   );
 }

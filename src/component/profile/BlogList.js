@@ -55,10 +55,6 @@ function BlogList() {
               blogs={blogs}
               setBlog={setBlog}
               blog={item}
-              likeChange={async () => {
-                const res = await axios.get(`/profile/${userId}/blog`);
-                setBlog(res.data.allBlog);
-              }}
             />
           ))
         ) : (

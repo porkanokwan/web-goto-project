@@ -10,7 +10,7 @@ function BlogHomePage() {
   const dispatch = useDispatch();
   const blogs = useSelector((state) => state.blog);
   const { setError } = useError();
-  console.log(blogs);
+
   useEffect(() => {
     const fetchAllBlog = async () => {
       try {
@@ -37,10 +37,6 @@ function BlogHomePage() {
             picSize="card-img"
             position="justify-content-center"
             blog={item}
-            likeChange={async () => {
-              const res = await getBlog();
-              dispatch(getAllBlog({ blog: res.data.allBlog }));
-            }}
           />
         ))}
 

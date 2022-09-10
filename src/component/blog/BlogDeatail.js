@@ -2,8 +2,11 @@ import { Like, Location } from "../../icons";
 import ProfileIcon from "../layout/header/ProfileIcon";
 import parseDate from "../../service/dateFormat";
 import PicCard from "../common/PicCard";
+import LikeButton from "../common/LikeButton";
+import { useParams } from "react-router-dom";
 
-function BlogDeatail({ blog }) {
+function BlogDeatail({ blog, setBlog }) {
+  const { blogId } = useParams();
   return (
     <div className="bg-white w-mt">
       <div className="d-flex flex-column p-5">
@@ -26,8 +29,7 @@ function BlogDeatail({ blog }) {
           </div>
 
           <div className="d-flex flex-grow-1 justify-content-end pt-70 fs-5">
-            <Like mt={5} />
-            {blog.like}
+            <LikeButton blog={blog} setBlog={setBlog} blogId={blogId} />
           </div>
         </div>
 

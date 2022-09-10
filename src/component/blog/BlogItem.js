@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import PicCard from "../common/PicCard";
-import { Like, Location } from "../../icons";
+import { Location } from "../../icons";
 import parseDate from "../../service/dateFormat";
 import { useError } from "../../context/ErrorContext";
-import { createLike, deleteLike, deleteBlog } from "../../api/blogApi";
+import { deleteBlog } from "../../api/blogApi";
+import LikeButton from "../common/LikeButton";
+import axios from "../../config/axios";
 
 function BlogItem({
   userId,
@@ -15,20 +17,8 @@ function BlogItem({
   blogs,
   setBlog,
   blog,
-  likeChange,
 }) {
   const { setError } = useError();
-  const isLiked = blog.Likes?.find((item) => item.user_id === blog.User.id);
-
-  const handleClickLike = async () => {
-    try {
-      isLiked ? await deleteLike(blog.id) : await createLike(blog.id);
-      likeChange();
-    } catch (err) {
-      setError(err.response.data.message);
-    }
-  };
-
   const handleDelete = async () => {
     try {
       await deleteBlog(blog.id);
@@ -83,11 +73,7 @@ function BlogItem({
               </div>
 
               <span className="like fs-2">
-                <Like
-                  handleClickLike={handleClickLike}
-                  isLiked={isLiked ? "rgb(3, 102, 252)" : "grey"}
-                />
-                <span className="color-subtitle fs-5">{blog?.like}</span>
+                <LikeButton blog={blog} setBlog={setBlog} userId={userId} />
               </span>
             </div>
           </div>
