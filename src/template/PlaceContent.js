@@ -1,6 +1,6 @@
-import { Location } from "./icons";
+import { Location } from "../icons";
 import StarRating from "./StarRating";
-import Carousel from "./ui/Carousel";
+import Carousel from "../component/ui/Carousel";
 
 function PlaceContent({ setEditPlace }) {
   return (

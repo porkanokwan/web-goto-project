@@ -45,26 +45,21 @@ function BlogList() {
       <div className="d-flex flex-column mt-5 me-5 w-100">
         {blogs.length ? (
           blogs.map((item, idx) => (
-            <div key={idx}>
-              <div className="d-flex ms-edit text-primary">
-                <Link to="/blog/edit" className="mt-minus-5">
-                  <i className="fa-solid fa-pencil me-1" />
-                </Link>
-                <i className="fa-solid fa-trash" role="button" />
-              </div>
-
-              <BlogItem
-                size="ms-0 wb-50"
-                direction="fd-column"
-                line="w-blog"
-                picSize="card-img-bl"
-                blog={item}
-                likeChange={async () => {
-                  const res = await axios.get(`/profile/${userId}/blog`);
-                  setBlog(res.data.allBlog);
-                }}
-              />
-            </div>
+            <BlogItem
+              key={idx}
+              userId={userId}
+              size="ms-0 wb-50"
+              direction="fd-column"
+              line="w-blog"
+              picSize="card-img-bl"
+              blogs={blogs}
+              setBlog={setBlog}
+              blog={item}
+              likeChange={async () => {
+                const res = await axios.get(`/profile/${userId}/blog`);
+                setBlog(res.data.allBlog);
+              }}
+            />
           ))
         ) : (
           <div className="box-blog">

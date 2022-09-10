@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import MenuForm from "./MenuForm";
-import Modal from "./ui/Modal";
+import Modal from "../component/ui/Modal";
 
 function MenuItem() {
   return (

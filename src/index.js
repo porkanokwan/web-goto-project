@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/js/dist/dropdown";
 import "bootstrap/js/dist/modal";
 import "bootstrap/js/dist/carousel";
 import "bootstrap/js/dist/offcanvas";
@@ -9,13 +8,26 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import "react-loading-skeleton/dist/skeleton.css";
 import "./index.css";
 import App from "./App";
+import { Provider } from "react-redux";
+import { store } from "./store";
 import { BrowserRouter } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
+import AuthContextProvider from "./context/AuthContext";
+import ErrorContextProvider from "./context/ErrorContext";
+import HomeContextProvider from "./context/HomeContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
-    <App />
+    <ErrorContextProvider>
+      <HomeContextProvider>
+        <Provider store={store}>
+          <AuthContextProvider>
+            <App />
+          </AuthContextProvider>
+        </Provider>
+      </HomeContextProvider>
+    </ErrorContextProvider>
   </BrowserRouter>
 );
 

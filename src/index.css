@@ -86,7 +86,12 @@ html {
 
 .position-title {
   top: 50%;
-  left: 30%;
+  left: 29vw;
+}
+
+.text-title {
+  top: 40%;
+  left: 15vw;
 }
 
 .bg-base {
@@ -239,7 +244,7 @@ html {
 }
 
 .mt-8 {
-  margin-top: 8px;
+  margin-top: 0.75vw;
 }
 
 .btn-search {
@@ -258,7 +263,7 @@ html {
   width: 100%;
   height: 135vh;
   background-size: cover;
-  background-image: url("./template/img/thailand.jpg");
+  background-image: url("./img/thailand.jpg");
   opacity: 60%;
 }
 
@@ -275,6 +280,14 @@ html {
   top: 225px;
   left: 21.75vw;
   width: 800px;
+  height: 500px;
+}
+
+.form-reset {
+  position: absolute;
+  top: 250px;
+  left: 30.75vw;
+  width: 40vw;
   height: 500px;
 }
 
@@ -374,6 +387,7 @@ html {
 
 .btn-mt {
   margin-top: -70px;
+  margin-left: 220px;
 }
 
 .w-mt {
@@ -480,7 +494,7 @@ html {
 }
 
 .h-350 {
-  height: 350px;
+  height: 600px;
 }
 
 .h-180 {
@@ -522,11 +536,11 @@ html {
 }
 
 .pt-65 {
-  padding-top: 2vw;
+  padding-top: 1.5vw;
 }
 
 .pt-66 {
-  padding-top: 2vw;
+  padding-top: 1.5vw;
 }
 
 .pt-70 {
@@ -536,6 +550,12 @@ html {
 .m-drop {
   margin-top: 10px;
   margin-left: 1450px;
+}
+
+.title {
+  height: 72px;
+  font-size: 2.5vw !important;
+  line-height: 60px !important;
 }
 
 .card-img-w {
@@ -554,7 +574,7 @@ html {
 }
 
 .mt-minus-5 {
-  margin-top: -5px;
+  margin-top: -3px;
 }
 
 .img-size {
@@ -582,7 +602,7 @@ html {
 
 .side-layout {
   display: grid;
-  grid-template-columns: 440px 1000px;
+  grid-template-columns: 550px 1fr;
 }
 
 .pic-size {
@@ -609,7 +629,13 @@ html {
 }
 
 .h-500 {
-  height: 500px;
+  height: 800px;
+}
+
+.btn-group {
+  position: absolute !important;
+  top: 80%;
+  left: 40%;
 }
 
 .top-80 {
@@ -664,24 +690,24 @@ html {
 }
 
 .position-add {
-  margin-top: 300px;
-  margin-left: 600px;
+  margin-top: 500px;
+  margin-left: 38vw;
 }
 
 .edit-blog-size {
   width: 1000px;
 }
 
-.wd-450 {
-  width: 92vw !important;
-}
-
 .wf-69 {
   width: 69vw !important;
 }
 
+.w-85 {
+  width: 88%;
+}
+
 .w-70 {
-  width: 50% !important;
+  width: 30vw;
 }
 
 .w-bt {
@@ -689,16 +715,16 @@ html {
 }
 
 .w-pass {
-  width: 63.5vw;
+  width: 57.5vw;
   padding-left: 48px;
 }
 
 .w-line {
-  width: 70.5%;
+  width: 82%;
 }
 
 .ms-ep-5 {
-  margin-left: -14px;
+  margin-left: 10px;
 }
 
 .area-about {
@@ -742,6 +768,35 @@ html {
   margin-right: 30px !important;
 }
 
+.w-form-change {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  width: 70%;
+  margin-left: 50px;
+  margin-bottom: 20px;
+}
+
+.ms-150 {
+  margin-left: 120px;
+}
+
+.box-blog {
+  margin-top: 15vw;
+  margin-left: 21vw;
+}
+
+.like {
+  flex-direction: column;
+  margin-left: 0px;
+}
+
+.img-blog {
+  width: 100%;
+  height: 600px;
+}
+
 @media (max-width: 2000px) {
   .menu-none {
     display: none !important;
@@ -750,8 +805,9 @@ html {
 
 @media (max-width: 1400px) {
   .position-title {
-    top: 40%;
-    left: 27%;
+    top: 50%;
+    left: 32.5%;
+    font-size: 3.75vw !important;
   }
   .mr-p-80 {
     margin-right: 80px;
@@ -777,15 +833,14 @@ html {
     margin-top: 300px;
     margin-left: 37vw;
   }
-  .wd-450 {
-    width: 70vw !important;
+  .side-layout {
+    grid-template-columns: 430px 1fr;
   }
-  .w-pass,
-  .w-line {
+  .w-pass {
     width: 55vw;
   }
   .w-line {
-    width: 80%;
+    width: 90%;
   }
   .ms-150 {
     margin-left: 120px;
@@ -811,15 +866,27 @@ html {
   .ms-700 {
     margin-left: 45.5vw;
   }
+  .btn-mt {
+    margin-left: 21vw;
+  }
+  .w-form-change {
+    width: 50vw;
+    margin-left: 50px;
+    margin-bottom: 20px;
+  }
+  .box-blog {
+    margin-left: 20vw;
+  }
+  .search-destination select {
+    margin-top: 1.75px !important;
+    width: 100%;
+  }
 }
 
 @media (max-width: 1280px) {
   .position-title {
     top: 50%;
-    left: 22.5%;
-  }
-  .wd-450 {
-    width: 65vw !important;
+    left: 20%;
   }
   .mr-p-80 {
     margin-right: 0px !important;
@@ -844,9 +911,27 @@ html {
   .card-img-review {
     width: 30vw;
   }
+  .btn-mt {
+    margin-left: 15vw;
+  }
+  .box-blog {
+    margin-left: 12vw;
+  }
+  .destination {
+    font-size: 1rem;
+  }
+  .btn-group {
+    left: 33.2%;
+  }
+  .w-85 {
+    width: 84%;
+  }
 }
 
 @media (max-width: 992px) {
+  .w-85 {
+    width: 80%;
+  }
   .p-150 {
     padding: 100px 100px 0px 100px;
   }
@@ -887,15 +972,6 @@ html {
   .horizon-nav {
     display: flex;
   }
-  .title {
-    height: 72px;
-    line-height: 60px !important;
-    font-size: 3.75vw;
-  }
-  .position-title {
-    top: 50%;
-    left: 20%;
-  }
   .search {
     width: 70%;
     height: 7.25vw;
@@ -914,9 +990,6 @@ html {
   .mr-p-80 {
     margin-right: 50px !important;
   }
-  .wd-450 {
-    width: 100vw !important;
-  }
   .w-pass {
     width: 45vw !important;
     padding-left: 0px;
@@ -925,11 +998,14 @@ html {
     width: 45vw !important;
   }
   .ms-150 {
-    margin-left: -220px !important;
-    margin-top: 240px !important;
+    margin-left: -10px !important;
+    margin-top: 20px !important;
   }
   .ms-ep-5 {
-    margin-left: -10px;
+    margin-left: 40px;
+  }
+  .w-70 {
+    width: 39.9vw;
   }
   .ms-0 {
     margin-left: 0px !important;
@@ -1059,10 +1135,10 @@ html {
     width: 40vw;
   }
   .side-layout {
-    grid-template-columns: 430px 520px;
+    grid-template-columns: 450px 520px;
   }
   .d-flex p {
-    font-size: 20px !important;
+    font-size: 16px !important;
   }
   .w-blog {
     width: 75%;
@@ -1071,9 +1147,26 @@ html {
   .ms-edit {
     margin-left: 40vw;
   }
+  .w-form-change {
+    margin-left: 0px;
+  }
+  .box-blog {
+    width: 30vw;
+    margin-left: 9vw;
+  }
+  .descript {
+    width: 50vw !important;
+    padding-top: 15px;
+  }
+  .btn-group {
+    left: 26.5%;
+  }
 }
 
 @media (max-width: 768px) {
+  .w-85 {
+    width: 75%;
+  }
   .form {
     height: 700px;
   }
@@ -1112,13 +1205,12 @@ html {
     height: 80vh;
   }
   .title {
-    height: 72px;
-    font-size: 3.25vw !important;
+    font-size: 4.4vw !important;
     line-height: 60px !important;
   }
   .position-title {
     top: 35%;
-    left: 25%;
+    left: 15%;
   }
   .search {
     width: 75%;
@@ -1130,7 +1222,7 @@ html {
     margin-left: 27.5vw;
   }
   .position-add {
-    margin-left: 25vw;
+    margin-left: 20vw;
   }
   .caption {
     margin-top: -40px;
@@ -1163,7 +1255,7 @@ html {
     margin-left: 24.5vw;
   }
   .destination {
-    font-size: 2.5vw !important;
+    font-size: 2.5vw;
   }
   .pt-65 {
     padding-top: 3.5vw;
@@ -1201,6 +1293,7 @@ html {
   }
   .ms-150 {
     margin-left: -150px !important;
+    margin-top: 190px !important;
   }
   .w-blog {
     width: 90%;
@@ -1212,7 +1305,7 @@ html {
     margin-top: 12vw;
   }
   .d-flex p {
-    font-size: 14px !important;
+    font-size: 21px !important;
   }
   .w-follow {
     font-size: 2.5vw;
@@ -1227,9 +1320,32 @@ html {
     width: 35vw;
     height: 35vw;
   }
+  .form-reset {
+    left: 24vw;
+    width: 55vw;
+  }
+  .btn-reset {
+    width: 25vw;
+    margin-top: 20px;
+  }
+  .w-350 {
+    width: 28vw;
+  }
+  .search-destination {
+    height: 25px;
+  }
+  .h-500 {
+    height: 500px;
+  }
+  .btn-group {
+    left: 20%;
+  }
 }
 
 @media (max-width: 650px) {
+  .w-85 {
+    width: 70%;
+  }
   .search {
     margin-top: -16.75vw;
     padding: 1.75vw 0px 1.95vw 0px;
@@ -1323,9 +1439,24 @@ html {
   .mt-150 {
     margin-top: 15vw;
   }
+  .img-blog {
+    height: 400px;
+  }
+  .h-350 {
+    height: 400px;
+  }
 }
 
 @media (max-width: 576px) {
+  .img-blog {
+    height: 270px;
+  }
+  .h-350 {
+    height: 270px;
+  }
+  .w-85 {
+    width: 65%;
+  }
   .logo {
     width: 120px;
     height: 120px;
@@ -1376,7 +1507,7 @@ html {
     width: 14.5vw;
     height: 3.5vw;
     font-size: 1.5vw;
-    margin-top: 8px !important;
+    margin-top: 5px !important;
   }
   .fs-s {
     font-size: 0.95rem !important;
@@ -1426,10 +1557,10 @@ html {
     font-size: 14px !important;
   }
   .d-flex p {
-    font-size: 10px !important;
+    font-size: 20px !important;
   }
   .destination {
-    font-size: 2vw !important;
+    font-size: 2vw;
   }
   .password {
     font-size: 12px !important;
@@ -1448,9 +1579,6 @@ html {
   }
   .search-destination i {
     margin-top: 2.5px !important;
-  }
-  .search-destination select {
-    margin-top: 1.75px !important;
   }
   .btn-search {
     width: 6.5vw;
@@ -1532,12 +1660,11 @@ html {
     height: 50px !important;
   }
   .title {
-    height: 60px;
-    font-size: 3.5vw !important;
+    font-size: 4.5vw !important;
     line-height: 0px !important;
   }
   .position-title {
-    top: 25%;
+    top: 30%;
   }
   .wifi {
     font-size: 3.5vw;
@@ -1644,6 +1771,20 @@ html {
   }
   .mr-15 {
     margin-right: 15px;
+  }
+  .form-reset {
+    left: 0vw;
+    width: 100vw;
+  }
+  .btn-reset {
+    width: 35vw;
+  }
+  .h-500 {
+    height: 300px;
+  }
+  .btn-group {
+    top: 70%;
+    left: 15%;
   }
 }
 

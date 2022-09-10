@@ -1,4 +1,4 @@
-import { Image } from "./icons";
+import { Image } from "../icons";
 import StarRating from "./StarRating";
 
 function ReviewForm({ onClickCloseForm, onClickCloseEdit }) {

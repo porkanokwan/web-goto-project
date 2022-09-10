@@ -1,0 +1,102 @@
+import { Link } from "react-router-dom";
+import PicCard from "../common/PicCard";
+import { Like, Location } from "../../icons";
+import parseDate from "../../service/dateFormat";
+import { useError } from "../../context/ErrorContext";
+import { createLike, deleteLike, deleteBlog } from "../../api/blogApi";
+
+function BlogItem({
+  userId,
+  size,
+  direction = "",
+  line,
+  picSize,
+  position,
+  blogs,
+  setBlog,
+  blog,
+  likeChange,
+}) {
+  const { setError } = useError();
+  const isLiked = blog.Likes?.find((item) => item.user_id === blog.User.id);
+
+  const handleClickLike = async () => {
+    try {
+      isLiked ? await deleteLike(blog.id) : await createLike(blog.id);
+      likeChange();
+    } catch (err) {
+      setError(err.response.data.message);
+    }
+  };
+
+  const handleDelete = async () => {
+    try {
+      await deleteBlog(blog.id);
+      const clone = [...blogs];
+      const newBlogs = clone.filter((item) => item.id !== blog.id);
+      setBlog(newBlogs);
+    } catch (err) {
+      setError(err.response.data.message);
+    }
+  };
+
+  return (
+    <>
+      {userId && (
+        <div className="d-flex ms-edit text-primary">
+          <Link to={`/edit/blog/${blog.id}`} className="mt-minus-5">
+            <i className="fa-solid fa-pencil me-1" />
+          </Link>
+          <i
+            className="fa-solid fa-trash"
+            role="button"
+            onClick={handleDelete}
+          />
+        </div>
+      )}
+      <div className="d-flex flex-grow-1 flex-column">
+        <div className={`d-flex ${direction} ${position} box-content`}>
+          <PicCard size={picSize} src={blog?.coverPic} tooltip="name place" />
+          <div className={`descript ms-5 ${size}`}>
+            <Link
+              to={`/blog/${blog?.id}`}
+              className="fs-2 fw-400 text-dark text-decoration-none"
+            >
+              {blog?.title}
+            </Link>
+            <p>
+              <Link
+                to={`/profile/${blog?.User.id}`}
+                className="color-subtitle text-decoration-none fs-5"
+              >
+                {blog?.User.name}
+              </Link>
+            </p>
+            <p className="color-subtitle fs-5">{parseDate(blog?.createdAt)}</p>
+
+            <div className="d-flex flex-grow-1 justify-content-between like">
+              <div className="fs-3">
+                <Location opacity={50} />
+                <span className="destination color-subtitle fs-5">
+                  {blog?.Category.name} {blog?.Province.name}
+                </span>
+              </div>
+
+              <span className="like fs-2">
+                <Like
+                  handleClickLike={handleClickLike}
+                  isLiked={isLiked ? "rgb(3, 102, 252)" : "grey"}
+                />
+                <span className="color-subtitle fs-5">{blog?.like}</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <hr className={`text-dark mx-auto mb-50 ${line}`} />
+      </div>
+    </>
+  );
+}
+
+export default BlogItem;

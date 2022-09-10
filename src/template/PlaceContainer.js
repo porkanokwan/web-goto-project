@@ -1,10 +1,10 @@
 import { useState } from "react";
 import CardPic from "./CardPic";
-import ProfileIcon from "./layout/header/ProfileIcon";
+import ProfileIcon from "../component/layout/header/ProfileIcon";
 import PlaceContent from "./PlaceContent";
 import PlaceForm from "./PlaceForm";
 import ReviewForm from "./ReviewForm";
-import Modal from "./ui/Modal";
+import Modal from "../component/ui/Modal";
 
 function PlaceContainer() {
   const [open, setOpen] = useState(false);

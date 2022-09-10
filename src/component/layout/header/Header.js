@@ -114,7 +114,7 @@ function Header() {
                     className={`nav-link  ${
                       location.pathname.includes("create") ? "active" : ""
                     }`}
-                    to="/blog/create"
+                    to="/create/blog"
                   >
                     Post New Blog
                   </Link>

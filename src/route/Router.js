@@ -46,7 +46,7 @@ function Router() {
             <Route path="place" element={<PlaceForm />} />
             <Route path="place/:placeId" element={<PlaceContainer />} />
             <Route path="/create/blog" element={<BlogForm />} />
-            <Route path="/edit/blog" element={<BlogForm />} />
+            <Route path="/edit/blog/:blogId" element={<BlogForm />} />
           </Route>
 
           <Route path="*" element={<HeaderFooterPage />}>

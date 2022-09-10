@@ -1,5 +1,5 @@
 import React from "react";
-import { Image } from "./icons";
+import { Image } from "../icons";
 
 function PlaceForm({ title }) {
   return (

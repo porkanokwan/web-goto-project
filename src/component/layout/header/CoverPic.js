@@ -13,7 +13,7 @@ function CoverPic() {
         <Header />
         {location.pathname !== `/blog/${blogId}` ? (
           <>
-            <CoverCard />
+            <CoverCard text="position-title" />
             <SearchBar />
           </>
         ) : (
