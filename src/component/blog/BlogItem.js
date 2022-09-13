@@ -5,7 +5,6 @@ import parseDate from "../../service/dateFormat";
 import { useError } from "../../context/ErrorContext";
 import { deleteBlog } from "../../api/blogApi";
 import LikeButton from "../common/LikeButton";
-import axios from "../../config/axios";
 
 function BlogItem({
   userId,

@@ -1,4 +1,4 @@
-import BlogDeatail from "./BlogDeatail";
+import BlogDeatail from "./BlogDetail";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useError } from "../../context/ErrorContext";

@@ -7,8 +7,6 @@ import SelectDestination from "../../layout/header/SelectDestination";
 import { useError } from "../../../context/ErrorContext";
 import SpinnerGrow from "../../common/SpinnerGrow";
 import { createNewBlog, getBlogById, updatedBlog } from "../../../api/blogApi";
-import { createBlog, updateBlog } from "../../../store/blog";
-import { useDispatch } from "react-redux";
 
 function BlogForm() {
   const [number, setNumber] = useState([1]);
@@ -25,7 +23,6 @@ function BlogForm() {
   });
   const [loading, setLoading] = useState(false);
   const { setError } = useError();
-  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const { blogId } = useParams();
@@ -51,16 +48,14 @@ function BlogForm() {
       setLoading(true);
       const place = Object.values(places);
       if (blogId) {
-        const res = await updatedBlog(blogId, form, titleShow, place);
-        navigate("/blog");
-        dispatch(updateBlog(res.data.blog));
+        await updatedBlog(blogId, form, titleShow, place);
+        navigate(`/blog/${blogId}`);
       } else {
-        const res = await createNewBlog(form, titleShow, place);
+        await createNewBlog(form, titleShow, place);
         navigate("/blog");
-        dispatch(createBlog(res.data.blog));
       }
     } catch (err) {
-      setError(err.response?.data?.message);
+      setError(err.response.data.message);
     } finally {
       setLoading(false);
     }
