@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, useEffect } from "react";
+import { getAllPlace } from "../api/placeApi";
 import axios from "../config/axios";
 import { useError } from "./ErrorContext";
 
@@ -13,7 +14,7 @@ export default function HomeContextProvider({ children }) {
   useEffect(() => {
     const fetchPlace = async () => {
       try {
-        const res = await axios.get("/");
+        const res = await getAllPlace();
         setPlace(res.data.allplace);
       } catch (err) {
         setError(err.response.data.message);
@@ -47,7 +48,7 @@ export default function HomeContextProvider({ children }) {
   }, []);
   console.log(places);
   return (
-    <HomeContext.Provider value={{ category, province }}>
+    <HomeContext.Provider value={{ category, province, places }}>
       {children}
     </HomeContext.Provider>
   );

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FaStar } from "react-icons/fa";
 
-function StarRating({ star, size }) {
+function StarRating({ star, size, disable = false }) {
   const [rating, setRating] = useState(star || null);
   const [hover, setHover] = useState(null);
 
@@ -18,18 +18,25 @@ function StarRating({ star, size }) {
               name="rating"
               value={rating || ratingValue}
               onChange={(e) => setRating(e.target.value)}
+              disabled={disable}
             />
             <FaStar
               className="stars"
               color={ratingValue <= (rating || hover) ? "#ffc107" : "e4e5e9"}
-              onMouseEnter={() => setHover(ratingValue)}
+              onMouseEnter={() => {
+                if (disable) {
+                  setHover(null);
+                } else {
+                  setHover(ratingValue);
+                }
+              }}
               onMouseLeave={() => setHover(null)}
             />
           </label>
         );
       })}
       {star ? (
-        <span className="pt-5 ms-3 fs-4 text-secondary">{star.toFixed(1)}</span>
+        <span className="score ms-3 fs-6 text-secondary">{star} scores</span>
       ) : rating ? (
         <span
           className="ms-900 text-danger"
