@@ -597,10 +597,6 @@ html {
   width: 300px;
 }
 
-.ms-900 {
-  margin-left: 900px;
-}
-
 .side-size {
   width: 400px;
   height: 100%;
@@ -809,6 +805,14 @@ html {
 
 .w-box {
   width: 50vw;
+}
+
+.ms-clear {
+  margin-left: 50px;
+}
+
+.p-le {
+  padding-right: 2.5rem;
 }
 
 @media (max-width: 2000px) {
@@ -1325,9 +1329,6 @@ html {
   .mt-150 {
     margin-top: 12vw;
   }
-  .d-flex p {
-    font-size: 21px !important;
-  }
   .w-follow {
     font-size: 2.5vw;
   }
@@ -1554,7 +1555,7 @@ html {
     height: 25vw;
   }
   .word {
-    font-size: 3.3vw;
+    font-size: 2vw;
   }
   .mb-25 {
     margin-top: 90px;
@@ -1590,8 +1591,11 @@ html {
   .d-flex h4 {
     font-size: 14px !important;
   }
-  .d-flex p {
-    font-size: 20px !important;
+  .ms-clear {
+    margin-left: 50px;
+  }
+  .btn-img {
+    width: 100px;
   }
   .destination {
     font-size: 2vw;
@@ -1783,13 +1787,17 @@ html {
     grid-template-rows: 1.5fr;
   }
   .p-re {
-    padding-left: 1rem !important;
+    padding-left: 2.5rem !important;
   }
   .p-re-0 {
     padding-right: 0px !important;
   }
   .pr-0 {
     padding-right: 0px !important;
+  }
+  .m-drop {
+    margin-top: 0px;
+    margin-left: -60px;
   }
   .ma-25 {
     margin-top: 0px;

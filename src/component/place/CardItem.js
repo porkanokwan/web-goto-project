@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { Location } from "../../icons";
-import StarRating from "../../template/StarRating";
+import StarRating from "../common/StarRating";
 
 function CardItem({ place }) {
   const navigate = useNavigate();

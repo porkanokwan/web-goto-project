@@ -1,5 +1,5 @@
 import { Location } from "../../icons";
-import StarRating from "../../template/StarRating";
+import StarRating from "../common/StarRating";
 import Carousel from "../ui/Carousel";
 import { Link } from "react-router-dom";
 
@@ -8,7 +8,7 @@ function PlaceContent({ setEditPlace, place }) {
     <>
       <div className="p-5">
         <h1>{place?.name}</h1>
-        <StarRating star={place?.star} size="fs-3" disable={true} />
+        <StarRating star={place?.star} size="fs-3" disable={true} mt="mt-3" />
       </div>
 
       <Carousel placePic={place?.PlacePics} />
@@ -25,7 +25,7 @@ function PlaceContent({ setEditPlace, place }) {
               <h4 className="mt-3">
                 <Location opacity={50} /> ที่ตั้ง
               </h4>
-              <p>{place?.address}</p>
+              <p>{place?.address || ""}</p>
 
               {place?.recommendRoute && (
                 <>
@@ -74,8 +74,8 @@ function PlaceContent({ setEditPlace, place }) {
           <div className="bg-lightgrey rounded">
             <h4 className="pt-3 ps-3">เวลาเปิด-ปิด</h4>
             <div className="d-flex justify-content-between w-100">
-              <p className="text-grey ms-3">{place?.day}</p>
-              <p className="text-grey me-3">{place?.openClose}</p>
+              <p className="text-grey ms-3">{place?.day || ""}</p>
+              <p className="text-grey me-3">{place?.openClose || ""}</p>
             </div>
 
             <div>

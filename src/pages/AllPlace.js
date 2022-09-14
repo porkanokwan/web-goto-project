@@ -1,4 +1,4 @@
-import CardItem from "../template/CardItem";
+import CardItem from "../component/place/CardItem";
 import Pagination from "../component/ui/Pagination";
 
 function AllPlace() {
