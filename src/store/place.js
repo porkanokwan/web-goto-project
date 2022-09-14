@@ -18,7 +18,7 @@ const placeSlice = createSlice({
       state.reviews = action.payload.place.Reviews;
     },
     addReview(state, action) {
-      state.reviews.push(action.payload);
+      state.reviews.unshift(action.payload);
     },
     updatedReviewPlace(state, action) {
       const idx = state.reviews.findIndex((el) => el.id === action.payload.id);
