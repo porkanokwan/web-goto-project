@@ -71,7 +71,7 @@ function PlaceForm({ title }) {
               <input
                 type="text"
                 className="rounded-2 input-size my-3"
-                placeholder="เขียนที่อยู่ของร้าน (ถ้าทราบ) ดังนี้ บ้านเลขที่ ถนน แขวง เขต เป็นต้น"
+                placeholder="เขียนที่อยู่ของร้าน ดังนี้ แขวงตลาดยอด เขตพระนคร กรุงเทพมหานคร ประเทศไทย"
               />
 
               <label className="fs-5">จังหวัด*</label>

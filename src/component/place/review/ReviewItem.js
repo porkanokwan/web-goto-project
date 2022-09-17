@@ -30,7 +30,11 @@ function ReviewItem({ review, placeId }) {
       <div className="d-flex flex-column">
         <div className="d-flex flex-grow-1">
           <div className="d-flex flex-column ps-3 w-100">
-            <ProfileIcon size="70px" user={review?.User.name} />
+            <ProfileIcon
+              size="70px"
+              user={review?.User.name}
+              src={review?.User.profilePic}
+            />
             <p className="text-grey ms-90 date-review">
               {timeSince(review?.updatedAt)}
             </p>

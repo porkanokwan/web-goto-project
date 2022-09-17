@@ -2,8 +2,26 @@ import { Location } from "../../icons";
 import StarRating from "../common/StarRating";
 import Carousel from "../ui/Carousel";
 import { Link } from "react-router-dom";
+import Map from "./maps/Map";
+import { geocode } from "../../api/mapApi";
+import { useEffect, useState } from "react";
 
 function PlaceContent({ setEditPlace, place }) {
+  const [map, setMap] = useState(null);
+  const address =
+    place?.name + " " + place?.address + " " + place?.Province.name;
+
+  useEffect(() => {
+    const fetchMap = async () => {
+      try {
+        const res = await geocode(address);
+        setMap(res.data.results[0]);
+      } catch (err) {}
+    };
+
+    fetchMap();
+  }, [place?.address]);
+
   return (
     <>
       <div className="p-5">
@@ -16,25 +34,16 @@ function PlaceContent({ setEditPlace, place }) {
       <div className="d-flex justify-content-center mt-5 m-box">
         <div className="w-box d-flex flex-column bg-lightgrey rounded mb-5 mr-15">
           <div className="box-direct d-flex">
-            <img
-              className="w-maps"
-              src="https://res.cloudinary.com/drwgmpw3e/image/upload/v1659171006/pisol82ljjts35fjptjj.jpg"
-              alt="place"
+            <Map
+              lat={map?.geometry.location.lat}
+              lng={map?.geometry.location.lng}
             />
             <div className="d-flex flex-column mx-3">
               <h4 className="mt-3">
                 <Location opacity={50} /> ที่ตั้ง
               </h4>
               <p>{place?.address || ""}</p>
-
-              {place?.recommendRoute && (
-                <>
-                  <h4 className="mt-3">
-                    <Location opacity={50} /> เส้นทางแนะนำ
-                  </h4>
-                  <p>{place?.recommendRoute}</p>
-                </>
-              )}
+              <p>{place?.recommendRoute}</p>
 
               <h4>
                 <i className="fa-solid fa-phone text-secondary me-2" />
@@ -110,14 +119,14 @@ function PlaceContent({ setEditPlace, place }) {
             <div>
               <h4 className="pt-3 ps-3">ค่าเข้าสถานที่</h4>
               <p className="text-grey ms-3">
-                ผู้ใหญ่{" "}
+                ผู้ใหญ่
                 <span className="text-grey ms-5">
                   {place?.adultPrice || "ฟรี"}
                 </span>
               </p>
 
               <p className="text-grey ms-3">
-                เด็ก{" "}
+                เด็ก
                 <span className="text-grey ms-5">
                   {place?.childPrice || "ฟรี"}
                 </span>
