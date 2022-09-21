@@ -62,11 +62,11 @@ function PlaceContent({ setEditPlace, place }) {
       <div className="d-flex justify-content-center mt-5 m-box">
         <div className="w-box d-flex flex-column bg-lightgrey rounded mb-5 mr-15">
           <div className="box-direct d-flex">
-            {/* <Map
+            <Map
               category={place?.Category.name}
               lat={map?.geometry.location.lat || 0}
               lng={map?.geometry.location.lng || 0}
-            /> */}
+            />
             <div className="d-flex flex-column mx-3">
               <h4 className="mt-3">
                 <Location opacity={50} /> ที่ตั้ง

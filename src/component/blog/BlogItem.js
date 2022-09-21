@@ -43,7 +43,7 @@ function BlogItem({
           />
         </div>
       )}
-      <div className="d-flex flex-grow-1 flex-column">
+      <div className="d-flex flex-grow-1 flex-column mx-3">
         <div className={`d-flex ${direction} ${position} box-content`}>
           <PicCard size={picSize} src={blog?.coverPic} tooltip="name place" />
           <div className={`descript ms-5 ${size}`}>

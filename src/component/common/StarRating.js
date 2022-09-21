@@ -6,7 +6,7 @@ function StarRating({ setReview, star, size, disable = false, mt }) {
   const [hover, setHover] = useState(null);
 
   return (
-    <div className="d-flex">
+    <div className="d-flex flex-wrap">
       {[1, 2, 3, 4, 5].map((star, index) => {
         const ratingValue = star;
         return (

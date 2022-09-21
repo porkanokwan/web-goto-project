@@ -433,8 +433,8 @@ html {
   padding: 300px 0px 0px 450px;
 }
 
-.mt-250 {
-  margin-top: -250px;
+.mt-280 {
+  margin-top: -280px;
 }
 
 .fs-48 {
@@ -445,7 +445,8 @@ html {
   margin-bottom: 25px;
 }
 
-.ms-120 {
+.ms-120,
+.ms-p {
   margin-left: 120px;
 }
 
@@ -476,11 +477,28 @@ html {
   gap: 30px 350px;
 }
 
+/* .container-place {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-rows: 80px 80px 80px 0px;
+  gap: 350px 100px;
+} */
+
 .container-place {
   display: grid;
-  grid-template-columns: 100px 50px 100px;
-  grid-template-rows: 80px 80px 80px;
-  gap: 300px 350px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 90px 100px;
+}
+
+.ms-275 {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.ms-all {
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 .img-review {
@@ -493,10 +511,6 @@ html {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-template-rows: repeat(auto-fit, minmax(250px, 1fr));
-}
-
-.ms-275 {
-  margin-left: 275px;
 }
 
 .h-350 {
@@ -869,9 +883,6 @@ html {
   .wf-69 {
     width: 92% !important;
   }
-  .ms-275 {
-    margin-left: 16.5vw;
-  }
   .mt-15 {
     margin-top: 0.35rem;
   }
@@ -1050,15 +1061,6 @@ html {
   .w-hr {
     width: 100%;
   }
-  .container-place {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-template-rows: 80px 80px 80px 80px 80px 80px;
-    gap: 300px 30px;
-    grid-auto-flow: column;
-    overflow: scroll;
-    padding-left: 45px;
-  }
   .position-place {
     margin-left: 30.5vw;
   }
@@ -1069,7 +1071,7 @@ html {
     margin-left: 0px;
   }
   .p-pagination {
-    padding: 300px 0px 0px 250px;
+    padding: 300px 0px 0px 180px;
   }
   .container-menu {
     display: grid;
@@ -1292,20 +1294,12 @@ html {
   .pt-70 {
     padding-top: 3.75vw;
   }
-  .container-place {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 80px 80px 80px 80px 80px 80px;
-    gap: 300px 0px;
-    grid-auto-flow: column;
-    overflow: scroll;
-  }
   .side-size {
     width: 40vw;
     height: 100%;
   }
   .side-layout {
-    grid-template-columns: 44vw 55vw;
+    grid-template-columns: 44vw 50vw;
   }
   .p-left {
     padding-left: 30px;
@@ -1391,13 +1385,13 @@ html {
   .card-container {
     width: 100vw;
     height: 350px;
-    margin: 0px 30px 30px 30px;
+    margin: 0px 30px 30px 0px;
   }
   .card-category {
     display: block !important;
   }
   .card-box {
-    display: inline-flex;
+    display: inline-block;
     position: absolute;
     background-color: transparent;
     padding: 20px 0px 0px 20px;
@@ -1477,6 +1471,13 @@ html {
   .score {
     margin-top: 10px;
   }
+  .container-place {
+    display: block;
+  }
+  .ms-all {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
 }
 
 @media (max-width: 576px) {
@@ -1543,6 +1544,10 @@ html {
     height: 3.5vw;
     font-size: 1.5vw;
     margin-top: 5px !important;
+  }
+  .sm-search {
+    margin-top: -10px !important;
+    margin-left: 10px !important;
   }
   .fs-s {
     font-size: 0.95rem !important;
@@ -1635,21 +1640,25 @@ html {
     height: 80vw;
     margin: 0px 0px 30px;
   }
-  .card-category {
-    display: block !important;
-  }
   .card-box {
-    width: 20vw;
+    width: 30vw;
     padding: 0px 10px;
     margin: 90px 10px;
   }
+  .card-all {
+    display: grid;
+    position: relative;
+    background-color: transparent;
+    padding: 20px 0px 0px 20px;
+    margin: auto;
+    top: -250px;
+    left: 320px;
+  }
   .button-view {
-    margin-left: 35vw;
+    margin-left: 50vw;
     margin-top: 1.75vw !important;
   }
   .reviews {
-    display: flex;
-    flex-wrap: wrap;
     font-size: 2.5vw;
   }
   .card-img {
@@ -1694,8 +1703,8 @@ html {
     margin-top: -10px;
   }
   .profile {
-    width: 50px !important;
-    height: 50px !important;
+    width: 150px !important;
+    height: 150px !important;
   }
   .title {
     font-size: 4.5vw !important;
@@ -1828,6 +1837,9 @@ html {
     top: 70%;
     left: 15%;
   }
+  .ms-p {
+    margin-left: 25px;
+  }
 }
 
 @media (max-width: 350px) {
@@ -1892,5 +1904,8 @@ html {
   }
   .stars {
     font-size: 5vw;
+  }
+  .card-box {
+    margin: 20px 10px;
   }
 }

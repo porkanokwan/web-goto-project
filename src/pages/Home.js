@@ -21,14 +21,20 @@ function Home() {
         <div className="min-vh-100">
           <h1 className="title-place ms-5 mt-5">Popular Attractions</h1>
           <div className="d-flex flex-column">
-            <div className="card-category d-flex flex-grow-1 justify-content-evenly mt-5">
+            <div className="card-category d-flex flex-grow-1 justify-content-evenly mt-5 flex-wrap">
               {places?.Attractions.slice(0, 4).map((el, idx) => (
                 <CardItem key={idx} place={el} />
               ))}
             </div>
             <button
-              className="mt-4 button-view"
-              onClick={() => navigate(user ? "/allplace" : "/user/allplace")}
+              className="button-view"
+              onClick={() =>
+                navigate(
+                  user
+                    ? `/allplace?category=${1}`
+                    : `/user/allplace?category=${1}`
+                )
+              }
             >
               view all Attractions
             </button>
@@ -42,8 +48,14 @@ function Home() {
               ))}
             </div>
             <button
-              className="mt-4 button-view"
-              onClick={() => navigate(user ? "/allplace" : "/user/allplace")}
+              className="button-view"
+              onClick={() =>
+                navigate(
+                  user
+                    ? `/allplace?category=${2}`
+                    : `/user/allplace?category=${2}`
+                )
+              }
             >
               view all Restaurant & Cafe
             </button>
@@ -57,8 +69,14 @@ function Home() {
               ))}
             </div>
             <button
-              className="mt-4 button-view"
-              onClick={() => navigate(user ? "/allplace" : "/user/allplace")}
+              className="button-view"
+              onClick={() =>
+                navigate(
+                  user
+                    ? `/allplace?category=${3}`
+                    : `/user/allplace?category=${3}`
+                )
+              }
             >
               view all Street Food
             </button>
@@ -73,7 +91,14 @@ function Home() {
             </div>
             <button
               className="button-view"
-              onClick={() => navigate(user ? "/allplace" : "/user/allplace")}
+              role="button"
+              onClick={() =>
+                navigate(
+                  user
+                    ? `/allplace?category=${4}`
+                    : `/user/allplace?category=${4}`
+                )
+              }
             >
               view all NightLife
             </button>
