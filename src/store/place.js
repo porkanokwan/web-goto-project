@@ -26,9 +26,7 @@ const placeSlice = createSlice({
       state.reviews.splice(idx, 1, action.payload);
     },
     deletedReviewPlace(state, action) {
-      const idx = state.reviews.findIndex(
-        (el) => el.id === action.payload.reviewId
-      );
+      const idx = state.reviews.findIndex((el) => el.id === action.payload);
       state.reviews.splice(idx, 1);
     },
     updatePlaceId(state, action) {
@@ -69,7 +67,6 @@ export const updatedReview =
   (reviewId, placeId, review, reviewPic) => async (dispatch) => {
     try {
       const res = await updateReview(reviewId, placeId, review, reviewPic);
-      console.log(res.data.review);
       dispatch(updatedReviewPlace(res.data.review));
     } catch (err) {
       console.log(err);
