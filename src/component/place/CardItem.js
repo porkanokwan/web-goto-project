@@ -12,7 +12,7 @@ function CardItem({ place }) {
     >
       <img
         className="card-img-top"
-        src={place?.PlacePics[0].picture}
+        src={place?.PlacePics[0]?.picture}
         alt="attraction name"
       />
       <div className="card-box">

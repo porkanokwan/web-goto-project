@@ -1,15 +1,24 @@
 import { Location } from "../../icons";
 import StarRating from "../common/StarRating";
 import Carousel from "../ui/Carousel";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import Map from "./maps/Map";
 import { geocode } from "../../api/mapApi";
 import { useEffect, useState } from "react";
+import { useError } from "../../context/ErrorContext";
+import { deletePlace } from "../../api/placeApi";
+import SpinnerGrow from "../common/SpinnerGrow";
+import { useHome } from "../../context/HomeContext";
 
 function PlaceContent({ setEditPlace, place }) {
   const [map, setMap] = useState(null);
+  const [loading, setLoading] = useState(false);
   const address =
     place?.name + " " + place?.address + " " + place?.Province.name;
+  const { setError } = useError();
+  const { places, setPlace } = useHome();
+  const { placeId } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchMap = async () => {
@@ -22,6 +31,25 @@ function PlaceContent({ setEditPlace, place }) {
     fetchMap();
   }, [place?.address]);
 
+  const handleDeletePlace = async () => {
+    try {
+      setLoading(true);
+      await deletePlace(placeId);
+      const newPlaces = { ...places };
+      const idx = newPlaces[place?.Category?.name].findIndex(
+        (el) => el.id === Number(placeId)
+      );
+      newPlaces[place?.Category?.name].splice(idx, 1);
+      setPlace(newPlaces);
+      navigate("/");
+    } catch (err) {
+      setError(err.response.data.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  if (loading) return <SpinnerGrow />;
   return (
     <>
       <div className="p-5">
@@ -34,10 +62,11 @@ function PlaceContent({ setEditPlace, place }) {
       <div className="d-flex justify-content-center mt-5 m-box">
         <div className="w-box d-flex flex-column bg-lightgrey rounded mb-5 mr-15">
           <div className="box-direct d-flex">
-            <Map
-              lat={map?.geometry.location.lat}
-              lng={map?.geometry.location.lng}
-            />
+            {/* <Map
+              category={place?.Category.name}
+              lat={map?.geometry.location.lat || 0}
+              lng={map?.geometry.location.lng || 0}
+            /> */}
             <div className="d-flex flex-column mx-3">
               <h4 className="mt-3">
                 <Location opacity={50} /> ที่ตั้ง
@@ -150,6 +179,7 @@ function PlaceContent({ setEditPlace, place }) {
           <div
             role="button"
             className="mt-3 bg-lightgrey rounded text-center mb-5"
+            onClick={handleDeletePlace}
           >
             <i className="fa-solid fa-trash" />
             ลบข้อมูล

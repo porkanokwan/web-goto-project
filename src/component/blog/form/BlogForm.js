@@ -7,6 +7,7 @@ import SelectDestination from "../../layout/header/SelectDestination";
 import { useError } from "../../../context/ErrorContext";
 import SpinnerGrow from "../../common/SpinnerGrow";
 import { createNewBlog, getBlogById, updatedBlog } from "../../../api/blogApi";
+import ChooseCategory from "../../common/ChooseCategory";
 
 function BlogForm() {
   const [number, setNumber] = useState([1]);
@@ -193,57 +194,10 @@ function BlogForm() {
         <div className="bg-white w-mt">
           <div className="bg-white w-100 mx-auto">
             <div className="d-flex w-100 justify-content-around pt-5 fs-vw ps-35">
-              <div>
-                <input
-                  type="radio"
-                  id="retaurant"
-                  name="category"
-                  value="2"
-                  checked={form.categoryId == 2}
-                  onChange={chooseCategory}
-                />
-                <label className="me-3 ms-1">
-                  ร้านอาหาร/คาเฟ่(Restaurant & Cafe)
-                </label>
-              </div>
-
-              <div>
-                <input
-                  type="radio"
-                  id="street-food"
-                  name="category"
-                  value="3"
-                  checked={form.categoryId == 3}
-                  onChange={chooseCategory}
-                />
-                <label className="me-3 ms-1">อาหารริมทาง (Street Food)</label>
-              </div>
-
-              <div>
-                <input
-                  type="radio"
-                  id="nightlife"
-                  name="category"
-                  value="4"
-                  checked={form.categoryId == 4}
-                  onChange={chooseCategory}
-                />
-                <label className="me-3 ms-1">สถานบันเทิง(NightLife)</label>
-              </div>
-
-              <div>
-                <input
-                  type="radio"
-                  id="attraction"
-                  name="category"
-                  value="1"
-                  checked={form.categoryId == 1}
-                  onChange={chooseCategory}
-                />
-                <label className="me-3 ms-1">
-                  สถานที่ท่องเที่ยว(Attractions)
-                </label>
-              </div>
+              <ChooseCategory
+                onChange={chooseCategory}
+                categoryId={form.categoryId}
+              />
             </div>
 
             <div className="d-flex flex-column mx-5">

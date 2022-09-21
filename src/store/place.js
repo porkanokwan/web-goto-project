@@ -3,6 +3,7 @@ import {
   createReview,
   deleteReview,
   getPlaceById,
+  updatePlace,
   updateReview,
 } from "../api/placeApi";
 
@@ -30,12 +31,20 @@ const placeSlice = createSlice({
       );
       state.reviews.splice(idx, 1);
     },
+    updatePlaceId(state, action) {
+      state.place = action.payload;
+    },
   },
 });
 
 export default placeSlice.reducer;
-export const { getPlaces, addReview, updatedReviewPlace, deletedReviewPlace } =
-  placeSlice.actions;
+export const {
+  getPlaces,
+  addReview,
+  updatedReviewPlace,
+  deletedReviewPlace,
+  updatePlaceId,
+} = placeSlice.actions;
 
 export const fetchPlace = (placeId) => async (dispatch) => {
   try {
@@ -75,3 +84,13 @@ export const deletedReview = (reviewId, placeId) => async (dispatch) => {
     console.log(err);
   }
 };
+
+export const updatedPlace =
+  (placeForm, placePic, placeId) => async (dispatch) => {
+    try {
+      const res = await updatePlace(placeForm, placePic, placeId);
+      dispatch(updatePlaceId(res.data.place));
+    } catch (err) {
+      console.log(err);
+    }
+  };

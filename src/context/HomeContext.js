@@ -48,7 +48,7 @@ export default function HomeContextProvider({ children }) {
   }, []);
   console.log(places);
   return (
-    <HomeContext.Provider value={{ category, province, places }}>
+    <HomeContext.Provider value={{ category, province, places, setPlace }}>
       {children}
     </HomeContext.Provider>
   );

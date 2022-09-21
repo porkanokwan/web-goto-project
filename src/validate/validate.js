@@ -102,3 +102,110 @@ export function validate({
     }));
   }
 }
+
+export function validatePlaceForm(
+  categoryId,
+  provinceId,
+  name,
+  wifi,
+  parking,
+  reserve,
+  address,
+  setErrorPlace
+) {
+  if (validator.isEmpty(categoryId)) {
+    setErrorPlace((prev) => ({
+      ...prev,
+      errCategory: "You must choose category of this place",
+    }));
+  } else {
+    setErrorPlace((prev) => ({
+      ...prev,
+      errCategory: "",
+    }));
+  }
+
+  if (validator.isEmpty(provinceId)) {
+    setErrorPlace((prev) => ({
+      ...prev,
+      errProvince: "You must choose province of this place",
+    }));
+  } else {
+    setErrorPlace((prev) => ({
+      ...prev,
+      errProvince: "",
+    }));
+  }
+
+  if (validator.isEmpty(name)) {
+    setErrorPlace((prev) => ({ ...prev, errName: "Name is required" }));
+  } else {
+    setErrorPlace((prev) => ({
+      ...prev,
+      errName: "",
+    }));
+  }
+
+  if (validator.isEmpty(wifi)) {
+    setErrorPlace((prev) => ({
+      ...prev,
+      errWifi: "Wifi is required",
+    }));
+  } else if (validator.isBoolean(wifi)) {
+    setErrorPlace((prev) => ({
+      ...prev,
+      errWifi: "Wifi can be only true or false",
+    }));
+  } else {
+    setErrorPlace((prev) => ({
+      ...prev,
+      errWifi: "",
+    }));
+  }
+
+  if (validator.isEmpty(parking)) {
+    setErrorPlace((prev) => ({
+      ...prev,
+      errParking: "Parking is required",
+    }));
+  } else if (validator.isBoolean(parking)) {
+    setErrorPlace((prev) => ({
+      ...prev,
+      errParking: "Parking can be only true or false",
+    }));
+  } else {
+    setErrorPlace((prev) => ({
+      ...prev,
+      errParking: "",
+    }));
+  }
+
+  if (validator.isEmpty(reserve)) {
+    setErrorPlace((prev) => ({
+      ...prev,
+      errReserve: "Reserve is required",
+    }));
+  } else if (validator.isBoolean(reserve)) {
+    setErrorPlace((prev) => ({
+      ...prev,
+      errReserve: "Reserve can be only true or false",
+    }));
+  } else {
+    setErrorPlace((prev) => ({
+      ...prev,
+      errReserve: "",
+    }));
+  }
+
+  if (validator.isEmpty(address)) {
+    setErrorPlace((prev) => ({
+      ...prev,
+      errAddress: "Address is required",
+    }));
+  } else {
+    setErrorPlace((prev) => ({
+      ...prev,
+      errAddress: "",
+    }));
+  }
+}

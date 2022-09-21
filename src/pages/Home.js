@@ -9,9 +9,12 @@ function Home() {
   const navigate = useNavigate();
   const { places } = useHome();
   const { user } = useContext(AuthContext);
+
+  const restaurant = places?.["Restaurant & Cafe"].slice(0, 4);
+  const streetFood = places?.["Street Food"].slice(0, 4);
+
   return (
     <>
-      {/* check category มีค่าไหม ถ้ามีแสดงแบบ AllPlace ถ้าไม่แสดงแบบล่าง */}
       {false ? (
         <AllPlace />
       ) : (
@@ -19,7 +22,7 @@ function Home() {
           <h1 className="title-place ms-5 mt-5">Popular Attractions</h1>
           <div className="d-flex flex-column">
             <div className="card-category d-flex flex-grow-1 justify-content-evenly mt-5">
-              {places?.Attractions?.map((el, idx) => (
+              {places?.Attractions.slice(0, 4).map((el, idx) => (
                 <CardItem key={idx} place={el} />
               ))}
             </div>
@@ -34,7 +37,7 @@ function Home() {
           <h1 className="ms-5 mt-5">Popular Restaurant & Cafe</h1>
           <div className="d-flex flex-column">
             <div className="card-category d-flex flex-grow-1 justify-content-evenly mt-5">
-              {places?.Restaurant?.map((el, idx) => (
+              {restaurant?.map((el, idx) => (
                 <CardItem key={idx} place={el} />
               ))}
             </div>
@@ -49,7 +52,7 @@ function Home() {
           <h1 className="ms-5 mt-5">Popular Street Food</h1>
           <div className="d-flex flex-column">
             <div className="card-category d-flex flex-grow-1 justify-content-evenly mt-5">
-              {places?.StreetFood?.map((el, idx) => (
+              {streetFood?.map((el, idx) => (
                 <CardItem key={idx} place={el} />
               ))}
             </div>
@@ -64,7 +67,7 @@ function Home() {
           <h1 className="ms-5 mt-5">Popular NightLife</h1>
           <div className="d-flex flex-column">
             <div className="card-category d-flex flex-grow-1 justify-content-evenly mt-5">
-              {places?.NightLife.map((el, idx) => (
+              {places?.NightLife.slice(0, 4).map((el, idx) => (
                 <CardItem key={idx} place={el} />
               ))}
             </div>

@@ -26,8 +26,16 @@ function PlaceContainer() {
     fetch();
   }, [placeId]);
 
+  const arrPic = place?.place?.PlacePics?.map((el) => el.picture);
   if (editPlace)
-    return <PlaceForm title="แก้ไขข้อมูลร้าน/สถานที่" place={place} />;
+    return (
+      <PlaceForm
+        title="แก้ไขข้อมูลร้าน/สถานที่"
+        place={place.place}
+        arrPic={arrPic}
+        setEditPlace={setEditPlace}
+      />
+    );
   return (
     <div className="bg-white min-vh-100">
       {Object.keys(place.place).length === 0 ? (
