@@ -33,7 +33,7 @@ function ReviewItem({ review, placeId }) {
             <ProfileIcon
               size="70px"
               user={review?.User.name}
-              src={review?.User.profilePic}
+              src={review?.User.profile_pic || review?.User.profilePic}
             />
             <p className="text-grey ms-90 date-review">
               {timeSince(review?.updatedAt)}
