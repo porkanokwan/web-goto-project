@@ -81,8 +81,10 @@ function ReviewItem({ review, placeId }) {
               <h5 className="fw-bold">{review?.title}</h5>
               <p>{review?.review}</p>
             </div>
-            {/* Limit 4 */}
-            <CardPic classImg="card-img-review" pics={review?.ReviewPics} />
+            <CardPic
+              classImg="card-img-review"
+              pics={review?.ReviewPics.slice(0, 4)}
+            />
             {review?.ReviewPics.length !== 0 && (
               <div
                 role="button"
