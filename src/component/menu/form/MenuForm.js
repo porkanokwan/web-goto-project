@@ -13,9 +13,13 @@ function MenuForm({ menu, placeId, onClose }) {
 
   const handleClickMenu = async () => {
     try {
-      menu
-        ? dispatch(updateMenu(menu.id, placeId, title, menuPic))
-        : dispatch(addMenu(placeId, title, menuPic));
+      if (menu) {
+        dispatch(updateMenu(menu.id, placeId, title, menuPic));
+      } else {
+        dispatch(addMenu(placeId, title, menuPic));
+        setTitle("");
+        setMenuPic("");
+      }
       onClose();
     } catch (err) {
       setError(err.response.data.message);
