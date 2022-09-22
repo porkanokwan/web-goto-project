@@ -1,23 +1,17 @@
-import { useContext } from "react";
+import Offcanvas from "../../ui/Offcanvas";
+import { useContext, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import UserIcon from "../../../component/common/UserIcon";
 import { AuthContext } from "../../../context/AuthContext";
-import { useError } from "../../../context/ErrorContext";
 import Logo from "../../../img/Logo.jpg";
 import Dropdown from "./Dropdown";
 
 function Header() {
   const location = useLocation();
-  const { user, logout } = useContext(AuthContext);
-  const { setError } = useError();
+  const { user } = useContext(AuthContext);
+  const [offcanvas, setOffCanvas] = useState(null);
 
-  const handleLogout = async () => {
-    try {
-      await logout();
-    } catch (err) {
-      setError(err.response.data.message);
-    }
-  };
+  const handleClick = () => offcanvas.show();
 
   return (
     <>
@@ -31,102 +25,14 @@ function Header() {
             <button
               className="navbar-toggler shadow-none border-0 me-3 mb-1"
               type="button"
-              data-bs-toggle="offcanvas"
-              data-bs-target="#navbarOffcanvasmd"
+              onClick={handleClick}
             >
               <i className="fa-solid fa-bars text-white  menu-none" />
             </button>
           </div>
-          <div
-            className="offcanvas offcanvas-end"
-            tabIndex="-1"
-            id="navbarOffcanvasmd"
-          >
-            <div className="offcanvas-header">
-              <h5 className="offcanvas-title" id="offcanvasNavbarLabel">
-                Menu
-              </h5>
-              <button
-                type="button"
-                className="btn-close text-reset"
-                data-bs-dismiss="offcanvas"
-                aria-label="Close"
-              ></button>
-            </div>
 
-            <div className="offcanvas-body">
-              <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
-                <li className="nav-item">
-                  <Link
-                    className={`nav-link  ${
-                      location.pathname === "/home" ? "active" : ""
-                    }`}
-                    to="/"
-                  >
-                    Home
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link
-                    className={`nav-link  ${
-                      location.pathname === "/blog" ? "active" : ""
-                    }`}
-                    to="/blog"
-                  >
-                    Blog
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  {user ? (
-                    <Link
-                      className={`nav-link  ${
-                        location.pathname === `/profile/${user.id}`
-                          ? "active"
-                          : ""
-                      }`}
-                      to={`/profile/${user.id}`}
-                    >
-                      {user.name}
-                    </Link>
-                  ) : (
-                    <Link
-                      className={`nav-link  ${
-                        location.pathname === "/login" ? "active" : ""
-                      }`}
-                      to="/login"
-                    >
-                      Login/Sign up
-                    </Link>
-                  )}
-                </li>
-                <li className="nav-item">
-                  <Link
-                    className={`nav-link  ${
-                      location.pathname === "/place" ? "active" : ""
-                    }`}
-                    to="/place"
-                  >
-                    Add Restaurant & Attractions
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link
-                    className={`nav-link  ${
-                      location.pathname.includes("create") ? "active" : ""
-                    }`}
-                    to="/create/blog"
-                  >
-                    Post New Blog
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <span className="nav-link" onClick={handleLogout}>
-                    Logout
-                  </span>
-                </li>
-              </ul>
-            </div>
-          </div>
+          <Offcanvas setOffCanvas={setOffCanvas} offcanvas={offcanvas} />
+
           <div className="nav-bar horizon-nav">
             <ul className="all-list">
               <li>

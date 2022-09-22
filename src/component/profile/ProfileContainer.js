@@ -1,10 +1,11 @@
 import axios from "../../config/axios";
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useError } from "../../context/ErrorContext";
 import ChangePasswordForm from "./ChangePasswordForm";
 import ProfileDetail from "./ProfileDetail";
 import SpinnerGrow from "../common/SpinnerGrow";
+import { AuthContext } from "../../context/AuthContext";
 
 function ProfileContainer() {
   const { userId } = useParams();
@@ -12,6 +13,7 @@ function ProfileContainer() {
   const [chagePasswordOpen, setChagePasswordOpen] = useState(false);
   const [loading, setLoading] = useState(true);
   const { setError } = useError();
+  const { user } = useContext(AuthContext);
 
   useEffect(() => {
     const fetchProfile = async () => {
@@ -35,25 +37,29 @@ function ProfileContainer() {
         <ProfileDetail user={userProfile} setUserProfile={setUserProfile} />
       </div>
 
-      <div className="d-flex mt-5 w-pass">
-        <h4 className="fw-bold">รหัสผ่าน:</h4>
+      {userProfile.id === user.id && (
+        <>
+          <div className="d-flex mt-5 w-pass">
+            <h4 className="fw-bold">รหัสผ่าน:</h4>
 
-        <div className="d-flex flex-grow-1 justify-content-end">
-          <div
-            className="password text-primary mt-1 active"
-            role="button"
-            onClick={() => setChagePasswordOpen(true)}
-          >
-            เปลี่ยนรหัสผ่าน
+            <div className="d-flex flex-grow-1 justify-content-end">
+              <div
+                className="password text-primary mt-1 active"
+                role="button"
+                onClick={() => setChagePasswordOpen(true)}
+              >
+                เปลี่ยนรหัสผ่าน
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <hr className="w-line mt-0" />
+          <hr className="w-line mt-0" />
 
-      {chagePasswordOpen && (
-        <div className="w-form-change">
-          <ChangePasswordForm onClick={() => setChagePasswordOpen(false)} />
-        </div>
+          {chagePasswordOpen && (
+            <div className="w-form-change">
+              <ChangePasswordForm onClick={() => setChagePasswordOpen(false)} />
+            </div>
+          )}
+        </>
       )}
     </>
   );

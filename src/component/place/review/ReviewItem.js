@@ -7,12 +7,15 @@ import { timeSince } from "../../../service/dateFormat";
 import { useError } from "../../../context/ErrorContext";
 import { useDispatch } from "react-redux";
 import { deletedReview } from "../../../store/place";
+import { useContext } from "react";
+import { AuthContext } from "../../../context/AuthContext";
 
 function ReviewItem({ review, placeId }) {
   const [open, setOpen] = useState(false);
   const [editReview, setEditReview] = useState(false);
   const { setError } = useError();
   const dispatch = useDispatch();
+  const { user } = useContext(AuthContext);
 
   const onClose = () => setOpen(false);
   const arrPic = review?.ReviewPics.map((el) => el.reviewPic);
@@ -24,6 +27,7 @@ function ReviewItem({ review, placeId }) {
       setError(err.response.data.message);
     }
   };
+  console.log(review);
 
   return (
     <>
@@ -45,6 +49,7 @@ function ReviewItem({ review, placeId }) {
               className="fa-solid fa-ellipsis"
               data-bs-toggle="dropdown"
               role="button"
+              disabled={review?.User.id !== user.id}
             />
 
             <ul className="dropdown-menu dropdown-menu-end px-2 mt-1">

@@ -4,11 +4,12 @@ import Carousel from "../ui/Carousel";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import Map from "./maps/Map";
 import { geocode } from "../../api/mapApi";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useError } from "../../context/ErrorContext";
 import { deletePlace } from "../../api/placeApi";
 import SpinnerGrow from "../common/SpinnerGrow";
 import { useHome } from "../../context/HomeContext";
+import { AuthContext } from "../../context/AuthContext";
 
 function PlaceContent({ setEditPlace, place }) {
   const [map, setMap] = useState(null);
@@ -19,6 +20,7 @@ function PlaceContent({ setEditPlace, place }) {
   const { places, setPlace } = useHome();
   const { placeId } = useParams();
   const navigate = useNavigate();
+  const { user } = useContext(AuthContext);
 
   useEffect(() => {
     const fetchMap = async () => {
@@ -146,20 +148,29 @@ function PlaceContent({ setEditPlace, place }) {
             </div>
 
             <div>
-              <h4 className="pt-3 ps-3">ค่าเข้าสถานที่</h4>
-              <p className="text-grey ms-3">
-                ผู้ใหญ่
-                <span className="text-grey ms-5">
-                  {place?.adultPrice || "ฟรี"}
-                </span>
-              </p>
+              {place?.Category.name === "Attractions" ? (
+                <>
+                  <h4 className="pt-3 ps-3">ค่าเข้าสถานที่</h4>
+                  <p className="text-grey ms-3">
+                    ผู้ใหญ่
+                    <span className="text-grey ms-5">
+                      {place?.adultPrice || "ฟรี"}
+                    </span>
+                  </p>
 
-              <p className="text-grey ms-3">
-                เด็ก
-                <span className="text-grey ms-5">
-                  {place?.childPrice || "ฟรี"}
-                </span>
-              </p>
+                  <p className="text-grey ms-3">
+                    เด็ก
+                    <span className="text-grey ms-5">
+                      {place?.childPrice || "ฟรี"}
+                    </span>
+                  </p>
+                </>
+              ) : (
+                <>
+                  <h4 className="pt-3 ps-3">ช่วงราคา</h4>
+                  <p className="text-grey ms-3">{place?.ratePrice || "-"}</p>
+                </>
+              )}
             </div>
 
             <div>

@@ -18,6 +18,7 @@ function Carousel({ placePic }) {
     <>
       <div
         className="carousel carousel-dark slide carousel-fade"
+        style={{ zIndex: 0 }}
         data-interval="false"
         ref={btnEl}
       >

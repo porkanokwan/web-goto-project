@@ -4,16 +4,24 @@ import parseDate from "../../service/dateFormat";
 import PicCard from "../common/PicCard";
 import LikeButton from "../common/LikeButton";
 import { useParams } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
 
 function BlogDeatail({ blog, setBlog }) {
   const { blogId } = useParams();
+  const { user } = useContext(AuthContext);
   return (
     <div className="bg-white w-mt">
       <div className="d-flex flex-column p-5">
         <h3>{blog.title}</h3>
         <div className="d-flex">
           <div className="d-flex mt-3">
-            <ProfileIcon size={70} mt={20} user={blog.User?.name} />
+            <ProfileIcon
+              size={70}
+              mt={20}
+              user={blog.User?.name}
+              src={blog.User?.profile_pic}
+            />
           </div>
 
           <div className="d-flex">
@@ -29,7 +37,12 @@ function BlogDeatail({ blog, setBlog }) {
           </div>
 
           <div className="d-flex flex-grow-1 justify-content-end pt-70 fs-5">
-            <LikeButton blog={blog} setBlog={setBlog} blogId={blogId} />
+            <LikeButton
+              blog={blog}
+              setBlog={setBlog}
+              blogId={blogId}
+              id={user.id}
+            />
           </div>
         </div>
 

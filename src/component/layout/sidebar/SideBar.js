@@ -1,10 +1,11 @@
 import { useContext } from "react";
-import { Link, Outlet, useLocation } from "react-router-dom";
+import { Link, Outlet, useLocation, useParams } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthContext";
 
 function SideBar() {
   const location = useLocation();
   const { user } = useContext(AuthContext);
+  const { userId } = useParams();
 
   return (
     <div>
@@ -12,7 +13,7 @@ function SideBar() {
         <div className="side-size d-flex flex-column flex-grow-1 text-center shadow">
           <div className="mt-5">
             <Link
-              to={`/profile/${user.id}`}
+              to={`/profile/${userId}`}
               className={`mx-3 mb-3 fs-1 fw-normal mt-5 ${
                 location.pathname.includes("blog")
                   ? "text-dark text-decoration-none"
@@ -26,7 +27,7 @@ function SideBar() {
 
           <div>
             <Link
-              to={`/profile/${user.id}/blog`}
+              to={`/profile/${userId}/blog`}
               className={`mx-3 mb-3 fs-1 fw-normal ${
                 location.pathname.includes("blog")
                   ? "active text-primary"

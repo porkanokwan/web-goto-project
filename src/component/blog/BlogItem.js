@@ -5,6 +5,8 @@ import parseDate from "../../service/dateFormat";
 import { useError } from "../../context/ErrorContext";
 import { deleteBlog } from "../../api/blogApi";
 import LikeButton from "../common/LikeButton";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
 
 function BlogItem({
   userId,
@@ -17,6 +19,7 @@ function BlogItem({
   setBlog,
   blog,
 }) {
+  const { user } = useContext(AuthContext);
   const { setError } = useError();
   const handleDelete = async () => {
     try {
@@ -31,7 +34,7 @@ function BlogItem({
 
   return (
     <>
-      {userId && (
+      {+userId === user.id && (
         <div className="d-flex ms-edit text-primary">
           <Link to={`/edit/blog/${blog.id}`} className="mt-minus-5">
             <i className="fa-solid fa-pencil me-1" />
@@ -72,7 +75,7 @@ function BlogItem({
               </div>
 
               <span className="like fs-2">
-                <LikeButton blog={blog} setBlog={setBlog} userId={userId} />
+                <LikeButton blog={blog} setBlog={setBlog} id={user.id} />
               </span>
             </div>
           </div>

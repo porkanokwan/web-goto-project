@@ -28,13 +28,7 @@ function Home() {
             </div>
             <button
               className="button-view"
-              onClick={() =>
-                navigate(
-                  user
-                    ? `/allplace?category=${1}`
-                    : `/user/allplace?category=${1}`
-                )
-              }
+              onClick={() => navigate(`/allplace?category=${1}`)}
             >
               view all Attractions
             </button>
@@ -49,13 +43,7 @@ function Home() {
             </div>
             <button
               className="button-view"
-              onClick={() =>
-                navigate(
-                  user
-                    ? `/allplace?category=${2}`
-                    : `/user/allplace?category=${2}`
-                )
-              }
+              onClick={() => navigate(`/allplace?category=${2}`)}
             >
               view all Restaurant & Cafe
             </button>
@@ -70,13 +58,7 @@ function Home() {
             </div>
             <button
               className="button-view"
-              onClick={() =>
-                navigate(
-                  user
-                    ? `/allplace?category=${3}`
-                    : `/user/allplace?category=${3}`
-                )
-              }
+              onClick={() => navigate(user`/allplace?category=${3}`)}
             >
               view all Street Food
             </button>
@@ -92,13 +74,7 @@ function Home() {
             <button
               className="button-view"
               role="button"
-              onClick={() =>
-                navigate(
-                  user
-                    ? `/allplace?category=${4}`
-                    : `/user/allplace?category=${4}`
-                )
-              }
+              onClick={() => navigate(`/allplace?category=${4}`)}
             >
               view all NightLife
             </button>

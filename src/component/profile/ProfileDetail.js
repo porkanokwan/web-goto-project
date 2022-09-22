@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../context/AuthContext";
 import UserCard from "../common/UserCard";
 import ProfileForm from "./ProfileForm";
 
 function ProfileDetail({ user, setUserProfile }) {
   const [editProfile, setEditProfile] = useState(false);
+  const { user: users } = useContext(AuthContext);
 
   return (
     <>
@@ -19,15 +21,17 @@ function ProfileDetail({ user, setUserProfile }) {
         <>
           <div className="d-flex flex-column w-25 text-center p-left">
             <UserCard src={user.profilePic} size="pic-size" />
-            <div
-              className="w-100 ms-ep-5"
-              role="button"
-              onClick={() => setEditProfile(true)}
-            >
-              <p className="text-primary text-decoration-underline">
-                edit profile
-              </p>
-            </div>
+            {user.id === users.id && (
+              <div
+                className="w-100 ms-ep-5"
+                role="button"
+                onClick={() => setEditProfile(true)}
+              >
+                <p className="text-primary text-decoration-underline">
+                  edit profile
+                </p>
+              </div>
+            )}
           </div>
 
           <div className="mr-p-80 d-flex flex-column ms-150 mt-5 w-70">
@@ -53,7 +57,11 @@ function ProfileDetail({ user, setUserProfile }) {
               <h4 className="fw-bold">เกี่ยวกับฉัน:</h4>
             </div>
             <hr className="w-100 mt-0" />
-            <p className="ms-3 fs-5">{user.aboutMe || "-"}</p>
+            <p className="ms-3 fs-5">
+              {user.aboutMe === "null" || user.aboutMe === ""
+                ? "-"
+                : user.aboutMe}
+            </p>
           </div>
         </>
       )}

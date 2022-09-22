@@ -17,7 +17,6 @@ function SearchBar() {
         <div className="category mb-2 d-flex">
           <label className="cate-x fs-s px-3 mt-1">Category</label>
           <div className="search-destination mt-8 d-flex">
-            {/* <i className="fa-solid fa-magnifying-glass ms-1 mt-search" /> */}
             <SelectCategory />
           </div>
         </div>

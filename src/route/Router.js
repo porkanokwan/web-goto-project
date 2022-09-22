@@ -65,11 +65,14 @@ function Router() {
             <Route path="category/province" element={<AllPlace />} />
           </Route>
 
-          <Route path="/user" element={<HeaderFooterPage />}>
+          <Route path="/" element={<HeaderFooterPage />}>
             <Route path="allplace" element={<AllPlace />} />
             <Route path="allplace/province" element={<AllPlace />} />
             <Route path="menu/:placeId" element={<Menu />} />
             <Route path="place/:placeId" element={<Place />} />
+          </Route>
+
+          <Route path="*" element={<HeaderFooterPage />}>
             <Route path="*" element={<NotFoundPage />} />
           </Route>
         </>

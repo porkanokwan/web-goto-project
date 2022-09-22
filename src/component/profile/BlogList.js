@@ -60,7 +60,7 @@ function BlogList() {
         ) : (
           <div className="box-blog">
             <h1>ไม่มี Blog ที่เขียน</h1>
-            <Link to="/blog/create" className="mt-5 fs-1 text-dark opacity-50">
+            <Link to="/create/blog" className="mt-5 fs-1 text-dark opacity-50">
               <i className="fa-solid fa-file-circle-plus me-3" />
               <span>เขียน Blog ครั้งแรกที่นี่</span>
             </Link>
