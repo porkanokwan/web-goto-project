@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import BlogItem from "../component/blog/BlogItem";
 import Pagination from "../component/ui/Pagination";
 import { useDispatch, useSelector } from "react-redux";
@@ -7,6 +7,7 @@ import { getBlog } from "../api/blogApi";
 import { useError } from "../context/ErrorContext";
 
 function BlogHomePage() {
+  const [currentPage, setCurrentPage] = useState(1);
   const dispatch = useDispatch();
   const blogs = useSelector((state) => state.blog);
   const { setError } = useError();
@@ -24,12 +25,22 @@ function BlogHomePage() {
     fetchAllBlog();
   }, []);
 
+  const limit = 10;
+  const showBlog = blogs.blog.slice(
+    (currentPage - 1) * limit,
+    limit * currentPage
+  );
+
+  const changePage = (page) => {
+    setCurrentPage(page);
+  };
+
   return (
     <>
       <div className="bg-white min-vh-100 w-mt">
         <p className="fs-1 p-5">Blog List</p>
 
-        {blogs.blog.map((item, idx) => (
+        {showBlog.map((item, idx) => (
           <BlogItem
             key={idx}
             size="w-bt"
@@ -41,7 +52,12 @@ function BlogHomePage() {
         ))}
 
         <div className="ms-450">
-          <Pagination />
+          <Pagination
+            length={blogs.blog.length}
+            limit={limit}
+            changePage={changePage}
+            currentPage={currentPage}
+          />
         </div>
       </div>
     </>

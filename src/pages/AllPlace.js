@@ -7,6 +7,7 @@ import { useError } from "../context/ErrorContext";
 
 function AllPlace({ size }) {
   const [allPlace, setAllPlace] = useState(null);
+  const [currentPage, setCurrentPage] = useState(1);
   const [categoryId, setCategoryId] = useSearchParams();
   const { setError } = useError();
 
@@ -22,18 +23,32 @@ function AllPlace({ size }) {
     };
     fetchAllPlace();
   }, []);
+  console.log(allPlace);
+  const limit = 15;
+  const showPlace = allPlace?.slice(
+    (currentPage - 1) * limit,
+    limit * currentPage
+  );
+  const changePage = (page) => {
+    setCurrentPage(page);
+  };
 
   return (
     <>
       <h1 className="p-5">All Attractions</h1>
 
       <div className="container-place ms-all ps-45">
-        {allPlace?.map((el, idx) => (
+        {showPlace?.map((el, idx) => (
           <CardItem key={idx} place={el} size={size} />
         ))}
       </div>
       <div className="mt-280 ms-p p-pagination">
-        <Pagination />
+        <Pagination
+          limit={limit}
+          length={allPlace?.length}
+          currentPage={currentPage}
+          changePage={changePage}
+        />
       </div>
     </>
   );
