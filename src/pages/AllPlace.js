@@ -39,26 +39,23 @@ function AllPlace({ size, categoryId, provinceId }) {
     fetchAllPlace();
   }, [categoryId, provinceId]);
 
-  console.log(allPlace);
-  const filterdPlace = queryId.get("province")
-    ? allPlace
-    : allPlace?.filter(
-        (el) =>
-          el?.Province.id === +queryId.get("province") &&
-          el?.Category.id === +queryId.get("category")
-      );
-  console.log(filterdPlace);
+  const filterdPlace =
+    +queryId.get("province") && +queryId.get("category")
+      ? allPlace?.filter(
+          (el) =>
+            el?.Province.id === +queryId.get("province") &&
+            el?.Category.id === +queryId.get("category")
+        )
+      : allPlace;
 
   const limit = 15;
   const showPlace = filterdPlace?.slice(
     (currentPage - 1) * limit,
     limit * currentPage
   );
-  console.log(showPlace?.length);
   const changePage = (page) => {
     setCurrentPage(page);
   };
-
   const name = category?.find(
     (item) => item.id === +queryId.get("category")
   ).name;

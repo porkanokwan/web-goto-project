@@ -5,9 +5,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAllBlog } from "../store/blog";
 import { getBlog } from "../api/blogApi";
 import { useError } from "../context/ErrorContext";
+import { Link, useSearchParams } from "react-router-dom";
 
 function BlogHomePage() {
   const [currentPage, setCurrentPage] = useState(1);
+  const [search, setSearch] = useSearchParams();
   const dispatch = useDispatch();
   const blogs = useSelector((state) => state.blog);
   const { setError } = useError();
@@ -25,8 +27,25 @@ function BlogHomePage() {
     fetchAllBlog();
   }, []);
 
+  const filterdBlog =
+    search.get("category") && search.get("province")
+      ? blogs.blog?.filter(
+          (item) =>
+            item?.Category.id === +search.get("category") &&
+            item?.Province.id === +search.get("province")
+        )
+      : search.get("province")
+      ? blogs.blog?.filter(
+          (item) => item?.Province.id === +search.get("province")
+        )
+      : search.get("category")
+      ? blogs.blog?.filter(
+          (item) => item?.Category.id === +search.get("category")
+        )
+      : blogs.blog;
+
   const limit = 10;
-  const showBlog = blogs.blog.slice(
+  const showBlog = filterdBlog.slice(
     (currentPage - 1) * limit,
     limit * currentPage
   );
@@ -50,15 +69,33 @@ function BlogHomePage() {
             blog={item}
           />
         ))}
-
-        <div className="ms-450">
-          <Pagination
-            length={blogs.blog.length}
-            limit={limit}
-            changePage={changePage}
-            currentPage={currentPage}
-          />
-        </div>
+        {showBlog.length ? (
+          <>
+            <div className="ms-450">
+              <Pagination
+                length={filterdBlog.length}
+                limit={limit}
+                changePage={changePage}
+                currentPage={currentPage}
+              />
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="text-center mt-180">
+              <h1>ไม่มี Blog รีวิวในจังหวัดหรือหมวดหมู่นี้</h1>
+              <Link
+                to="/create/blog"
+                className="mt-5 fs-1 text-dark opacity-50"
+              >
+                <i className="fa-solid fa-file-circle-plus me-3" />
+                <span>
+                  คุณสามารถเขียน Blog แนะนำสถานที่ต่างๆ ในจังหวัดนี้ได้ที่นี่
+                </span>
+              </Link>
+            </div>
+          </>
+        )}
       </div>
     </>
   );

@@ -1,9 +1,6 @@
 import { useState } from "react";
-import { useSearchParams } from "react-router-dom";
-import {
-  getAllPlaceByCategoryId,
-  getAllPlaceByProvinceId,
-} from "../../../api/homeApi";
+import { useLocation, useSearchParams } from "react-router-dom";
+import { getAllPlaceByProvinceId } from "../../../api/homeApi";
 import { useError } from "../../../context/ErrorContext";
 import { useHome } from "../../../context/HomeContext";
 import { Location } from "../../../icons";
@@ -16,6 +13,7 @@ function SearchBar() {
   const [category, setCategory] = useState(search.get("category") || "");
   const { setPlace } = useHome();
   const { setError } = useError();
+  const location = useLocation();
 
   const fetchAllPlace = async () => {
     try {
@@ -53,7 +51,39 @@ function SearchBar() {
       }
     } catch (err) {
       setError(err.response.data.message);
-      console.log(err);
+    }
+  };
+
+  const handleSearchBlog = () => {
+    let searchBlog;
+    if (category && destination) {
+      if (category) {
+        searchBlog = {
+          category,
+          province: destination,
+        };
+      } else {
+        searchBlog = undefined;
+      }
+      setSearch(searchBlog, { replace: true });
+    } else if (destination !== "") {
+      if (destination) {
+        searchBlog = {
+          province: destination,
+        };
+      } else {
+        searchBlog = undefined;
+      }
+      setSearch(searchBlog, { replace: true });
+    } else if (category !== "") {
+      if (category) {
+        searchBlog = {
+          category,
+        };
+      } else {
+        searchBlog = undefined;
+      }
+      setSearch(searchBlog, { replace: true });
     }
   };
 
@@ -82,7 +112,13 @@ function SearchBar() {
         </div>
 
         <div>
-          <button className="btn-search" type="button" onClick={fetchAllPlace}>
+          <button
+            className="btn-search"
+            type="button"
+            onClick={
+              location.pathname === "/" ? fetchAllPlace : handleSearchBlog
+            }
+          >
             Search
           </button>
         </div>

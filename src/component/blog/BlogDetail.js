@@ -21,6 +21,7 @@ function BlogDeatail({ blog, setBlog }) {
               mt={20}
               user={blog.User?.name}
               src={blog.User?.profile_pic}
+              id={blog.User?.id}
             />
           </div>
 

@@ -1,5 +1,5 @@
 import axios from "../../config/axios";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import BlogItem from "../blog/BlogItem";
 import SelectCategory from "../layout/header/SelectCategory";
@@ -12,6 +12,8 @@ function BlogList() {
   const [blogs, setBlog] = useState("");
   const [loading, setLoading] = useState(false);
   const { setError } = useError();
+  const [searchProvince, setSearchProvince] = useState("");
+  const [searchCategory, setSearchCategory] = useState("");
 
   useEffect(() => {
     const fetchBlog = async () => {
@@ -29,22 +31,41 @@ function BlogList() {
     fetchBlog();
   }, [userId]);
 
+  const filterdBlog =
+    searchCategory && searchProvince
+      ? blogs?.filter(
+          (item) =>
+            item?.Category.id === +searchCategory &&
+            item?.Province.id === +searchProvince
+        )
+      : searchCategory
+      ? blogs?.filter((item) => item?.Category.id === +searchCategory)
+      : searchProvince
+      ? blogs?.filter((item) => item?.Province.id === +searchProvince)
+      : blogs;
+
   if (loading) return <SpinnerGrow />;
   return (
     <div className="pt-5 wb-600">
       <div className="d-flex justify-content-start">
         <div className="mt-8 text-secondary me-3 search-destination">
-          <SelectDestination />
+          <SelectDestination
+            provinceId={searchProvince}
+            onChange={(e) => setSearchProvince(e.target.value)}
+          />
         </div>
 
         <div className="mt-8 text-secondary search-destination">
-          <SelectCategory />
+          <SelectCategory
+            categoryId={searchCategory}
+            onChange={(e) => setSearchCategory(e.target.value)}
+          />
         </div>
       </div>
 
       <div className="d-flex flex-column mt-5 me-5 w-100">
-        {blogs.length ? (
-          blogs.map((item, idx) => (
+        {filterdBlog.length ? (
+          filterdBlog.map((item, idx) => (
             <BlogItem
               key={idx}
               userId={userId}

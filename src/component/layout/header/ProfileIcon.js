@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import UserIcon from "../../../component/common/UserIcon";
 import { AuthContext } from "../../../context/AuthContext";
 
-function ProfileIcon({ src, size, mt, user }) {
+function ProfileIcon({ src, size, mt, user, id }) {
   const { user: users } = useContext(AuthContext);
   return (
     <Link
-      to={users ? `/profile/${1}` : "/login"}
+      to={users ? `/profile/${id}` : "/login"}
       className="text-dark text-decoration-none"
     >
       <div className="d-flex">

@@ -5,7 +5,7 @@ import { useHome } from "../context/HomeContext";
 
 function Home() {
   const navigate = useNavigate();
-  const { places, setPlace } = useHome();
+  const { places } = useHome();
   const [search, setSearch] = useSearchParams();
   const restaurant = places?.["Restaurant & Cafe"]?.slice(0, 4);
   const streetFood = places?.["Street Food"]?.slice(0, 4);

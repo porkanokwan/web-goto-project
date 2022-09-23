@@ -75,7 +75,12 @@ function BlogItem({
               </div>
 
               <span className="like fs-2">
-                <LikeButton blog={blog} setBlog={setBlog} id={user.id} />
+                <LikeButton
+                  blog={blog}
+                  setBlog={setBlog}
+                  id={user.id}
+                  userId={user.id === userId ? userId : ""}
+                />
               </span>
             </div>
           </div>
