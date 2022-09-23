@@ -9,6 +9,7 @@ export default function HomeContextProvider({ children }) {
   const [category, setCategory] = useState(null);
   const [province, setProvince] = useState(null);
   const [places, setPlace] = useState(null);
+  const [open, setOpen] = useState(false);
   const { setError } = useError();
 
   useEffect(() => {
@@ -21,7 +22,7 @@ export default function HomeContextProvider({ children }) {
       }
     };
     fetchPlace();
-  }, []);
+  }, [open]);
 
   useEffect(() => {
     const fetchCategory = async () => {
@@ -48,7 +49,9 @@ export default function HomeContextProvider({ children }) {
   }, []);
   console.log(places);
   return (
-    <HomeContext.Provider value={{ category, province, places, setPlace }}>
+    <HomeContext.Provider
+      value={{ category, province, places, setPlace, setOpen }}
+    >
       {children}
     </HomeContext.Provider>
   );

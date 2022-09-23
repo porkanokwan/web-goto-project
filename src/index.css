@@ -219,7 +219,7 @@ html {
 .button-view {
   width: 200px;
   margin-left: 85vw;
-  margin-top: 3.5rem !important;
+  margin-top: 4rem !important;
   background-color: rgba(146, 187, 236, 0.3);
   border-style: none;
   color: rgba(20, 41, 235, 0.5);
@@ -430,7 +430,7 @@ html {
 }
 
 .p-pagination {
-  padding: 350px 0px 0px 450px;
+  padding: 400px 0px 0px 450px;
 }
 
 .mt-280 {
@@ -438,7 +438,7 @@ html {
 }
 
 .fs-48 {
-  font-size: 2.75vw;
+  font-size: 2vw;
 }
 
 .mb-25 {
@@ -450,7 +450,7 @@ html {
 }
 
 .ms-p {
-  margin-left: 300px;
+  margin-left: 350px;
 }
 
 .ms-250 {
@@ -462,7 +462,7 @@ html {
 }
 
 .ms-450 {
-  margin-left: 32.5vw;
+  margin-left: 37.5vw;
 }
 
 .me-15 {

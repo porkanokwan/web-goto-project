@@ -8,7 +8,7 @@ import Dropdown from "./Dropdown";
 
 function Header() {
   const location = useLocation();
-  const { user } = useContext(AuthContext);
+  const { user, setOpen } = useContext(AuthContext);
   const [offcanvas, setOffCanvas] = useState(null);
 
   const handleClick = () => offcanvas.show();
@@ -18,7 +18,7 @@ function Header() {
       <div className="header header-container">
         <nav className="navbar navbar-light w-vw">
           <div className="d-flex flex-grow-1 justify-content-between">
-            <Link to="/">
+            <Link to="/" onClick={() => setOpen(true)}>
               <img className="logo" src={Logo} alt="Logo" />
             </Link>
 
@@ -41,6 +41,7 @@ function Header() {
                     location.pathname === "/" ? "active" : ""
                   }`}
                   to="/"
+                  onClick={() => setOpen(true)}
                 >
                   Home
                 </Link>
