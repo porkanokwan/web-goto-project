@@ -58,7 +58,7 @@ function BlogItem({
             </Link>
             <p>
               <Link
-                to={`/profile/${blog?.User.id}`}
+                to={user ? `/profile/${blog?.User.id}` : "/login"}
                 className="color-subtitle text-decoration-none fs-5"
               >
                 {blog?.User.name}
@@ -78,8 +78,7 @@ function BlogItem({
                 <LikeButton
                   blog={blog}
                   setBlog={setBlog}
-                  id={user.id}
-                  userId={user.id === userId ? userId : ""}
+                  id={user.id === userId ? userId : user.id}
                 />
               </span>
             </div>

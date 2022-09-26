@@ -301,7 +301,7 @@ function PlaceForm({ title, place, arrPic, setEditPlace }) {
                     id="wifi"
                     name="accessory"
                     value={true}
-                    checked={placeForm.wifi + "" == "true"}
+                    checked={placeForm.wifi + "" === "true"}
                     onChange={(e) =>
                       setPlaceForm((prev) => ({
                         ...prev,
@@ -319,7 +319,7 @@ function PlaceForm({ title, place, arrPic, setEditPlace }) {
                     id="non-wifi"
                     name="accessory"
                     value={false}
-                    checked={placeForm.wifi + "" == "false"}
+                    checked={placeForm.wifi + "" === "false"}
                     onChange={(e) =>
                       setPlaceForm((prev) => ({
                         ...prev,
@@ -343,7 +343,7 @@ function PlaceForm({ title, place, arrPic, setEditPlace }) {
                     id="parking"
                     name="park"
                     value={true}
-                    checked={placeForm.parking + "" == "true"}
+                    checked={placeForm.parking + "" === "true"}
                     onChange={(e) =>
                       setPlaceForm((prev) => ({
                         ...prev,
@@ -361,7 +361,7 @@ function PlaceForm({ title, place, arrPic, setEditPlace }) {
                     id="non-parking"
                     name="park"
                     value={false}
-                    checked={placeForm.parking + "" == "false"}
+                    checked={placeForm.parking + "" === "false"}
                     onChange={(e) =>
                       setPlaceForm((prev) => ({
                         ...prev,
@@ -387,7 +387,7 @@ function PlaceForm({ title, place, arrPic, setEditPlace }) {
                     id="reserve"
                     name="reserve"
                     value={true}
-                    checked={placeForm.reserve + "" == "true"}
+                    checked={placeForm.reserve + "" === "true"}
                     onChange={(e) =>
                       setPlaceForm((prev) => ({
                         ...prev,
@@ -405,7 +405,7 @@ function PlaceForm({ title, place, arrPic, setEditPlace }) {
                     id="non-reserve"
                     name="reserve"
                     value={false}
-                    checked={placeForm.reserve + "" == "false"}
+                    checked={placeForm.reserve + "" === "false"}
                     onChange={(e) =>
                       setPlaceForm((prev) => ({
                         ...prev,

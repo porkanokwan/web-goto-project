@@ -72,13 +72,10 @@ function Router() {
             <Route path="place/:placeId" element={<Place />} />
           </Route>
 
-          <Route path="*" element={<HeaderFooterPage />}>
-            <Route path="*" element={<NotFoundPage />} />
-          </Route>
+          <Route path="*" element={<Login />} />
         </>
       )}
     </Routes>
   );
 }
-
 export default Router;

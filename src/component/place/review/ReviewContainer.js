@@ -1,10 +1,13 @@
 import ReviewItem from "./ReviewItem";
 import ReviewForm from "./form/ReviewForm";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../../context/AuthContext";
 
 function ReviewContainer({ reviews, placeId }) {
   const [openReview, setOpenReview] = useState(false);
-  console.log(reviews);
+  const [openWaring, setOpenWarning] = useState(false);
+  const { user } = useContext(AuthContext);
+
   return (
     <div className="bg-lightgrey">
       <div className="d-flex justify-content-between">
@@ -13,12 +16,22 @@ function ReviewContainer({ reviews, placeId }) {
           <button
             type="button"
             className="btn btn-warning text-white"
-            onClick={() => setOpenReview(true)}
+            onClick={() => {
+              user ? setOpenReview(true) : setOpenWarning(true);
+            }}
           >
             เขียนรีวิว
           </button>
         </div>
       </div>
+      {openWaring && (
+        <div
+          class="alert alert-warning mt-2 mx-5 fs-4 text-center"
+          role="alert"
+        >
+          You have to login first!!!
+        </div>
+      )}
 
       <div className="mx-auto p-re">
         {reviews.map((item, idx) => (

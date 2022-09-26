@@ -1,10 +1,7 @@
-import { useContext } from "react";
 import { Link, Outlet, useLocation, useParams } from "react-router-dom";
-import { AuthContext } from "../../../context/AuthContext";
 
 function SideBar() {
   const location = useLocation();
-  const { user } = useContext(AuthContext);
   const { userId } = useParams();
 
   return (

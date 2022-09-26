@@ -182,7 +182,9 @@ function PlaceContent({ setEditPlace, place }) {
           <div
             role="button"
             className="mt-3 bg-lightgrey rounded text-center"
-            onClick={() => setEditPlace(true)}
+            onClick={() => {
+              user ? setEditPlace(true) : navigate("/login");
+            }}
           >
             <i className="fa-solid fa-pencil" />
             แก้ไขข้อมูล
