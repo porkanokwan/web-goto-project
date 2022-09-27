@@ -95,7 +95,7 @@ function SearchBar() {
           <label className="des-x fs-s pe-3 mt-1">Destinations</label>
           <div className="search-destination mt-8 d-flex">
             <SelectDestination
-              provinceId={destination || search.get("province")}
+              provinceId={destination}
               onChange={(e) => setDestination(e.target.value)}
             />
           </div>
