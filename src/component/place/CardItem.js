@@ -23,7 +23,7 @@ function CardItem({ place }) {
           </span>
 
           <div className="d-flex pb-3 reviews">
-            <StarRating star={place?.star} />
+            <StarRating star={place?.star} disable={true} />
           </div>
         </div>
       </div>
