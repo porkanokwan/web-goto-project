@@ -14,7 +14,6 @@ function StarRating({ setReview, star, size, disable = false, mt }) {
             <label className={`${size || ""}`}>
               <input
                 className="d-none"
-                key={index}
                 type="radio"
                 name="rating"
                 value={rating || ratingValue}
