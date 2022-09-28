@@ -1,12 +1,9 @@
-import { useContext, useState } from "react";
-import { AuthContext } from "../../context/AuthContext";
+import { useState } from "react";
 import UserCard from "../common/UserCard";
 import ProfileForm from "./ProfileForm";
 
-function ProfileDetail({ user, setUserProfile }) {
+function ProfileDetail({ user, setUserProfile, authUser }) {
   const [editProfile, setEditProfile] = useState(false);
-  const { user: users } = useContext(AuthContext);
-
   return (
     <>
       {editProfile ? (
@@ -21,7 +18,7 @@ function ProfileDetail({ user, setUserProfile }) {
         <>
           <div className="d-flex flex-column w-25 text-center p-left">
             <UserCard src={user.profilePic} size="pic-size" />
-            {user.id === users.id && (
+            {user.id === authUser.id && (
               <div
                 className="w-100 ms-ep-5"
                 role="button"
@@ -43,13 +40,19 @@ function ProfileDetail({ user, setUserProfile }) {
 
             <div className="d-flex">
               <h4 className="fw-bold">อีเมล:</h4>
-              <p className="ms-3 fs-5">{user.email}</p>
+              <p className="ms-3 fs-5">
+                {user.email === null || user.email === "" ? "-" : user.email}
+              </p>
             </div>
             <hr className="w-100 mt-0" />
 
             <div className="d-flex">
               <h4 className="fw-bold">เบอร์โทรศัพท์:</h4>
-              <p className="ms-3 fs-5">{user.phoneNumber || "-"}</p>
+              <p className="ms-3 fs-5">
+                {user.phoneNumber === "null" || user.phoneNumber === ""
+                  ? "-"
+                  : user.phoneNumber}
+              </p>
             </div>
             <hr className="w-100 mt-0" />
 

@@ -34,7 +34,11 @@ function ProfileContainer() {
   return (
     <>
       <div className="d-flex flex-wrap p-5">
-        <ProfileDetail user={userProfile} setUserProfile={setUserProfile} />
+        <ProfileDetail
+          user={userProfile}
+          setUserProfile={setUserProfile}
+          authUser={user}
+        />
       </div>
 
       {userProfile.id === user.id && (

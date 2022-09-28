@@ -4,8 +4,15 @@ import { useError } from "../../context/ErrorContext";
 import SpinnerGrow from "../common/SpinnerGrow";
 import UserCard from "../common/UserCard";
 
-function ProfileForm({ onClose, user, setUserProfile }) {
+function ProfileForm({ onClose, setUserProfile, user }) {
   const [loading, setLoading] = useState(false);
+  const [editForm, setEditForm] = useState({
+    name: user.name,
+    email: user.email || "",
+    phoneNumber: user.phoneNumber || "",
+    aboutMe: user.aboutMe,
+    profilePic: user.profilePic,
+  });
   const inputEl = useRef();
   const { setError } = useError();
 
@@ -13,13 +20,12 @@ function ProfileForm({ onClose, user, setUserProfile }) {
     try {
       setLoading(true);
       const formData = new FormData();
-      formData.append("profile_pic", user.profilePic);
-      formData.append("name", user.name);
-      formData.append("email", user.email);
-      formData.append("phoneNumber", user.phoneNumber);
-      formData.append("aboutMe", user.aboutMe);
+      formData.append("profile_pic", editForm.profilePic);
+      formData.append("name", editForm.name);
+      formData.append("email", editForm.email);
+      formData.append("phoneNumber", editForm.phoneNumber);
+      formData.append("aboutMe", editForm.aboutMe);
       const res = await axios.patch("/profile", formData);
-      console.log(res.data);
       setUserProfile(res.data.user);
       onClose();
     } catch (err) {
@@ -33,13 +39,13 @@ function ProfileForm({ onClose, user, setUserProfile }) {
   return (
     <form onSubmit={handleSubmitProfileForm} encType="multipart/form-data">
       <div className="d-flex flex-column w-25 text-center ms-275 mb-3">
-        {user.profilePic ? (
+        {editForm.profilePic ? (
           <>
             <UserCard
               src={
-                typeof user.profilePic === "string"
-                  ? user.profilePic
-                  : URL.createObjectURL(user.profilePic)
+                typeof editForm.profilePic === "string"
+                  ? editForm.profilePic
+                  : URL.createObjectURL(editForm.profilePic)
               }
               size="pic-size"
             />
@@ -60,7 +66,7 @@ function ProfileForm({ onClose, user, setUserProfile }) {
                 ref={inputEl}
                 onChange={(e) => {
                   if (e.target.files[0]) {
-                    setUserProfile((prev) => ({
+                    setEditForm((prev) => ({
                       ...prev,
                       profilePic: e.target.files[0],
                     }));
@@ -71,7 +77,7 @@ function ProfileForm({ onClose, user, setUserProfile }) {
           </>
         ) : (
           <>
-            <UserCard src={user.profilePic} size="pic-size" />
+            <UserCard src={editForm.profilePic} size="pic-size" />
             <div
               className="w-100 ms-ep-5"
               role="button"
@@ -86,7 +92,7 @@ function ProfileForm({ onClose, user, setUserProfile }) {
                 ref={inputEl}
                 onChange={(e) => {
                   if (e.target.files[0]) {
-                    setUserProfile((prev) => ({
+                    setEditForm((prev) => ({
                       ...prev,
                       profilePic: e.target.files[0],
                     }));
@@ -103,9 +109,9 @@ function ProfileForm({ onClose, user, setUserProfile }) {
         <input
           type="text"
           className="ms-3 fs-5 border border-none w-350"
-          value={user.name}
+          value={editForm.name}
           onChange={(e) =>
-            setUserProfile((prev) => ({ ...prev, name: e.target.value }))
+            setEditForm((prev) => ({ ...prev, name: e.target.value }))
           }
         />
       </div>
@@ -115,9 +121,9 @@ function ProfileForm({ onClose, user, setUserProfile }) {
         <input
           type="text"
           className="ms-3 fs-5 border border-none w-350"
-          value={user.email}
+          value={editForm.email}
           onChange={(e) =>
-            setUserProfile((prev) => ({ ...prev, email: e.target.value }))
+            setEditForm((prev) => ({ ...prev, email: e.target.value }))
           }
         />
       </div>
@@ -127,9 +133,9 @@ function ProfileForm({ onClose, user, setUserProfile }) {
         <input
           type="text"
           className="ms-3 fs-5 border border-none w-350"
-          value={user.phoneNumber}
+          value={editForm.phoneNumber}
           onChange={(e) =>
-            setUserProfile((prev) => ({
+            setEditForm((prev) => ({
               ...prev,
               phoneNumber: e.target.value,
             }))
@@ -143,9 +149,9 @@ function ProfileForm({ onClose, user, setUserProfile }) {
       <hr className="w-100 mt-0" />
       <textarea
         className="area-about ms-3 fs-5"
-        value={user.aboutMe}
+        value={editForm.aboutMe === "null" ? "" : editForm.aboutMe}
         onChange={(e) =>
-          setUserProfile((prev) => ({ ...prev, aboutMe: e.target.value }))
+          setEditForm((prev) => ({ ...prev, aboutMe: e.target.value }))
         }
       />
       <div className="mt-3 d-flex justify-content-end">
