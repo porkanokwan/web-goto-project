@@ -19,9 +19,12 @@ function BlogForm() {
     content: "",
     coverPic: "",
   });
-  const [places, setPlaces] = useState({
-    0: { name: "", content: "", picture: "" },
-  });
+  const [places, setPlaces] = useState([
+    { name: "", content: "", picture: "" },
+  ]);
+  // const [places, setPlaces] = useState({
+  //   0: { name: "", content: "", picture: "" },
+  // });
   const [loading, setLoading] = useState(false);
   const { setError } = useError();
   const navigate = useNavigate();
@@ -35,13 +38,22 @@ function BlogForm() {
 
   const handleClickAdd = () => {
     setNumber((prev) => [...prev, number.length * 1 + 1]);
-    setPlaces((prev) => ({
+    // setPlaces((prev) => ({
+    //   ...prev,
+    //   [number.length]: {
+    //     name: "",
+    //     content: "",
+    //     picture: "",
+    //   },
+    // }));
+    setPlaces((prev) => [
       ...prev,
-      [number.length]: {
+      {
         name: "",
         content: "",
+        picture: "",
       },
-    }));
+    ]);
   };
 
   const handleSubmitBlogForm = async () => {

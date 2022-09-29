@@ -3,26 +3,24 @@ import { Image } from "../../../icons";
 
 function PlaceInBlogForm({ places, setPlaces, count = "" }) {
   const inputEl = useRef();
-  let clone1 = { ...places };
 
   const handleClick = () => {
-    setPlaces({});
-    delete clone1[count];
-    setPlaces(clone1);
+    const newPlaces = [...places];
+    newPlaces.splice(count, 1);
+    setPlaces(newPlaces);
   };
 
   const handleChangeName = (e) => {
-    setPlaces((prev) => ({
-      ...prev,
-      [count]: { ...prev[count], name: e.target.value },
-    }));
+    const newPlaces = [...places];
+    newPlaces[count].name = e.target.value;
+    setPlaces(newPlaces);
   };
 
-  const handleChangeContent = (e) =>
-    setPlaces((prev) => ({
-      ...prev,
-      [count]: { ...prev[count], content: e.target.value },
-    }));
+  const handleChangeContent = (e) => {
+    const newPlaces = [...places];
+    newPlaces[count].content = e.target.value;
+    setPlaces(newPlaces);
+  };
 
   return (
     <div className="border border-dark rounded-2 d-flex flex-column mb-3 p-3">
@@ -55,10 +53,9 @@ function PlaceInBlogForm({ places, setPlaces, count = "" }) {
               onClick={() => {
                 if (places[count]?.picture) {
                   inputEl.current.value = "";
-                  setPlaces((prev) => ({
-                    ...prev,
-                    [count]: { ...prev[count], picture: "" },
-                  }));
+                  const newPlaces = [...places];
+                  newPlaces[count].picture = "";
+                  setPlaces(newPlaces);
                 }
               }}
             >
@@ -96,10 +93,9 @@ function PlaceInBlogForm({ places, setPlaces, count = "" }) {
                 ref={inputEl}
                 onChange={(e) => {
                   if (e.target.files[0]) {
-                    setPlaces((prev) => ({
-                      ...prev,
-                      [count]: { ...prev[count], picture: e.target.files[0] },
-                    }));
+                    const newPlaces = [...places];
+                    newPlaces[count].picture = e.target.files[0];
+                    setPlaces(newPlaces);
                   }
                 }}
               />
