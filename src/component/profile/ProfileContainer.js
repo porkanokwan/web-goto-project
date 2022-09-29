@@ -1,11 +1,12 @@
 import axios from "../../config/axios";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { useError } from "../../context/ErrorContext";
 import ChangePasswordForm from "./ChangePasswordForm";
 import ProfileDetail from "./ProfileDetail";
 import SpinnerGrow from "../common/SpinnerGrow";
 import { AuthContext } from "../../context/AuthContext";
+import { deleteToken } from "../../service/localStorage";
 
 function ProfileContainer() {
   const { userId } = useParams();
@@ -14,6 +15,7 @@ function ProfileContainer() {
   const [loading, setLoading] = useState(true);
   const { setError } = useError();
   const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchProfile = async () => {
@@ -60,7 +62,13 @@ function ProfileContainer() {
 
           {chagePasswordOpen && (
             <div className="w-form-change">
-              <ChangePasswordForm onClick={() => setChagePasswordOpen(false)} />
+              <ChangePasswordForm
+                onClick={() => {
+                  setChagePasswordOpen(false);
+                  deleteToken();
+                  navigate("/login");
+                }}
+              />
             </div>
           )}
         </>
