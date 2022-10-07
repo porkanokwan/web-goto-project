@@ -24,7 +24,7 @@ function PlaceContainer() {
     };
 
     fetch();
-  }, [placeId]);
+  }, [placeId, place.reviews]);
 
   const arrPic = place?.place?.PlacePics?.map((el) => el.picture);
   if (editPlace)

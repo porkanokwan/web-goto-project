@@ -276,7 +276,7 @@ function BlogForm() {
 
                 <label className="fs-5">รายละเอียด*</label>
                 {errorBlog.errContent && (
-                  <small className="invalid-feedback">
+                  <small className="invalid-feedback d-block">
                     {errorBlog.errContent}
                   </small>
                 )}

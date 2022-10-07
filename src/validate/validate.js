@@ -306,7 +306,7 @@ export function validatePlaceForm(
     }));
   }
 
-  if (wifi === undefined) {
+  if (wifi === undefined || wifi === "") {
     setErrorPlace((prev) => ({
       ...prev,
       errWifi: "Wifi is required",
@@ -323,7 +323,7 @@ export function validatePlaceForm(
     }));
   }
 
-  if (parking === undefined) {
+  if (parking === undefined || parking === "") {
     setErrorPlace((prev) => ({
       ...prev,
       errParking: "Parking is required",
@@ -340,7 +340,7 @@ export function validatePlaceForm(
     }));
   }
 
-  if (reserve === undefined) {
+  if (reserve === undefined || reserve === "") {
     setErrorPlace((prev) => ({
       ...prev,
       errReserve: "Reserve is required",

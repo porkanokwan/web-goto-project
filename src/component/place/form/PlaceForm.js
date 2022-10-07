@@ -25,9 +25,9 @@ function PlaceForm({ title, place, arrPic, setEditPlace }) {
     website: place?.website || "",
     day: place?.day || "",
     openClose: place?.openClose || "",
-    wifi: place?.wifi,
-    parking: place?.parking,
-    reserve: place?.reserve,
+    wifi: place?.wifi || "",
+    parking: place?.parking || "",
+    reserve: place?.reserve || "",
     condition: place?.condition || "",
     other: place?.other || "",
   });
@@ -105,10 +105,20 @@ function PlaceForm({ title, place, arrPic, setEditPlace }) {
               categoryId={placeForm.categoryId}
             />
           </div>
+          {errorPlace.errCategory && (
+            <small className="invalid-feedback d-block ms-5">
+              {errorPlace.errCategory}
+            </small>
+          )}
 
           <div className="d-flex flex-column mx-5 my-4">
             <div className="d-flex flex-column">
               <label className="fs-5">ชื่อร้าน*</label>
+              {errorPlace.errName && (
+                <small className="invalid-feedback d-block">
+                  {errorPlace.errName}
+                </small>
+              )}
               <input
                 type="text"
                 className={`rounded-2 input-size my-3 ${
@@ -120,9 +130,7 @@ function PlaceForm({ title, place, arrPic, setEditPlace }) {
                   setPlaceForm((prev) => ({ ...prev, name: e.target.value }))
                 }
               />
-              {errorPlace.errName && (
-                <small className="invalid-feedback">{errorPlace.errName}</small>
-              )}
+
               {placeForm.categoryId == "1" ? (
                 <>
                   <h5>อัตราค่าบริการ</h5>
@@ -190,6 +198,11 @@ function PlaceForm({ title, place, arrPic, setEditPlace }) {
               />
 
               <label className="fs-5">ที่อยู่*</label>
+              {errorPlace.errAddress && (
+                <small className="invalid-feedback d-block">
+                  {errorPlace.errAddress}
+                </small>
+              )}
               <input
                 type="text"
                 className={`rounded-2 input-size my-3 ${
@@ -201,12 +214,13 @@ function PlaceForm({ title, place, arrPic, setEditPlace }) {
                   setPlaceForm((prev) => ({ ...prev, address: e.target.value }))
                 }
               />
-              {errorPlace.errAddress && (
+
+              <label className="fs-5">จังหวัด*</label>
+              {errorPlace.errProvince && (
                 <small className="invalid-feedback">
-                  {errorPlace.errAddress}
+                  {errorPlace.errProvince}
                 </small>
               )}
-              <label className="fs-5">จังหวัด*</label>
               <SelectDestination
                 size="my-2"
                 provinceId={placeForm.provinceId}
@@ -218,11 +232,6 @@ function PlaceForm({ title, place, arrPic, setEditPlace }) {
                   }))
                 }
               />
-              {errorPlace.errProvince && (
-                <small className="invalid-feedback">
-                  {errorPlace.errProvince}
-                </small>
-              )}
 
               <label className="fs-5">เส้นทางแนะนำ</label>
               <input
