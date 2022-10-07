@@ -3,8 +3,9 @@ import { useDispatch } from "react-redux";
 import { useError } from "../../../context/ErrorContext";
 import { Image } from "../../../icons";
 import { addMenu, updateMenu } from "../../../store/menu";
+import { validateMenuForm } from "../../../validate/validate";
 
-function MenuForm({ menu, placeId, onClose }) {
+function MenuForm({ menu, placeId, onClose, errMenu, setErrMenu }) {
   const [title, setTitle] = useState(menu?.title || "");
   const [menuPic, setMenuPic] = useState(menu?.menuPic || null);
   const inputEl = useRef();
@@ -16,12 +17,14 @@ function MenuForm({ menu, placeId, onClose }) {
       if (menu) {
         dispatch(updateMenu(menu.id, placeId, title, menuPic));
       } else {
+        validateMenuForm(title, menuPic, setErrMenu);
         dispatch(addMenu(placeId, title, menuPic));
         setTitle("");
         setMenuPic("");
       }
-      onClose();
+      if (title && menuPic) onClose();
     } catch (err) {
+      console.log(err);
       setError(err.response.data.message);
     }
   };
@@ -59,31 +62,36 @@ function MenuForm({ menu, placeId, onClose }) {
           />
         </div>
       ) : (
-        <div
-          className="w-100 bg-secondary opacity-25 h-180"
-          role="button"
-          onClick={() => inputEl.current.click()}
-        >
+        <>
           <div
-            className="d-flex mb-3"
-            style={{ paddingTop: "125px", paddingLeft: "125px" }}
+            className="w-100 bg-secondary opacity-25 h-180"
+            role="button"
+            onClick={() => inputEl.current.click()}
           >
-            <Image color="primary fs-1 opacity-100" />
-            <div className="fs-2 text-dark">
-              Add Photo
-              <input
-                className="d-none"
-                type="file"
-                ref={inputEl}
-                onChange={(e) => {
-                  if (e.target.files[0]) {
-                    setMenuPic(e.target.files[0]);
-                  }
-                }}
-              />
+            <div
+              className="d-flex mb-3"
+              style={{ paddingTop: "125px", paddingLeft: "125px" }}
+            >
+              <Image color="primary fs-1 opacity-100" />
+              <div className="fs-2 text-dark">
+                Add Photo
+                <input
+                  className="d-none"
+                  type="file"
+                  ref={inputEl}
+                  onChange={(e) => {
+                    if (e.target.files[0]) {
+                      setMenuPic(e.target.files[0]);
+                    }
+                  }}
+                />
+              </div>
             </div>
           </div>
-        </div>
+          {errMenu?.errPic && (
+            <small className="invalid-feedback d-block">{errMenu.errPic}</small>
+          )}
+        </>
       )}
 
       <h5 className="mt-3">คำบรรยายภาพ</h5>
@@ -93,6 +101,9 @@ function MenuForm({ menu, placeId, onClose }) {
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
+      {errMenu?.errTitle && (
+        <small className="invalid-feedback d-block">{errMenu.errTitle}</small>
+      )}
 
       <button
         type="button"

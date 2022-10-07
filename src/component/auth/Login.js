@@ -4,12 +4,17 @@ import { AuthContext } from "../../context/AuthContext";
 import { useError } from "../../context/ErrorContext";
 import Logo from "../../img/Logo.jpg";
 import { deleteToken } from "../../service/localStorage";
+import { validateLogin } from "../../validate/validate";
 import SignUp from "./SignUp";
 
 function Login() {
   const [loginOpen, setLoginOpen] = useState(true);
   const [emailorPhone, setEmailorPhone] = useState("");
   const [password, setPassword] = useState("");
+  const [errLogin, setErrLogin] = useState({
+    errEmailOrPhone: "",
+    errPassword: "",
+  });
   const { login } = useContext(AuthContext);
   const { setError } = useError();
   const navigate = useNavigate();
@@ -17,6 +22,7 @@ function Login() {
   const handleSumbitLogin = async (e) => {
     try {
       e.preventDefault();
+      validateLogin(emailorPhone, password, setErrLogin);
       await login({ emailorPhone, password });
       navigate("/");
     } catch (err) {

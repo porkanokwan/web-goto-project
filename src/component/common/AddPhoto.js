@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { Image } from "../../icons";
 
-function AddPhoto({ number, picture, setPic, setNumber }) {
+function AddPhoto({ number, picture, setPic, setNumber, errorForm }) {
   const inputEl = useRef();
   let i;
   return (
@@ -83,7 +83,9 @@ function AddPhoto({ number, picture, setPic, setNumber }) {
           )}
         </div>
       ))}
-
+      {errorForm.errPic && (
+        <small className="invalid-feedback">{errorForm.errPic}</small>
+      )}
       <div className="d-flex flex-grow-1 justify-content-end">
         <button
           type="button"

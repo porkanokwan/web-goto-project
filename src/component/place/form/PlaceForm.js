@@ -41,6 +41,7 @@ function PlaceForm({ title, place, arrPic, setEditPlace }) {
     errParking: "",
     errReserve: "",
     errAddress: "",
+    errPic: "",
   });
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -69,6 +70,7 @@ function PlaceForm({ title, place, arrPic, setEditPlace }) {
           placeForm.parking,
           placeForm.reserve,
           placeForm.address,
+          placePic,
           setErrorPlace
         );
         const res = await createPlace(placeForm, placePic);
@@ -427,6 +429,7 @@ function PlaceForm({ title, place, arrPic, setEditPlace }) {
                 setNumber={setNumber}
                 picture={placePic}
                 setPic={setPlacePic}
+                errorForm={errorPlace}
               />
 
               <label className="fs-5">ข้อมูลเพิ่มเติม</label>

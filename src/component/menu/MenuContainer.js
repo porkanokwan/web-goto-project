@@ -10,6 +10,10 @@ import { getAllMenu } from "../../store/menu";
 function MenuContainer() {
   const { placeId } = useParams();
   const [open, setOpen] = useState(false);
+  const [errMenu, setErrMenu] = useState({
+    errTitle: "",
+    errPic: "",
+  });
   const { setError } = useError();
   const dispatch = useDispatch();
   const menu = useSelector((state) => state.menu.menus);
@@ -26,7 +30,10 @@ function MenuContainer() {
     fetchMenu();
   }, [placeId]);
 
-  const onClose = () => setOpen(false);
+  const onClose = () => {
+    setErrMenu({ errTitle: "", errPic: "" });
+    setOpen(false);
+  };
 
   return (
     <div className="overflow-s">
@@ -55,7 +62,12 @@ function MenuContainer() {
       </div>
 
       <Modal title="เพิ่มเมนู" open={open} onClose={onClose}>
-        <MenuForm placeId={placeId} onClose={onClose} />
+        <MenuForm
+          placeId={placeId}
+          onClose={onClose}
+          errMenu={errMenu}
+          setErrMenu={setErrMenu}
+        />
       </Modal>
     </div>
   );

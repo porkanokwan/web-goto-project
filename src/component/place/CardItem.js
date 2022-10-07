@@ -17,10 +17,13 @@ function CardItem({ place }) {
       />
       <div className="card-box">
         <div className="mb-15">
-          <Location opacity={100} />
-          <span className="name-location ps-1">
-            {place?.name} {place?.Province?.name}
-          </span>
+          <div className="d-flex">
+            <Location opacity={100} />
+            <div className="name-location ps-1">
+              <div className="cut-word">{place?.name}</div>{" "}
+              {place?.Province?.name}
+            </div>
+          </div>
 
           <div className="d-flex pb-3 reviews">
             <StarRating star={place?.star} disable={true} />

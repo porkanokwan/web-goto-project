@@ -8,6 +8,7 @@ import { useError } from "../../../context/ErrorContext";
 import SpinnerGrow from "../../common/SpinnerGrow";
 import { createNewBlog, getBlogById, updatedBlog } from "../../../api/blogApi";
 import ChooseCategory from "../../common/ChooseCategory";
+import { validateBlogForm } from "../../../validate/validate";
 
 function BlogForm() {
   const [number, setNumber] = useState([1]);
@@ -22,10 +23,18 @@ function BlogForm() {
   const [places, setPlaces] = useState([
     { name: "", content: "", picture: "" },
   ]);
-  // const [places, setPlaces] = useState({
-  //   0: { name: "", content: "", picture: "" },
-  // });
   const [loading, setLoading] = useState(false);
+  const [errorBlog, setErrorBlog] = useState({
+    errCategory: "",
+    errProvince: "",
+    errTitle: "",
+    errContent: "",
+    errcoverPic: "",
+    errPlaceLength: "",
+    errName: "",
+    errContent: "",
+    errPic: "",
+  });
   const { setError } = useError();
   const navigate = useNavigate();
 
@@ -38,14 +47,6 @@ function BlogForm() {
 
   const handleClickAdd = () => {
     setNumber((prev) => [...prev, number.length * 1 + 1]);
-    // setPlaces((prev) => ({
-    //   ...prev,
-    //   [number.length]: {
-    //     name: "",
-    //     content: "",
-    //     picture: "",
-    //   },
-    // }));
     setPlaces((prev) => [
       ...prev,
       {
@@ -64,6 +65,15 @@ function BlogForm() {
         await updatedBlog(blogId, form, titleShow, place);
         navigate(`/blog/${blogId}`);
       } else {
+        validateBlogForm(
+          form.categoryId,
+          form.provinceId,
+          form.content,
+          form.coverPic,
+          form.title,
+          setErrorBlog,
+          places.length
+        );
         await createNewBlog(form, titleShow, place);
         navigate("/blog");
       }
@@ -204,6 +214,11 @@ function BlogForm() {
         )}
 
         <div className="bg-white w-mt">
+          {errorBlog.errcoverPic && (
+            <small className="invalid-feedback d-block text-center">
+              {errorBlog.errcoverPic}
+            </small>
+          )}
           <div className="bg-white w-100 mx-auto">
             <div className="d-flex w-100 justify-content-around pt-5 fs-vw ps-35">
               <ChooseCategory
@@ -211,6 +226,11 @@ function BlogForm() {
                 categoryId={form.categoryId}
               />
             </div>
+            {errorBlog.errCategory && (
+              <small className="invalid-feedback d-block ms-5">
+                {errorBlog.errCategory}
+              </small>
+            )}
 
             <div className="d-flex flex-column mx-5">
               <div className="d-flex my-4">
@@ -227,10 +247,20 @@ function BlogForm() {
                     }))
                   }
                 />
+                {errorBlog.errProvince && (
+                  <small className="invalid-feedback d-block ms-5">
+                    {errorBlog.errProvince}
+                  </small>
+                )}
               </div>
 
               <div className="d-flex flex-column">
                 <label className="fs-5">หัวเรื่อง*</label>
+                {errorBlog.errTitle && (
+                  <small className="invalid-feedback">
+                    {errorBlog.errTitle}
+                  </small>
+                )}
                 <input
                   type="text"
                   className="rounded-2 input-size my-3"
@@ -245,6 +275,11 @@ function BlogForm() {
                 />
 
                 <label className="fs-5">รายละเอียด*</label>
+                {errorBlog.errContent && (
+                  <small className="invalid-feedback">
+                    {errorBlog.errContent}
+                  </small>
+                )}
                 <textarea
                   className="rounded-2 my-3"
                   rows={6}
@@ -258,6 +293,11 @@ function BlogForm() {
                   }
                 />
 
+                {errorBlog.errPlaceLength && (
+                  <small className="invalid-feedback d-block text-center fs-4 my-3">
+                    {errorBlog.errPlaceLength}
+                  </small>
+                )}
                 {Object.keys(places).map((el, idx) => (
                   <PlaceInBlogForm
                     key={idx}

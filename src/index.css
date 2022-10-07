@@ -166,8 +166,6 @@ html {
   border-radius: 15px;
   background-color: white;
   justify-self: center;
-  column-gap: 10px;
-  row-gap: 15px;
 }
 
 .card-container-menu {
@@ -183,7 +181,8 @@ html {
 .card-box {
   border-radius: 15px;
   background-color: white;
-  padding: 20px 0px 0px 30px;
+  padding: 10px 0px 0px 25px;
+  height: 120px;
 }
 
 .card-box-menu {
@@ -214,6 +213,7 @@ html {
 
 .mb-15 {
   margin-bottom: 5px;
+  line-height: 1.75;
 }
 
 .button-view {
@@ -825,6 +825,35 @@ html {
   padding-right: 2.5rem;
 }
 
+.score {
+  margin-top: 2px;
+}
+
+.name-location {
+  margin-top: 0.5rem;
+  margin-right: 1.2rem;
+}
+
+.cut-word {
+  width: 280px;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.reviews {
+  margin-left: 20px;
+}
+
+.card-category {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-rows: auto;
+  column-gap: 100px;
+  row-gap: 50px;
+  margin: 0px 50px;
+}
+
 @media (max-width: 2000px) {
   .menu-none {
     display: none !important;
@@ -1091,24 +1120,6 @@ html {
   .w-follow {
     font-size: 2.7vw;
   }
-  .card-container {
-    width: 30vw;
-    height: 300px;
-    border-radius: 15px;
-    background-color: white;
-    justify-self: center;
-    column-gap: 10px;
-    row-gap: 15px;
-  }
-  .card-img-top {
-    width: 30vw;
-    height: 260px;
-    border-top-left-radius: 15px !important;
-    border-top-right-radius: 15px !important;
-  }
-  .card-box {
-    padding: 5px 0px 0px 15px;
-  }
   .card-container-menu {
     width: 36vw;
     height: 300px;
@@ -1136,6 +1147,7 @@ html {
   }
   .button-view {
     margin-top: 9.75vw !important;
+    margin-left: 75vw;
   }
   .copy-right {
     font-size: 1.2vw !important;
@@ -1342,6 +1354,36 @@ html {
   .btn-group {
     left: 20%;
   }
+  .card-img-top {
+    width: 350px;
+    height: 350px;
+    border-top-left-radius: 15px !important;
+    border-top-right-radius: 0px !important;
+    border-bottom-left-radius: 15px !important;
+  }
+  .card-container {
+    width: 100vw;
+    height: 350px;
+    margin: 0px 30px 30px 0px;
+  }
+  .card-box {
+    display: inline-block;
+    position: absolute;
+    background-color: transparent;
+    padding: 20px 0px 0px 20px;
+    margin: 80px 10px;
+  }
+  .card-category {
+    display: block !important;
+    margin: 0px;
+  }
+  .button-view {
+    margin-left: 70vw;
+    margin-top: 1.75vw !important;
+  }
+  .name-location {
+    font-size: 2.75vw;
+  }
 }
 
 @media (max-width: 650px) {
@@ -1360,31 +1402,6 @@ html {
   }
   .btn-search {
     margin-bottom: 10px;
-  }
-  .card-img-top {
-    width: 350px;
-    height: 350px;
-    border-top-left-radius: 15px !important;
-    border-top-right-radius: 0px !important;
-    border-bottom-left-radius: 15px !important;
-  }
-  .card-container {
-    width: 100vw;
-    height: 350px;
-    margin: 0px 30px 30px 0px;
-  }
-  .card-category {
-    display: block !important;
-  }
-  .card-box {
-    display: inline-block;
-    position: absolute;
-    background-color: transparent;
-    padding: 20px 0px 0px 20px;
-    margin: 80px 10px;
-  }
-  .button-view {
-    margin-top: 1.75vw !important;
   }
   .name-location {
     font-size: 3.75vw;

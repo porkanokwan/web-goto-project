@@ -5,6 +5,7 @@ import { useError } from "../../../../context/ErrorContext";
 import { createdReview, updatedReview } from "../../../../store/place";
 import StarRating from "../../../common/StarRating";
 import AddPhoto from "../../../common/AddPhoto";
+import { validateReviewForm } from "../../../../validate/validate";
 
 function ReviewForm({ onClickCloseForm, onClickCloseEdit, reviews, arrPic }) {
   const { placeId } = useParams();
@@ -15,6 +16,11 @@ function ReviewForm({ onClickCloseForm, onClickCloseEdit, reviews, arrPic }) {
   });
   const [reviewPic, setReviewPic] = useState(arrPic || []);
   const [number, setNumber] = useState(arrPic || [1]);
+  const [errReview, setErrReview] = useState({
+    errTitle: "",
+    errContent: "",
+    errStar: "",
+  });
   const dispatch = useDispatch();
   const { setError } = useError();
 
@@ -24,8 +30,14 @@ function ReviewForm({ onClickCloseForm, onClickCloseEdit, reviews, arrPic }) {
         dispatch(updatedReview(reviews.id, placeId, review, reviewPic));
         onClickCloseEdit();
       } else {
+        validateReviewForm(
+          review.title,
+          review.content,
+          review.star,
+          setErrReview
+        );
         dispatch(createdReview(placeId, review, reviewPic));
-        onClickCloseForm();
+        review.title && review.content && review.star && onClickCloseForm();
       }
     } catch (err) {
       setError(err.response.data.message);
@@ -48,6 +60,11 @@ function ReviewForm({ onClickCloseForm, onClickCloseEdit, reviews, arrPic }) {
           <StarRating size="fs-3" star={review.star} setReview={setReview} />
         </div>
       </div>
+      {errReview.errStar && (
+        <small className="invalid-feedback ms-5 d-block">
+          {errReview.errStar}
+        </small>
+      )}
 
       <div className="pt-3 px-5 p-re">
         <label className="fs-4">หัวเรื่องรีวิว</label>
@@ -60,6 +77,11 @@ function ReviewForm({ onClickCloseForm, onClickCloseEdit, reviews, arrPic }) {
             setReview((prev) => ({ ...prev, title: e.target.value }))
           }
         />
+        {errReview.errTitle && (
+          <small className="invalid-feedback d-block">
+            {errReview.errTitle}
+          </small>
+        )}
 
         <label className="fs-4 pt-3">รายละเอียดรีวิว</label>
         <textarea
@@ -72,12 +94,18 @@ function ReviewForm({ onClickCloseForm, onClickCloseEdit, reviews, arrPic }) {
             setReview((prev) => ({ ...prev, content: e.target.value }))
           }
         ></textarea>
+        {errReview.errContent && (
+          <small className="invalid-feedback d-block">
+            {errReview.errContent}
+          </small>
+        )}
 
         <AddPhoto
           number={number}
           setNumber={setNumber}
           picture={reviewPic}
           setPic={setReviewPic}
+          errorForm=""
         />
       </div>
 

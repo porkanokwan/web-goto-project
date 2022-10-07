@@ -2,17 +2,20 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { useError } from "../../context/ErrorContext";
 import Logo from "../../img/Logo.jpg";
-import { deleteToken, getToken } from "../../service/localStorage";
+import { deleteToken } from "../../service/localStorage";
+import { validateForgot } from "../../validate/validate";
 
 function ForgotPassword() {
   const [email, setEmail] = useState("");
   const [sendEmail, setSendEmail] = useState(false);
+  const [errEmail, setErrEmail] = useState("");
   const { forgot } = useContext(AuthContext);
   const { setError } = useError();
 
   const handleSumbitForgot = async (e) => {
     try {
       e.preventDefault();
+      validateForgot(email, setErrEmail);
       await forgot(email);
       setSendEmail(true);
     } catch (err) {
@@ -48,6 +51,7 @@ function ForgotPassword() {
                 Send Email success, please check your email
               </div>
             )}
+            {errEmail && <small className="invalid-feedback">{errEmail}</small>}
           </div>
 
           <button className="btn-submit" type="submit">
