@@ -44,7 +44,7 @@ function PlaceInBlogForm({ places, setPlaces, count = "" }) {
         />
       </div>
 
-      {places[count].picture ? (
+      {places[count]?.picture ? (
         <>
           <div className="h-350 m-3 bg-secondary">
             <div

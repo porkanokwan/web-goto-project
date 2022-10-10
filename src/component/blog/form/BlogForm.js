@@ -11,7 +11,6 @@ import ChooseCategory from "../../common/ChooseCategory";
 import { validateBlogForm } from "../../../validate/validate";
 
 function BlogForm() {
-  const [number, setNumber] = useState([1]);
   const [titleShow, setTitleShow] = useState(false);
   const [form, setForm] = useState({
     categoryId: "",
@@ -46,7 +45,6 @@ function BlogForm() {
   };
 
   const handleClickAdd = () => {
-    setNumber((prev) => [...prev, number.length * 1 + 1]);
     setPlaces((prev) => [
       ...prev,
       {
@@ -98,12 +96,7 @@ function BlogForm() {
             coverPic: res.data.blog.coverPic,
           });
           setTitleShow(res.data.blog.titleShow);
-          setNumber([]);
-          res.data.blog.PlaceInBlogs.map((el, idx) => {
-            setPlaces((prev) => ({ ...prev, [idx]: el }));
-            setNumber((prev) => [...prev, idx]);
-            return;
-          });
+          setPlaces(res.data.blog.PlaceInBlogs);
         } catch (err) {
           setError(err.response.data.message);
         } finally {
@@ -298,10 +291,10 @@ function BlogForm() {
                     {errorBlog.errPlaceLength}
                   </small>
                 )}
-                {Object.keys(places).map((el, idx) => (
+                {places.map((el, idx) => (
                   <PlaceInBlogForm
                     key={idx}
-                    count={el}
+                    count={idx}
                     places={places}
                     setPlaces={setPlaces}
                   />
