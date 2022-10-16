@@ -166,6 +166,7 @@ html {
   border-radius: 15px;
   background-color: white;
   justify-self: center;
+  box-shadow: 5px 6px 8px #888888;
 }
 
 .card-container-menu {
