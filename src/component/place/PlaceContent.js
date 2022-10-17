@@ -32,7 +32,7 @@ function PlaceContent({ setEditPlace, place }) {
 
     fetchMap();
   }, [place?.address]);
-
+  console.log(place?.star);
   const handleDeletePlace = async () => {
     try {
       setLoading(true);

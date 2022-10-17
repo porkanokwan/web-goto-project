@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
 
 function StarRating({ setReview, star, size, disable = false, mt }) {
-  const [rating, setRating] = useState(star || null);
+  const [rating, setRating] = useState(+star || null);
   const [hover, setHover] = useState(null);
-
+  useEffect(() => setRating(+star), [star]);
   return (
     <div className="d-flex flex-wrap">
       {[1, 2, 3, 4, 5].map((star, index) => {
