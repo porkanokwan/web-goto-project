@@ -70,16 +70,12 @@ function BlogHomePage() {
           />
         ))}
         {showBlog.length ? (
-          <>
-            <div className="ms-450">
-              <Pagination
-                length={filterdBlog.length}
-                limit={limit}
-                changePage={changePage}
-                currentPage={currentPage}
-              />
-            </div>
-          </>
+          <Pagination
+            length={filterdBlog.length}
+            limit={limit}
+            changePage={changePage}
+            currentPage={currentPage}
+          />
         ) : (
           <>
             <div className="text-center mt-180">
