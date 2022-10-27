@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocation, useSearchParams } from "react-router-dom";
 import { getAllPlaceByProvinceId } from "../../../api/homeApi";
 import { useError } from "../../../context/ErrorContext";
@@ -88,6 +88,10 @@ function SearchBar() {
     }
   };
 
+  useEffect(() => {
+    setCategory("");
+    setDestination("");
+  }, [location.pathname]);
   return (
     <>
       <div className="d-flex flex-wrap bg-white rounded-pill justify-content-center align-items-center text-dark search">
