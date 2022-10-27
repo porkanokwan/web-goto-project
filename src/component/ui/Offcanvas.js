@@ -34,9 +34,7 @@ function Offcanvas({ setOffCanvas, offcanvas }) {
         tabIndex="1040"
       >
         <div className="offcanvas-header">
-          <h5 className="offcanvas-title" id="offcanvasNavbarLabel">
-            Menu
-          </h5>
+          <h5 className="offcanvas-title">Menu</h5>
           <button
             type="button"
             className="btn-close text-reset"

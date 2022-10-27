@@ -330,7 +330,11 @@ function PlaceForm({ title, place, arrPic, setEditPlace }) {
                     id="non-wifi"
                     name="accessory"
                     value={false}
-                    checked={placeForm.wifi + "" === "false"}
+                    checked={
+                      title
+                        ? placeForm.wifi === "false" || placeForm.wifi === ""
+                        : placeForm.wifi === "false"
+                    }
                     onChange={(e) =>
                       setPlaceForm((prev) => ({
                         ...prev,
@@ -372,7 +376,12 @@ function PlaceForm({ title, place, arrPic, setEditPlace }) {
                     id="non-parking"
                     name="park"
                     value={false}
-                    checked={placeForm.parking + "" === "false"}
+                    checked={
+                      title
+                        ? placeForm.parking === "false" ||
+                          placeForm.parking === ""
+                        : placeForm.parking === "false"
+                    }
                     onChange={(e) =>
                       setPlaceForm((prev) => ({
                         ...prev,
@@ -416,7 +425,12 @@ function PlaceForm({ title, place, arrPic, setEditPlace }) {
                     id="non-reserve"
                     name="reserve"
                     value={false}
-                    checked={placeForm.reserve + "" === "false"}
+                    checked={
+                      title
+                        ? placeForm.reserve === "false" ||
+                          placeForm.reserve === ""
+                        : placeForm.reserve === "false"
+                    }
                     onChange={(e) =>
                       setPlaceForm((prev) => ({
                         ...prev,

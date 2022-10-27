@@ -79,7 +79,7 @@ function AllPlace({ size, categoryId, provinceId }) {
           />
         </div>
       ) : (
-        <div className="text-center opacity-75">
+        <div className="text-center opacity-75 p-message">
           <h2>ไม่มีร้านหรือสถานที่ในจังหวัดและหมวดหมู่นี้!!!</h2>
           <h5>คุณสามารถลงแนะนำสถานที่ในจังหวัดนี้เป็นคนแรกได้ที่นี่</h5>
           <Link to="/place">คลิกที่นี่</Link>

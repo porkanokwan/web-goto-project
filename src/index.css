@@ -225,6 +225,7 @@ html {
   background-color: rgba(146, 187, 236, 0.3);
   border-style: none;
   color: rgba(20, 41, 235, 0.5);
+  box-shadow: 5px 5px 8px rgba(14, 21, 88, 0.5);
 }
 
 .search {
@@ -854,6 +855,10 @@ html {
   column-gap: 100px;
   row-gap: 50px;
   margin: 0px 50px;
+}
+
+.p-message {
+  padding: 250px 250px;
 }
 
 @media (max-width: 2000px) {

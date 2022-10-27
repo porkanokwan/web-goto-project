@@ -9,8 +9,8 @@ import SelectDestination from "./SelectDestination";
 
 function SearchBar() {
   const [search, setSearch] = useSearchParams();
-  const [destination, setDestination] = useState(search.get("province") || "");
-  const [category, setCategory] = useState(search.get("category") || "");
+  const [destination, setDestination] = useState("");
+  const [category, setCategory] = useState("");
   const { setPlace } = useHome();
   const { setError } = useError();
   const location = useLocation();
@@ -51,6 +51,7 @@ function SearchBar() {
       }
     } catch (err) {
       setError(err.response.data.message);
+      setDestination("");
     }
   };
 
