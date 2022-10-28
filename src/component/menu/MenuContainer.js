@@ -2,7 +2,7 @@ import MenuForm from "./form/MenuForm";
 import MenuItem from "./MenuItem";
 import Modal from "../ui/Modal";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useError } from "../../context/ErrorContext";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllMenu } from "../../store/menu";
@@ -55,11 +55,21 @@ function MenuContainer() {
         </div>
       </div>
 
-      <div className="container-menu mt-5 ms-250">
-        {menu[placeId]?.map((el, idx) => (
-          <MenuItem key={idx} menu={el} placeId={placeId} />
-        ))}
-      </div>
+      {menu[placeId]?.length ? (
+        menu[placeId]?.map((el, idx) => (
+          <div className="container-menu mt-5 ms-250" key={idx}>
+            <MenuItem menu={el} placeId={placeId} />
+          </div>
+        ))
+      ) : (
+        <div className="text-center opacity-75 p-message">
+          <h2>ยังไม่มีใครลงเมนูอาหารของร้านนี้!!!</h2>
+          <h5>
+            คุณสามารถลงรายการอาหารของร้านนี้เป็นคนแรกได้โดยการคลิกปุ่มด้านบน
+            <i className="fa-solid fa-hand-point-up fs-5 ps-3" />
+          </h5>
+        </div>
+      )}
 
       <Modal title="เพิ่มเมนู" open={open} onClose={onClose}>
         <MenuForm
