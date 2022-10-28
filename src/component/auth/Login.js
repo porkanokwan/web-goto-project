@@ -1,9 +1,7 @@
 import { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
-import { useError } from "../../context/ErrorContext";
 import Logo from "../../img/Logo.jpg";
-import { deleteToken } from "../../service/localStorage";
 import { validateLogin } from "../../validate/validate";
 import SignUp from "./SignUp";
 
@@ -16,19 +14,11 @@ function Login() {
     errPassword: "",
   });
   const { login } = useContext(AuthContext);
-  const { setError } = useError();
-  const navigate = useNavigate();
 
-  const handleSumbitLogin = async (e) => {
-    try {
-      e.preventDefault();
-      validateLogin(emailorPhone, password, setErrLogin);
-      await login({ emailorPhone, password });
-      navigate("/");
-    } catch (err) {
-      setError(err.response.data.message);
-      deleteToken();
-    }
+  const handleSumbitLogin = (e) => {
+    e.preventDefault();
+    validateLogin(emailorPhone, password, setErrLogin);
+    login({ emailorPhone, password });
   };
 
   return (
@@ -67,6 +57,11 @@ function Login() {
                 value={emailorPhone}
                 onChange={(e) => setEmailorPhone(e.target.value)}
               />
+              {errLogin.errEmailOrPhone && (
+                <small className="invalid-feedback d-flex justify-content-center">
+                  {errLogin.errEmailOrPhone}
+                </small>
+              )}
             </div>
 
             <div className="input-group h-25 p-50">
@@ -80,6 +75,11 @@ function Login() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
+              {errLogin.errPassword && (
+                <small className="invalid-feedback d-flex justify-content-center">
+                  {errLogin.errPassword}
+                </small>
+              )}
             </div>
 
             <div className="input-group link-forgot">

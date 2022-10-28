@@ -107,19 +107,19 @@ export function validateLogin(emailorPhone, password, setErrLogin) {
   if (validator.isEmpty(emailorPhone)) {
     setErrLogin((prev) => ({
       ...prev,
-      errEmailorPhone: "email or phone is required",
+      errEmailOrPhone: "email or phone is required",
     }));
   } else if (
     !(validator.isEmail(emailorPhone) || validator.isMobilePhone(emailorPhone))
   ) {
     setErrLogin((prev) => ({
       ...prev,
-      errEmailorPhone: "email or phone invalid format",
+      errEmailOrPhone: "email or phone invalid format",
     }));
   } else {
     setErrLogin((prev) => ({
       ...prev,
-      errEmailorPhone: "",
+      errEmailOrPhone: "",
     }));
   }
 
@@ -176,20 +176,11 @@ export function validateLogin(emailorPhone, password, setErrLogin) {
 
 export function validateForgot(email, setErrEmail) {
   if (validator.isEmpty(email)) {
-    setErrEmail((prev) => ({
-      ...prev,
-      errEmail: "email is required",
-    }));
+    setErrEmail("email is required");
   } else if (!(validator.isEmail(email) || validator.isMobilePhone(email))) {
-    setErrEmail((prev) => ({
-      ...prev,
-      errEmail: "email is invalid format",
-    }));
+    setErrEmail("email is invalid format");
   } else {
-    setErrEmail((prev) => ({
-      ...prev,
-      errEmail: "",
-    }));
+    setErrEmail("");
   }
 }
 

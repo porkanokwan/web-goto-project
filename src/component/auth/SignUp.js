@@ -1,6 +1,5 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
-import { useError } from "../../context/ErrorContext";
 import { validate } from "../../validate/validate";
 
 function SignUp({ setLoginOpen }) {
@@ -15,23 +14,18 @@ function SignUp({ setLoginOpen }) {
     errConfirmPassword: "",
   });
   const value = useContext(AuthContext);
-  const { setError } = useError();
 
-  const handleSumbitSignUp = async (e) => {
-    try {
-      e.preventDefault();
-      validate({
-        name,
-        emailorPhone,
-        password,
-        confirmPassword,
-        setErrorValidate,
-      });
+  const handleSumbitSignUp = (e) => {
+    e.preventDefault();
+    validate({
+      name,
+      emailorPhone,
+      password,
+      confirmPassword,
+      setErrorValidate,
+    });
 
-      value.signup({ name, emailorPhone, password, confirmPassword });
-    } catch (err) {
-      setError(err.response.data.message);
-    }
+    value.signup({ name, emailorPhone, password, confirmPassword });
   };
   return (
     <div className="form">

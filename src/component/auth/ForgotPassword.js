@@ -18,6 +18,7 @@ function ForgotPassword() {
       validateForgot(email, setErrEmail);
       await forgot(email);
       setSendEmail(true);
+      deleteToken();
     } catch (err) {
       setError(err.response.data.message);
       deleteToken();
@@ -51,7 +52,9 @@ function ForgotPassword() {
                 Send Email success, please check your email
               </div>
             )}
-            {errEmail && <small className="invalid-feedback">{errEmail}</small>}
+            {errEmail !== "" && (
+              <small className="invalid-feedback d-block">{errEmail}</small>
+            )}
           </div>
 
           <button className="btn-submit" type="submit">

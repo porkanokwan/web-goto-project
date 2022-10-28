@@ -46,7 +46,7 @@ function ResetPasswordForm() {
             onChange={(e) => setNewPassword(e.target.value)}
           />
           {errorReset.errNewPassword && (
-            <small className="invalid-feedback">
+            <small className="invalid-feedback d-flex">
               {errorReset.errNewPassword}
             </small>
           )}
@@ -64,7 +64,7 @@ function ResetPasswordForm() {
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
           {errorReset.errConfirmPassword && (
-            <small className="invalid-feedback">
+            <small className="invalid-feedback d-flex">
               {errorReset.errConfirmPassword}
             </small>
           )}
