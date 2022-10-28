@@ -457,7 +457,8 @@ html {
 }
 
 .ms-250 {
-  margin-left: 280px;
+  margin-left: 200px;
+  margin-right: 150px;
 }
 
 .ms-90 {
@@ -480,7 +481,7 @@ html {
   display: grid;
   grid-template-columns: 100px 40px 100px 40px;
   grid-template-rows: auto;
-  gap: 30px 350px;
+  gap: 30px 400px;
 }
 
 .container-place {

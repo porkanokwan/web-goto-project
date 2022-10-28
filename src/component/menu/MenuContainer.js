@@ -43,7 +43,7 @@ function MenuContainer() {
           <i className="fa-solid fa-utensils fs-1 mt-5" />
         </div>
 
-        <div>
+        <div className="me-5">
           <button
             type="button"
             className="btn btn-outline-primary mt-5 mb-25"

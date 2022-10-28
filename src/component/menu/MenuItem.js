@@ -1,14 +1,16 @@
 import MenuForm from "./form/MenuForm";
 import Modal from "../ui/Modal";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useError } from "../../context/ErrorContext";
 import { useDispatch } from "react-redux";
 import { removeMenu } from "../../store/menu";
+import { AuthContext } from "../../context/AuthContext";
 
 function MenuItem({ menu, placeId }) {
   const [open, setOpen] = useState(false);
   const { setError } = useError();
   const dispatch = useDispatch();
+  const { user } = useContext(AuthContext);
 
   const onClose = () => setOpen(false);
 
@@ -36,6 +38,7 @@ function MenuItem({ menu, placeId }) {
                 className="fa-solid fa-ellipsis"
                 data-bs-toggle="dropdown"
                 role="button"
+                disabled={user?.id !== menu?.Users[0].id ? true : false}
               />
 
               <ul className="dropdown-menu dropdown-menu-start px-2 mt-1">
