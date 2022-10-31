@@ -142,7 +142,7 @@ function BlogForm() {
                   <div className="text-center rounded-circle p-2 fs-3 me-1">
                     <Image />
                   </div>
-                  <div className="mt-2 fs-4 pe-2 py-1">เลือกรูปปก</div>
+                  <div className="mt-2 pe-2 py-1">เลือกรูปปก</div>
                   <input
                     type="file"
                     className="d-none"
@@ -160,7 +160,7 @@ function BlogForm() {
 
                 <button
                   type="button"
-                  className="fs-4 pe-2 ms-5 rounded-3 border border-0 text-center btn-cover"
+                  className="pe-2 ms-5 rounded-3 border border-0 text-center btn-cover"
                   onClick={() => setTitleShow((prev) => !prev)}
                 >
                   แสดงหัวเรื่องบนภาพปก
@@ -233,6 +233,7 @@ function BlogForm() {
                   size="ms-3"
                   firstOption="จังหวัด"
                   provinceId={form.provinceId}
+                  blogId={blogId}
                   onChange={(e) =>
                     setForm((prev) => ({
                       ...prev,

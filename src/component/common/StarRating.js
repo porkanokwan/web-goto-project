@@ -51,9 +51,7 @@ function StarRating({ setReview, star, size, disable = false, mt }) {
           Clear
         </span>
       ) : (
-        <span className={`score ms-3 fs-6 text-secondary ${mt}`}>
-          {star} scores
-        </span>
+        <span className={`score ms-3 text-secondary ${mt}`}>{star} scores</span>
       )}
     </div>
   );

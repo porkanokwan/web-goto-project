@@ -36,40 +36,42 @@ function MenuContainer() {
   };
 
   return (
-    <div className="overflow-s">
+    <div className="overflow">
       <div className="d-flex flex-grow-1 justify-content-between w-100">
         <div className="d-flex justify-content-start">
           <h1 className="pt-5 ps-5">เมนู</h1>
           <i className="fa-solid fa-utensils fs-1 mt-5" />
         </div>
 
-        <div className="me-5">
+        <div className="me-3">
           <button
             type="button"
             className="btn btn-outline-primary mt-5 mb-25"
             onClick={() => setOpen(true)}
           >
             <i className="fa-regular fa-image fs-2 me-3" />
-            <span className="fs-3">เพิ่มเมนู</span>
+            <span>เพิ่มเมนู</span>
           </button>
         </div>
       </div>
 
-      {menu[placeId]?.length ? (
-        menu[placeId]?.map((el, idx) => (
-          <div className="container-menu mt-5 ms-250" key={idx}>
-            <MenuItem menu={el} placeId={placeId} />
-          </div>
-        ))
-      ) : (
-        <div className="text-center opacity-75 p-message">
-          <h2>ยังไม่มีใครลงเมนูอาหารของร้านนี้!!!</h2>
-          <h5>
-            คุณสามารถลงรายการอาหารของร้านนี้เป็นคนแรกได้โดยการคลิกปุ่มด้านบน
-            <i className="fa-solid fa-hand-point-up fs-5 ps-3" />
-          </h5>
-        </div>
-      )}
+      <div className="container-menu mt-5 ms-250">
+        {menu[placeId]?.length ? (
+          menu[placeId]?.map((el, idx) => (
+            <MenuItem key={idx} menu={el} placeId={placeId} />
+          ))
+        ) : (
+          <>
+            <div className="grid-message text-center opacity-75 p-message">
+              <h2>ยังไม่มีใครลงเมนูอาหารของร้านนี้!!!</h2>
+              <h5>
+                คุณสามารถลงรายการอาหารของร้านนี้เป็นคนแรกได้โดยการคลิกปุ่มด้านบน
+                <i className="fa-solid fa-hand-point-up fs-5 ps-3" />
+              </h5>
+            </div>
+          </>
+        )}
+      </div>
 
       <Modal title="เพิ่มเมนู" open={open} onClose={onClose}>
         <MenuForm

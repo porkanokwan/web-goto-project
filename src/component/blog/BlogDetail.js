@@ -14,21 +14,21 @@ function BlogDeatail({ blog, setBlog }) {
     <div className="bg-white w-mt">
       <div className="d-flex flex-column p-5">
         <h3>{blog.title}</h3>
-        <div className="d-flex">
+        <div className="d-flex flex-wrap">
           <div className="d-flex mt-3">
             <ProfileIcon
               size={70}
-              mt={20}
+              mt={"mt-20"}
               user={blog.User?.name}
               src={blog.User?.profile_pic}
               id={blog.User?.id}
             />
           </div>
 
-          <div className="d-flex">
-            <div className="fs-5 ps-3 pt-65">
+          <div className="d-flex time-locate">
+            <div className="fs-6 ps-3 pt-65">
               <Location opacity={50} />
-              <span className="destination color-subtitle fs-6 ">
+              <span className="destination color-subtitle">
                 {blog.Category?.name} {blog.Province?.name}
               </span>
             </div>

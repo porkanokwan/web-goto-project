@@ -12,7 +12,7 @@ function ProfileIcon({ src, size, mt, user, id }) {
     >
       <div className="d-flex">
         <UserIcon src={src} size={size} />
-        <div className="ms-3 w-100" style={{ marginTop: mt }}>
+        <div className={`ms-3 w-100 ${mt}`}>
           <span className="fs-name">{user}</span>
         </div>
       </div>

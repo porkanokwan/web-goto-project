@@ -97,7 +97,7 @@ function SearchBar() {
       <div className="d-flex flex-wrap bg-white rounded-pill justify-content-center align-items-center text-dark search">
         <div className="d-flex">
           <Location opacity={50} />
-          <label className="des-x fs-s pe-3 mt-1">Destinations</label>
+          <label className="des-x fs-s pe-2 mt-1">Destinations</label>
           <div className="search-destination mt-8 d-flex">
             <SelectDestination
               provinceId={destination}
@@ -107,7 +107,7 @@ function SearchBar() {
         </div>
 
         <div className="category mb-2 d-flex">
-          <label className="cate-x fs-s px-3 mt-1">Category</label>
+          <label className="cate-x fs-s ps-3 pe-2 mt-1">Category</label>
           <div className="search-destination mt-8 d-flex">
             <SelectCategory
               categoryId={category}

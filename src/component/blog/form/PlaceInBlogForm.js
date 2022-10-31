@@ -34,7 +34,7 @@ function PlaceInBlogForm({ places, setPlaces, count = "" }) {
       </div>
 
       <div className="d-flex px-3">
-        <label className="fs-5">ชื่อสถานที่:</label>
+        <label className="fs-blog">ชื่อสถานที่:</label>
         <input
           type="text"
           className="ms-1 rounded-2 w-75"

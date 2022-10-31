@@ -99,7 +99,7 @@ function PlaceForm({ title, place, arrPic, setEditPlace }) {
           className="bg-white border border-dark rounded-2"
           onSubmit={handleSubmitPlaceForm}
         >
-          <div className="d-flex w-100 justify-content-around pt-5 fs-1v ps-35">
+          <div className="d-flex w-100 justify-content-around pt-5 fs-vw ps-35">
             <ChooseCategory
               onChange={chooseCategory}
               categoryId={placeForm.categoryId}

@@ -34,7 +34,7 @@ function ProfileContainer() {
 
   if (loading) return <SpinnerGrow />;
   return (
-    <>
+    <div className="overflow-s">
       <div className="d-flex flex-wrap p-5">
         <ProfileDetail
           user={userProfile}
@@ -73,7 +73,7 @@ function ProfileContainer() {
           )}
         </>
       )}
-    </>
+    </div>
   );
 }
 

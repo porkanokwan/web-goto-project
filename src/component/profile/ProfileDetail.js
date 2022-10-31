@@ -32,23 +32,23 @@ function ProfileDetail({ user, setUserProfile, authUser }) {
           </div>
 
           <div className="mr-p-80 d-flex flex-column ms-150 mt-5 w-70">
-            <div className="d-flex">
+            <div className="d-flex flex-wrap">
               <h4 className="fw-bold">ชื่อ-นามสกุล:</h4>
-              <p className="ms-3 fs-5">{user.name}</p>
+              <p className="ms-3 fs-user">{user.name}</p>
             </div>
             <hr className="w-100 mt-0" />
 
-            <div className="d-flex">
+            <div className="d-flex flex-wrap">
               <h4 className="fw-bold">อีเมล:</h4>
-              <p className="ms-3 fs-5">
+              <p className="ms-3 fs-user">
                 {user.email === null || user.email === "" ? "-" : user.email}
               </p>
             </div>
             <hr className="w-100 mt-0" />
 
-            <div className="d-flex">
+            <div className="d-flex flex-wrap">
               <h4 className="fw-bold">เบอร์โทรศัพท์:</h4>
-              <p className="ms-3 fs-5">
+              <p className="ms-3 fs-user">
                 {user.phoneNumber === "null" || user.phoneNumber === ""
                   ? "-"
                   : user.phoneNumber}
@@ -56,11 +56,11 @@ function ProfileDetail({ user, setUserProfile, authUser }) {
             </div>
             <hr className="w-100 mt-0" />
 
-            <div className="d-flex mt-5">
+            <div className="d-flex mt-5 flex-wrap">
               <h4 className="fw-bold">เกี่ยวกับฉัน:</h4>
             </div>
             <hr className="w-100 mt-0" />
-            <p className="ms-3 fs-5">
+            <p className="ms-3 fs-user">
               {user.aboutMe === "null" || user.aboutMe === ""
                 ? "-"
                 : user.aboutMe}

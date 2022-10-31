@@ -6,7 +6,7 @@ function Pagination({ length, limit, currentPage, changePage }) {
   }
 
   return (
-    <div className="w-100 ms-450">
+    <div className="ms-450">
       <nav>
         <ul className="pagination">
           <li className="page-item">

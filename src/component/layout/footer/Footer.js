@@ -13,7 +13,7 @@ function Footer() {
           <div className="d-flex justify-content-between">
             <div className="d-flex flex-column box-logo">
               <img className="logo-footer" src={Logo} alt="Logo" />
-              <h5 className="caption text-white fw-light fst-italic fs-vw">
+              <h5 className="caption text-white fw-light fst-italic fs-vw-des">
                 Discover amazing place, and Go to that place!!!
               </h5>
             </div>

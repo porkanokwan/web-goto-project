@@ -130,10 +130,6 @@ html {
   font-size: 1.25vw;
 }
 
-.fs-1v {
-  font-size: 1.5vw;
-}
-
 .fs-vw-footer {
   font-size: 2.8vw;
 }
@@ -433,7 +429,7 @@ html {
 }
 
 .p-pagination {
-  padding: 400px 0px 0px 450px;
+  padding: 400px 0px 0px 40vw;
 }
 
 .mt-280 {
@@ -450,10 +446,6 @@ html {
 
 .ms-120 {
   margin-left: 120px;
-}
-
-.ms-p {
-  margin-left: 350px;
 }
 
 .ms-250 {
@@ -479,7 +471,7 @@ html {
 
 .container-menu {
   display: grid;
-  grid-template-columns: 100px 40px 100px 40px;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 4fr));
   grid-template-rows: auto;
   gap: 30px 400px;
 }
@@ -543,10 +535,6 @@ html {
   margin-bottom: -45px;
 }
 
-.ms-700 {
-  margin-left: 900px;
-}
-
 .bg-lightgrey {
   background-color: rgba(217, 217, 217, 0.44);
 }
@@ -556,7 +544,7 @@ html {
 }
 
 .pt-65 {
-  padding-top: 1.5vw;
+  padding-top: 1.75vw;
 }
 
 .pt-66 {
@@ -681,6 +669,7 @@ html {
   color: rgba(0, 0, 0, 0.35);
   border: none;
   transition-duration: 0.4s;
+  font-size: calc(1.275rem + 0.3vw);
 }
 
 .btn-cover:hover {
@@ -688,7 +677,8 @@ html {
   color: white;
 }
 
-.fs-menu {
+.fs-menu,
+.fs-blog {
   font-size: 1.5rem;
 }
 
@@ -830,6 +820,7 @@ html {
 }
 
 .score {
+  font-size: 1rem;
   margin-top: 2px;
 }
 
@@ -859,7 +850,16 @@ html {
 }
 
 .p-message {
-  padding: 250px 250px;
+  padding: 50px 0px 150px 50px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.grid-message {
+  display: grid;
+  grid-template-columns: max-content;
 }
 
 @media (max-width: 2000px) {
@@ -925,9 +925,6 @@ html {
   .img-review {
     gap: 50px 4vw;
   }
-  .ms-700 {
-    margin-left: 45.5vw;
-  }
   .btn-mt {
     margin-left: 21vw;
   }
@@ -940,7 +937,7 @@ html {
     margin-left: 20vw;
   }
   .search-destination select {
-    margin-top: 1.75px !important;
+    margin-top: 1.75px;
     width: 100%;
   }
   .ms-250 {
@@ -960,9 +957,8 @@ html {
     margin-left: 100px;
   }
   .pic-size {
-    width: 20vw;
-    height: 20vw;
-    border: 1px solid black;
+    width: 27vw;
+    height: 27vw;
   }
   .area-about {
     width: 50vw;
@@ -1044,10 +1040,14 @@ html {
     margin-top: -11.75vw;
   }
   .mt-8 {
-    margin-top: 0px !important;
+    margin-top: 6px;
   }
   .coverHome {
-    min-width: 100%;
+    height: 70vh;
+  }
+  .position-title {
+    top: 35%;
+    left: 20%;
   }
   .bg-base {
     width: 100%;
@@ -1074,9 +1074,6 @@ html {
   }
   .ms-0 {
     margin-left: 0px !important;
-  }
-  .ms-700 {
-    margin-left: 42.5vw;
   }
   .fs-in {
     font-size: 12px !important;
@@ -1106,10 +1103,11 @@ html {
   .p-pagination {
     padding: 400px 0px 0px 180px;
   }
+  .ms-p {
+    margin-left: 18vw;
+  }
   .container-menu {
-    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-template-rows: auto;
     gap: 100px 175px;
   }
   .ms-250 {
@@ -1145,7 +1143,7 @@ html {
     margin-left: 75px;
   }
   .pt-65 {
-    padding-top: 3vw;
+    padding-top: 3.5vw;
   }
   .pt-66 {
     padding-top: 3vw;
@@ -1168,9 +1166,6 @@ html {
   }
   .side-layout {
     grid-template-columns: 450px 520px;
-  }
-  .d-flex p {
-    font-size: 16px !important;
   }
   .w-blog {
     width: 75%;
@@ -1198,6 +1193,12 @@ html {
   }
   .w-maps {
     width: 94.2%;
+  }
+  .fs-48 {
+    font-size: 3vw;
+  }
+  .grid-message {
+    grid-template-columns: 80vw;
   }
 }
 
@@ -1239,15 +1240,14 @@ html {
     display: none !important;
   }
   .coverHome {
-    width: 100vw;
-    height: 80vh;
+    height: 60vh;
   }
   .title {
     font-size: 4.4vw !important;
     line-height: 60px !important;
   }
   .position-title {
-    top: 35%;
+    top: 30%;
     left: 15%;
   }
   .search {
@@ -1255,6 +1255,10 @@ html {
     height: 7vw;
     margin-left: 11.5vw;
     margin-top: -10.75vw;
+  }
+  .container-place {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 90px 100px;
   }
   .position-place {
     margin-left: 27.5vw;
@@ -1270,6 +1274,9 @@ html {
   }
   .fs-vw {
     font-size: 1.55vw;
+  }
+  .fs-48 {
+    font-size: 5vw;
   }
   .ps-35 {
     padding-left: 12px;
@@ -1288,14 +1295,14 @@ html {
     margin-left: 24.5vw;
   }
   .destination {
-    font-size: 2.5vw;
+    font-size: 2vw;
   }
   .pt-65 {
-    padding-top: 3.5vw;
+    padding-top: 4.2vw;
   }
   .pt-66 {
-    padding-top: 4.5vw;
-    font-size: 1.4vw !important;
+    padding-top: 4.2vw;
+    font-size: 1.8vw !important;
   }
   .pt-70 {
     padding-top: 3.75vw;
@@ -1311,14 +1318,14 @@ html {
     padding-left: 30px;
   }
   .ms-ep-5 {
-    margin-left: 10px;
+    margin-left: 35px;
   }
   .wd-450 {
     width: 90vw !important;
   }
   .ms-150 {
     margin-left: -150px !important;
-    margin-top: 190px !important;
+    margin-top: 220px !important;
   }
   .w-blog {
     width: 90%;
@@ -1380,6 +1387,7 @@ html {
     background-color: transparent;
     padding: 20px 0px 0px 20px;
     margin: 80px 10px;
+    box-shadow: 0px 0px 0px;
   }
   .card-category {
     display: block !important;
@@ -1391,6 +1399,13 @@ html {
   }
   .name-location {
     font-size: 2.75vw;
+  }
+  .p-message {
+    padding: 50px 0px 150px 10px;
+  }
+  .img-review-rest {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(300px, 1fr));
   }
 }
 
@@ -1406,7 +1421,7 @@ html {
     width: 14.5vw;
     height: 3.5vw;
     font-size: 1.025vw;
-    margin-top: 3px !important;
+    margin-top: 3px;
   }
   .btn-search {
     margin-bottom: 10px;
@@ -1432,9 +1447,7 @@ html {
     width: 53vw;
   }
   .container-menu {
-    display: grid;
-    grid-template-columns: 250px 200px;
-    grid-template-rows: auto;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 2fr));
     gap: 100px 175px;
   }
   .card-container-menu {
@@ -1450,7 +1463,7 @@ html {
     font-size: 3.75vw !important;
   }
   .pt-65 {
-    padding-top: 4.5vw;
+    padding-top: 30px;
   }
   .pt-66 {
     padding-top: 5.2vw;
@@ -1484,6 +1497,22 @@ html {
     margin-left: 0px;
     margin-right: 0px;
   }
+  .cut-word {
+    width: 32vw;
+  }
+  .fs-vw {
+    font-size: 16px;
+    flex-direction: column;
+  }
+  .fs-vw-des {
+    font-size: 1.55vw;
+  }
+  .ps-35 {
+    padding-left: 50px;
+  }
+  .form-size {
+    display: inline;
+  }
 }
 
 @media (max-width: 576px) {
@@ -1494,7 +1523,7 @@ html {
     height: 270px;
   }
   .h-350 {
-    height: 270px;
+    height: 250px;
   }
   .w-85 {
     width: 65%;
@@ -1546,17 +1575,17 @@ html {
     margin-left: 6.5vw;
   }
   .search-destination {
-    width: 14.5vw;
+    width: 19vw;
     height: 3.5vw;
     font-size: 1.5vw;
-    margin-top: 5px !important;
+    margin-top: 5px;
   }
   .sm-search {
     margin-top: -10px !important;
     margin-left: 10px !important;
   }
   .fs-s {
-    font-size: 0.95rem !important;
+    font-size: 0.65rem;
   }
   .bs-size {
     width: 100% !important;
@@ -1578,19 +1607,16 @@ html {
     font-size: 2.35vw;
     padding-top: 7.5px;
   }
-  .fs-1v {
-    font-size: 2vw;
-  }
   .p-pagination {
     padding: 300px 0px 0px 125px;
   }
   .pic-size {
     width: 30vw;
     height: 30vw;
-    border: 1px solid black;
+    margin-top: -20px;
   }
   .ms-ep-5 {
-    margin-left: 45px;
+    margin-left: 25px;
   }
   .ms-150 {
     margin-left: -100px !important;
@@ -1609,7 +1635,7 @@ html {
     width: 100px;
   }
   .destination {
-    font-size: 2vw;
+    font-size: 2.5vw;
   }
   .password {
     font-size: 12px !important;
@@ -1627,7 +1653,7 @@ html {
     height: 30%;
   }
   .search-destination i {
-    margin-top: 2.5px !important;
+    margin-top: 3.5px !important;
   }
   .btn-search {
     width: 6.5vw;
@@ -1638,12 +1664,10 @@ html {
     padding: 0px !important;
   }
   .card-img-top {
-    width: 65vw;
-    height: 80vw;
+    width: 55vw;
   }
   .card-container {
     width: 100vw;
-    height: 80vw;
     margin: 0px 0px 30px;
   }
   .card-box {
@@ -1661,7 +1685,7 @@ html {
     left: 320px;
   }
   .button-view {
-    margin-left: 60vw;
+    margin-left: 50vw;
     margin-top: 1.75vw !important;
   }
   .reviews {
@@ -1689,35 +1713,30 @@ html {
   .horizon-nav {
     display: none !important;
   }
-  .pt-65 {
-    padding-top: 5.5vw;
-    padding-left: 0px !important;
-  }
   .pt-66 {
-    padding: 7vw 0px 0px 1.5vw;
+    padding: 34px 0px 0px 10px;
   }
   .pt-70 {
     padding-top: 5.5vw;
+    margin-top: -70px;
   }
   .fs-name {
-    font-size: 3vw;
+    font-size: 4vw;
+    padding-left: 5px;
   }
   .ms-90 {
-    margin-left: 50px;
-  }
-  .date-review {
-    margin-top: -10px;
+    margin-left: 80px;
   }
   .profile {
-    width: 150px !important;
-    height: 150px !important;
+    width: 75px !important;
+    height: 75px !important;
   }
   .title {
     font-size: 4.5vw !important;
     line-height: 0px !important;
   }
   .position-title {
-    top: 30%;
+    top: 50vw;
   }
   .wifi {
     font-size: 3.5vw;
@@ -1730,9 +1749,6 @@ html {
   }
   .ms-450 {
     margin-left: 22.75vw;
-  }
-  .fs-48 {
-    font-size: 4vw;
   }
   .me-15 {
     margin-right: 3vw;
@@ -1750,9 +1766,6 @@ html {
   .add-photo {
     font-size: 5vw;
   }
-  .h-350 {
-    height: 250px;
-  }
   .caption {
     width: 90px;
     margin-left: 12.75vw;
@@ -1765,12 +1778,12 @@ html {
   .mt-150 {
     margin-top: 20vw;
   }
+  .mt-20 {
+    margin-top: 20px;
+  }
   .line {
     width: 85vw;
     margin-left: 50px;
-  }
-  .fs-vw {
-    font-size: 1.75vw;
   }
   .logo-width {
     width: 4.8vw !important;
@@ -1788,13 +1801,14 @@ html {
   }
   .card-img-bl {
     height: 50vw;
+    margin-left: -15px;
   }
   .fs-vw-footer {
     margin-left: -1px;
   }
   .card-img-review {
     width: 40vw;
-    height: 50vw;
+    height: 40vw;
   }
   .img-review {
     gap: 0vw 0vw;
@@ -1843,8 +1857,39 @@ html {
     top: 70%;
     left: 15%;
   }
-  .ms-p {
-    margin-left: 25px;
+  .stars {
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+  .nav-link {
+    font-size: 22px;
+  }
+  .container-menu {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 100px 175px;
+    margin-bottom: 25px;
+  }
+  .fs-blog {
+    font-size: 1rem;
+  }
+  .btn-post {
+    width: 90px;
+  }
+  .time-locate {
+    padding: 0px 50px 0px 55px;
+    margin-top: -48px;
+  }
+  .fs-user {
+    font-size: 16px;
+    margin-left: 5px !important;
+  }
+  .descript {
+    width: 48vw !important;
+  }
+  .img-review-rest {
+    grid-template-columns: repeat(auto-fit, minmax(20vw, 2fr));
+    grid-template-rows: repeat(auto-fit, minmax(20px, 1fr));
+    gap: 20px 95px;
   }
 }
 
@@ -1855,24 +1900,21 @@ html {
     width: 80vw;
   }
   .fs-s {
-    font-size: 0.55rem !important;
+    font-size: 0.55rem;
   }
   .search-destination {
     width: 20vw;
-    margin-top: 4px !important;
+    margin-top: 4px;
   }
   .btn-search {
     margin-left: 5px;
     margin-bottom: 10px;
   }
   .mt-search {
-    margin-top: 2px;
-  }
-  .position-title {
-    top: 15%;
+    margin-top: 7px;
   }
   .search-destination select {
-    margin-top: 0.5px !important;
+    margin-top: 0.5px;
   }
   .des-x {
     padding-right: 0.5rem !important;
@@ -1886,9 +1928,6 @@ html {
   }
   .logo-width {
     width: 5vw !important;
-  }
-  .d-flex p {
-    font-size: 10px !important;
   }
   .mt-180 {
     margin-top: 35vw;
@@ -1906,12 +1945,95 @@ html {
     font-size: 3.15vw;
   }
   i + span {
-    font-size: 12px !important;
+    font-size: 10px !important;
   }
   .stars {
     font-size: 5vw;
   }
   .card-box {
     margin: 20px 10px;
+  }
+  .card-container {
+    height: 90vw;
+  }
+  .card-img-top {
+    height: 90vw;
+  }
+  .cut-word {
+    width: 100px;
+  }
+  .stars {
+    font-size: 3vw;
+  }
+  .score {
+    font-size: 0.5rem;
+  }
+  .card-box {
+    margin: 65px 10px;
+  }
+  .button-view {
+    margin-left: 30vw;
+  }
+  .profile {
+    width: 50px !important;
+    height: 50px !important;
+  }
+  .pt-66 {
+    padding: 10vw 0px 0px 3vw;
+  }
+  .pt-70 {
+    margin-top: -80px;
+  }
+  .btn-cover {
+    font-size: 1rem;
+  }
+  .p-pagination {
+    padding: 300px 0px 0px 50px;
+  }
+  .fs-48 {
+    font-size: 6vw;
+  }
+  .fs-vw-des {
+    font-size: 2vw;
+  }
+  .time-locate {
+    padding: 5px 50px 0px 35px;
+  }
+  .mt-20 {
+    margin-top: 0px;
+  }
+  .ms-150 {
+    margin-left: -80px !important;
+  }
+  .fs-user {
+    font-size: 13px;
+    margin-left: 0px !important;
+  }
+  .ms-ep-5 {
+    margin-left: 20px;
+  }
+  .pic-size {
+    width: 40vw;
+    height: 40vw;
+    margin-left: -25px;
+  }
+  .box-blog {
+    width: 45vw;
+    margin-left: 5vw;
+  }
+  .p-message {
+    padding: 50px 0px 150px 0px;
+  }
+  .img-review-rest {
+    gap: 20px 50px;
+  }
+  .ms-90 {
+    margin-left: 50px;
+  }
+  .date-review {
+    margin-top: -10px;
+  }
+  h4 + p {
+    font-size: 12px !important;
   }
 }

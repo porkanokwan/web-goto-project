@@ -34,7 +34,7 @@ function Carousel({ placePic }) {
         </div>
       </div>
 
-      <div className="ms-700">
+      <div className="text-center">
         <button
           className="border border-0 bg-white fs-3"
           type="button"
