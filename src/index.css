@@ -501,7 +501,7 @@ html {
 
 .img-review-rest {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-template-rows: repeat(auto-fit, minmax(250px, 1fr));
 }
 
@@ -659,7 +659,7 @@ html {
 }
 
 .w-maps {
-  width: 500px;
+  width: 100%;
   height: 350px;
   margin: 15px;
 }
@@ -808,7 +808,7 @@ html {
 }
 
 .w-box {
-  width: 50vw;
+  width: 60vw;
 }
 
 .ms-clear {
@@ -860,6 +860,10 @@ html {
 .grid-message {
   display: grid;
   grid-template-columns: max-content;
+}
+
+.me-review {
+  margin-right: 3rem;
 }
 
 @media (max-width: 2000px) {
@@ -1191,14 +1195,25 @@ html {
   .box-direct {
     flex-direction: column;
   }
-  .w-maps {
-    width: 94.2%;
-  }
   .fs-48 {
     font-size: 3vw;
   }
   .grid-message {
     grid-template-columns: 80vw;
+  }
+  .me-review {
+    margin-right: 1.5rem;
+  }
+  .place-box {
+    margin-top: 355px;
+  }
+  .w-maps {
+    width: 95vw;
+    height: 350px;
+    margin: 0px;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: 1fr;
   }
 }
 
@@ -1345,10 +1360,6 @@ html {
   .card-img-review {
     width: 40vw;
   }
-  .w-maps {
-    width: 45.5vw;
-    height: 35vw;
-  }
   .form-reset {
     left: 24vw;
     width: 55vw;
@@ -1406,6 +1417,9 @@ html {
   .img-review-rest {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-template-rows: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  .ma-25 {
+    margin-right: -30px !important;
   }
 }
 
@@ -1595,7 +1609,7 @@ html {
     height: 25vw;
   }
   .word {
-    font-size: 2vw;
+    font-size: 3vw;
   }
   .mb-25 {
     margin-top: 90px;
@@ -1630,6 +1644,7 @@ html {
   }
   .ms-clear {
     margin-left: 50px;
+    font-size: 14px;
   }
   .btn-img {
     width: 100px;
@@ -1816,10 +1831,10 @@ html {
     grid-template-rows: 1.5fr;
   }
   .p-re {
-    padding-left: 2.5rem !important;
+    padding-left: 0rem;
   }
   .p-re-0 {
-    padding-right: 0px !important;
+    padding-right: 0px;
   }
   .pr-0 {
     padding-right: 0px !important;
@@ -1889,7 +1904,10 @@ html {
   .img-review-rest {
     grid-template-columns: repeat(auto-fit, minmax(20vw, 2fr));
     grid-template-rows: repeat(auto-fit, minmax(20px, 1fr));
-    gap: 20px 95px;
+    gap: 20px 110px;
+  }
+  .me-review {
+    margin-right: -1rem;
   }
 }
 
@@ -2025,7 +2043,7 @@ html {
     padding: 50px 0px 150px 0px;
   }
   .img-review-rest {
-    gap: 20px 50px;
+    gap: 20px 70px;
   }
   .ms-90 {
     margin-left: 50px;
@@ -2033,7 +2051,16 @@ html {
   .date-review {
     margin-top: -10px;
   }
-  h4 + p {
-    font-size: 12px !important;
+  h4 ~ p {
+    font-size: 12px;
+  }
+  .ms-clear {
+    font-size: 12px;
+  }
+  .text-day {
+    font-size: 8px;
+  }
+  .p-le {
+    padding-right: 0px;
   }
 }

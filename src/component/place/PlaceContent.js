@@ -110,10 +110,10 @@ function PlaceContent({ setEditPlace, place }) {
           </div>
         </div>
 
-        <div className="d-flex flex-column ms-5 w-300">
+        <div className="d-flex flex-column ms-5 w-300 place-box">
           <div className="bg-lightgrey rounded">
             <h4 className="pt-3 ps-3">เวลาเปิด-ปิด</h4>
-            <div className="d-flex justify-content-between w-100">
+            <div className="d-flex justify-content-between w-100 text-day">
               <p className="text-grey ms-3">{place?.day || ""}</p>
               <p className="text-grey me-3">{place?.openClose || ""}</p>
             </div>

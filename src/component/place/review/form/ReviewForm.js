@@ -45,7 +45,7 @@ function ReviewForm({ onClickCloseForm, onClickCloseEdit, reviews, arrPic }) {
   };
 
   return (
-    <div className="bg-white me-5">
+    <div className="bg-white me-review">
       <div className="d-flex justify-content-end p-3">
         <i
           className="fa-solid fa-xmark"
@@ -54,7 +54,7 @@ function ReviewForm({ onClickCloseForm, onClickCloseEdit, reviews, arrPic }) {
         />
       </div>
 
-      <div className="d-flex pt-3 ps-5 p-re">
+      <div className="d-flex pt-3 ps-5">
         <h4 className="me-3">ให้คะแนนความพึงพอใจ</h4>
         <div className="mt-minus-15">
           <StarRating size="fs-3" star={review.star} setReview={setReview} />
@@ -66,7 +66,7 @@ function ReviewForm({ onClickCloseForm, onClickCloseEdit, reviews, arrPic }) {
         </small>
       )}
 
-      <div className="pt-3 px-5 p-re">
+      <div className="pt-3 px-5">
         <label className="fs-4">หัวเรื่องรีวิว</label>
         <input
           type="text"
