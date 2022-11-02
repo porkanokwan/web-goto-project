@@ -28,13 +28,21 @@ function ResetPasswordForm() {
   };
 
   return (
-    <>
-      <div className="background-login">
-        <img className="logo" src={Logo} alt="Logo" />
-      </div>
+    <div className="bg-login">
+      <img
+        className="logo"
+        src={Logo}
+        alt="Logo"
+        style={{
+          opacity: "60%",
+          position: "absolute",
+          top: "-5px",
+          left: "20px",
+        }}
+      />
 
       <form className="form-reset text-center" onSubmit={handleSumbitReset}>
-        <div className="input-group h-25 p-reset">
+        <div className="input-group p-reset">
           <span className="input-group-text">
             <i className="fa-solid fa-lock" />
           </span>
@@ -52,7 +60,7 @@ function ResetPasswordForm() {
           )}
         </div>
 
-        <div className="input-group h-25 p-reset">
+        <div className="input-group p-reset">
           <span className="input-group-text">
             <i className="fa-solid fa-lock" />
           </span>
@@ -74,7 +82,7 @@ function ResetPasswordForm() {
           reset
         </button>
       </form>
-    </>
+    </div>
   );
 }
 

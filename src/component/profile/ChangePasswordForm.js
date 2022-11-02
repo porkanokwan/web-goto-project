@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useError } from "../../context/ErrorContext";
 import SpinnerGrow from "../common/SpinnerGrow";
 
-function ChangePasswordForm({ onClick }) {
+function ChangePasswordForm({ onClick, onClickCancle }) {
   const [password, setPassword] = useState({
     oldPassword: "",
     newPassword: "",
@@ -78,7 +78,7 @@ function ChangePasswordForm({ onClick }) {
         <button
           type="button"
           className="btn btn-secondary rounded-0 me-3"
-          onClick={onClick}
+          onClick={onClickCancle}
         >
           ยกเลิก
         </button>

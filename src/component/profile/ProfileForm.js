@@ -108,7 +108,7 @@ function ProfileForm({ onClose, setUserProfile, user }) {
         <h4 className="fw-bold">ชื่อ-นามสกุล:</h4>
         <input
           type="text"
-          className="ms-3 fs-5 border border-none w-350"
+          className="ms-3 border border-none w-350"
           value={editForm.name}
           onChange={(e) =>
             setEditForm((prev) => ({ ...prev, name: e.target.value }))
@@ -120,7 +120,7 @@ function ProfileForm({ onClose, setUserProfile, user }) {
         <h4 className="fw-bold">อีเมล:</h4>
         <input
           type="text"
-          className="ms-3 fs-5 border border-none w-350"
+          className="ms-3 border border-none w-350"
           value={editForm.email}
           onChange={(e) =>
             setEditForm((prev) => ({ ...prev, email: e.target.value }))
@@ -132,7 +132,7 @@ function ProfileForm({ onClose, setUserProfile, user }) {
         <h4 className="fw-bold">เบอร์โทรศัพท์:</h4>
         <input
           type="text"
-          className="ms-3 fs-5 border border-none w-350"
+          className="ms-3 border border-none w-350"
           value={editForm.phoneNumber}
           onChange={(e) =>
             setEditForm((prev) => ({
@@ -148,13 +148,13 @@ function ProfileForm({ onClose, setUserProfile, user }) {
       </div>
       <hr className="w-100 mt-0" />
       <textarea
-        className="area-about ms-3 fs-5"
+        className="area-about ms-3"
         value={editForm.aboutMe === "null" ? "" : editForm.aboutMe}
         onChange={(e) =>
           setEditForm((prev) => ({ ...prev, aboutMe: e.target.value }))
         }
       />
-      <div className="mt-3 d-flex justify-content-end">
+      <div className="mt-3 d-flex justify-content-end btn-profile">
         <button type="submit" className="btn btn-primary">
           บันทึก
         </button>

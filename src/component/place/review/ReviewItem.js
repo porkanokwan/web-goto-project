@@ -87,10 +87,12 @@ function ReviewItem({ review, placeId }) {
               <h5 className="fw-bold">{review?.title}</h5>
               <p>{review?.review}</p>
             </div>
-            <CardPic
-              classImg="card-img-review"
-              pics={review?.ReviewPics.slice(0, 4)}
-            />
+            <div className="img-review-rest">
+              <CardPic
+                classImg="card-img-review"
+                pics={review?.ReviewPics.slice(0, 4)}
+              />
+            </div>
             {review?.ReviewPics.length !== 0 && (
               <div
                 role="button"
@@ -104,7 +106,7 @@ function ReviewItem({ review, placeId }) {
         )}
 
         <Modal picture="picture" height="h-auto" open={open} onClose={onClose}>
-          <div className="w-100">
+          <div className="w-100 img-modal">
             <CardPic classImg="card-img-w" pics={review?.ReviewPics} />
           </div>
         </Modal>

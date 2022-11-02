@@ -28,8 +28,8 @@ function SignUp({ setLoginOpen }) {
     value.signup({ name, emailorPhone, password, confirmPassword });
   };
   return (
-    <div className="form">
-      <form className="bg-white text-center h-75" onSubmit={handleSumbitSignUp}>
+    <div className="form bg-white">
+      <form className="text-center" onSubmit={handleSumbitSignUp}>
         <div className="d-flex flex-nowrap justify-content-center">
           <button
             className="btn-login"
@@ -43,7 +43,7 @@ function SignUp({ setLoginOpen }) {
           </button>
         </div>
 
-        <div className="input-group h-25 p-name">
+        <div className="input-group p-name">
           <span className="input-group-text">
             <i className="fa-solid fa-user" />
           </span>
@@ -61,7 +61,7 @@ function SignUp({ setLoginOpen }) {
           )}
         </div>
 
-        <div className="input-group h-25 p-email">
+        <div className="input-group p-email">
           <span className="input-group-text">
             <i className="fa-regular fa-envelope" />
           </span>
@@ -83,7 +83,7 @@ function SignUp({ setLoginOpen }) {
           )}
         </div>
 
-        <div className="input-group h-25 p-password">
+        <div className="input-group p-password">
           <span className="input-group-text">
             <i className="fa-solid fa-lock" />
           </span>
@@ -103,7 +103,7 @@ function SignUp({ setLoginOpen }) {
           )}
         </div>
 
-        <div className="input-group h-25 p-confirmpassword">
+        <div className="input-group p-confirmpassword">
           <span className="input-group-text">
             <i className="fa-solid fa-lock" />
           </span>

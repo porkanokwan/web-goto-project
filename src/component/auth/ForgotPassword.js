@@ -26,16 +26,21 @@ function ForgotPassword() {
   };
 
   return (
-    <>
-      <div className="background-login">
-        <img className="logo" src={Logo} alt="Logo" />
-      </div>
+    <div className="bg-login">
+      <img
+        className="logo"
+        src={Logo}
+        alt="Logo"
+        style={{
+          opacity: "60%",
+          position: "absolute",
+          top: "-5px",
+          left: "20px",
+        }}
+      />
 
-      <div className="form-forgot">
-        <form
-          className="bg-white text-center h-75"
-          onSubmit={handleSumbitForgot}
-        >
+      <div className="form-forgot bg-white">
+        <form className="text-center" onSubmit={handleSumbitForgot}>
           <div className="input-group p-forgot">
             <span className="input-group-text">
               <i className="fa-regular fa-envelope" />
@@ -62,7 +67,7 @@ function ForgotPassword() {
           </button>
         </form>
       </div>
-    </>
+    </div>
   );
 }
 

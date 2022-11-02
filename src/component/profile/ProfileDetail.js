@@ -7,7 +7,7 @@ function ProfileDetail({ user, setUserProfile, authUser }) {
   return (
     <>
       {editProfile ? (
-        <div className="p-5 mt-5 wf-69">
+        <div className="mt-5 wf-69">
           <ProfileForm
             onClose={() => setEditProfile(false)}
             user={user}

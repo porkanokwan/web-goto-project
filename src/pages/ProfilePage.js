@@ -2,7 +2,7 @@ import ProfileContainer from "../component/profile/ProfileContainer";
 
 function ProfilePage() {
   return (
-    <div className="d-flex flex-column wd-450">
+    <div className="d-flex flex-column">
       <ProfileContainer />
     </div>
   );

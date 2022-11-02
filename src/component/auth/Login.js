@@ -22,17 +22,22 @@ function Login() {
   };
 
   return (
-    <>
-      <div className="background-login">
-        <img className="logo" src={Logo} alt="Logo" />
-      </div>
+    <div className="bg-login">
+      <img
+        className="logo"
+        src={Logo}
+        alt="Logo"
+        style={{
+          opacity: "60%",
+          position: "absolute",
+          top: "-5px",
+          left: "20px",
+        }}
+      />
 
       {loginOpen ? (
-        <div className="form">
-          <form
-            className="bg-white text-center h-75"
-            onSubmit={handleSumbitLogin}
-          >
+        <div className="form bg-white">
+          <form className="text-center" onSubmit={handleSumbitLogin}>
             <div className="d-flex flex-nowrap justify-content-center">
               <button className="btn-login active-form" type="button">
                 Login
@@ -46,7 +51,7 @@ function Login() {
               </button>
             </div>
 
-            <div className="input-group mb-54 h-25 p-150">
+            <div className="input-group mb-54 p-150">
               <span className="input-group-text">
                 <i className="fa-regular fa-envelope" />
               </span>
@@ -64,7 +69,7 @@ function Login() {
               )}
             </div>
 
-            <div className="input-group h-25 p-50">
+            <div className="input-group p-50">
               <span className="input-group-text">
                 <i className="fa-solid fa-lock" />
               </span>
@@ -96,7 +101,7 @@ function Login() {
       ) : (
         <SignUp setLoginOpen={setLoginOpen} />
       )}
-    </>
+    </div>
   );
 }
 

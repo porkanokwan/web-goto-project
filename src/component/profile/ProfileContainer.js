@@ -35,7 +35,7 @@ function ProfileContainer() {
   if (loading) return <SpinnerGrow />;
   return (
     <div className="overflow-s">
-      <div className="d-flex flex-wrap p-5">
+      <div className="d-flex flex-wrap profile-de">
         <ProfileDetail
           user={userProfile}
           setUserProfile={setUserProfile}
@@ -68,6 +68,7 @@ function ProfileContainer() {
                   deleteToken();
                   navigate("/login");
                 }}
+                onClickCancle={() => setChagePasswordOpen(false)}
               />
             </div>
           )}

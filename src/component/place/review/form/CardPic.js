@@ -1,6 +1,6 @@
 function CardPic({ classImg, pics }) {
   return (
-    <div className="img-review-rest">
+    <>
       {pics?.map((el, idx) => (
         <img
           key={idx}
@@ -9,7 +9,7 @@ function CardPic({ classImg, pics }) {
           alt="place"
         />
       ))}
-    </div>
+    </>
   );
 }
 
