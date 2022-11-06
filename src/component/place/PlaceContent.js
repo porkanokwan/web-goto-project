@@ -88,7 +88,12 @@ function PlaceContent({ setEditPlace, place }) {
                     <i className="fa-solid fa-phone text-secondary me-2" />
                     Website
                   </h4>
-                  <p>{place?.website}</p>
+                  <Link
+                    to={place?.website}
+                    className="text-dark text-decoration-none"
+                  >
+                    <p>{place?.website}</p>
+                  </Link>
                 </>
               )}
 
